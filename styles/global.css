@@ -86,7 +86,16 @@ main {
           flex: 1;
 }
 
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
 footer {
+  font-size: 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 5px;
