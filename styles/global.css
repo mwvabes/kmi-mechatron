@@ -82,6 +82,10 @@ nav > ul > li > a:hover {
   transition: 100ms linear;
 }
 
+main > div:first-child {
+  min-height: calc(100vh - 60px);
+}
+
 main > div {
   max-width: 1260px;
   margin: 0px auto;
@@ -94,7 +98,6 @@ main > div {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  min-height: calc(100vh - 60px);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -121,6 +124,30 @@ main > div {
   text-align: right;
 }
 
+#warning {
+  font-size: .9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #9b0000;
+  color: #eee;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#warning > a {
+  text-decoration: underline;
+  color: #eee;
+  margin: 0 5px;
+  font-weight: normal;
+}
+
 footer > div {
   color: #3d3d3d;
   font-size: .8rem;
@@ -142,6 +169,7 @@ footer > div {
 
 footer > * > * > p {
   font-size: inherit;
+  text-align: center;
 }
 
 .footer > .left {

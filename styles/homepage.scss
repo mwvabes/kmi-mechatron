@@ -3,6 +3,8 @@ $navy: rgb(0, 12, 68);
 
 $anchorMenuColor: #FFF;
 
+$rNumColor: rgb(0, 238, 255);
+
 $greyColor: #3f3f3f;
 $greyBorder: #c7c7c7;
 
@@ -15,27 +17,46 @@ $footerBackground: #2e1a1a;
 
 $maxWidth: 1260px;
 
+$actionButtonBgColor: #20afc9;
+$actionButtonColor: #f7f7f7;
+$actionButtonBorderColor: #0030b4;
+$actionAnchorColor: #eee;
+
+$alphaBackground: rgba(0,0,0,0.2);
+
+$contactBgColor: #FFF;
+$contactColor: #2e1a1a;
+
 body {
     background-color: $navy;
     color: #FFF;
+}
+
+section#contact {
+    margin-top: 20px;
 }
 
 .timeRemainingContainer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    font-size: 1rem;
-    padding: 0 10px;
+    font-size: .8rem;
+    padding: 15px 30px;
+    margin-bottom: 10px;
 }
 
 .timeRemainingContainer > h1 {
-    font-size: 2em;
+    font-size: 1.2em;
 }
 
 .rNum {
-    font-size: 1.6em;
+    font-size: 2.6rem;
     margin: 5px;
-    line-height: 0.4;
+    color: $rNumColor;
+}
+
+.rNum:first-child {
+    margin-left: 0;
 }
 
 #timeRemaining:first-child {
@@ -43,13 +64,14 @@ body {
 }
 
 .timeRemainingContainer > p {
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 #timeRemaining {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: first baseline;
 }
 
 .numElements {
@@ -96,11 +118,6 @@ body {
     text-align: center;
 }
 
-#conferenceInNumbers > .title > h1 {
-    font-size: 1.6rem;
-    padding: 5px;
-}
-
 #welcome {
     display: flex;
     flex-direction: row;
@@ -111,31 +128,113 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    flex: 1;
+    flex: 6;
 }
 
 .categoriesInfoContainer {
     font-size: 1rem;
+    background-color: $alphaBackground;
+    padding: 15px 30px;
+    margin-bottom: 10px;
 }
 
 .categoriesInfoContainer > h1 {
-    font-size: 1.6em;
+    font-size: 1.2em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.categoriesInfoContainer > ul {
+    font-size: .8em;
+    list-style-type: disclosure-closed;
 }
 
 #welcome > .right {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    flex: 2;
+    flex: 8;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
 
 .competeActionContainer {
+    padding: 25px 60px;
+    background-color: $alphaBackground;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+}
+
+.competeActionContainer > button {
+    padding: 25px 60px;
+    background-color: $actionButtonBgColor;
+    color: $actionButtonColor;
+    border: 4px solid $actionButtonBorderColor;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.competeActionContainer > a {
+    color: $actionAnchorColor;
+    font-size: .8rem;
+}
+
+#contact {
+    background-color: $contactBgColor;
+    color: $contactColor;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title h1 {
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 5px;
+}
+
+#contact > .left {
+    display: flex;
+    flex-direction: column;
+    flex: 7;
+    flex-wrap: wrap;
+}
+
+#contact > .right {
+    flex: 3;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#contactInfo h1 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#contactInfo p {
+    font-size: 1rem;
+}
+
+#contactEmails li {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#contactEmails button {
+    font-size: .7rem;
+    padding: 1px;
+    margin: 0 5px;
+    text-transform: uppercase;
+    border-radius: 0;
 }
 
