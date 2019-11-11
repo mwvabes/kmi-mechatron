@@ -1,6 +1,8 @@
 $blue: #008ecf;
 $navy: rgb(0, 12, 68);
 
+$alphaBackground: rgba(0,0,0,0.2);
+
 $anchorMenuColor: #FFF;
 
 $footerBackground: #e0e0e0;
@@ -9,6 +11,16 @@ $footerColor: #3d3d3d;
 $warningBgColor: rgb(155, 0, 0);
 $warningColor: #eee;
 
+$busStopBgColor: rgba(176, 200, 252, 0.315);
+
+$actionButtonBgColor: #20afc9;
+$actionButtonColor: #f7f7f7;
+$actionButtonBorderColor: #0030b4;
+$actionAnchorColor: #eee;
+
+$actionButtonBgColorHover: #008fc7;
+$actionButtonBorderColorHover: #003c81;
+
 $maxWidth: 1260px;
 
 body {
@@ -16,6 +28,10 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+
+button {
+  font-family: 'Istok Web', 'Arial', sans-serif;
 }
 
 :root {
@@ -131,6 +147,74 @@ main > div {
   color: $warningColor;
   margin: 0 5px;
   font-weight: normal;
+}
+
+#contact > .left {
+  display: flex;
+  flex-direction: column;
+  flex: 7;
+  flex-wrap: wrap;
+}
+
+#contact > .right {
+  flex: 3;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+#contactInfo h1 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#contactInfo p {
+  font-size: 1rem;
+}
+
+#contactInfo p:last-child {
+  margin-bottom: 10px;
+}
+
+#contactEmails li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+#contactEmails button {
+  font-size: .7rem;
+  padding: 0 5px;
+  margin: 0 5px;
+  text-transform: uppercase;
+  border-radius: 0;
+  background-color: $actionButtonBgColor;
+  color: $actionAnchorColor;
+  border: 2px solid $actionButtonBorderColor;
+  font-weight: bold;
+  transition: 300ms linear;
+}
+
+#contactEmails button:hover {
+  background-color: $actionButtonBgColorHover;
+  border-color: $actionButtonBorderColorHover;
+}
+
+.busStop {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: $busStopBgColor;
+}
+
+.busStop h2 {
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.busStop p {
+  font-size: .8rem;
 }
 
 footer > div {

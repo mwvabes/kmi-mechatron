@@ -10,6 +10,10 @@ body {
           flex-direction: column;
 }
 
+button {
+  font-family: 'Istok Web', 'Arial', sans-serif;
+}
+
 :root {
   font-size: 18px;
 }
@@ -146,6 +150,96 @@ main > div {
   color: #eee;
   margin: 0 5px;
   font-weight: normal;
+}
+
+#contact > .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 7;
+      -ms-flex: 7;
+          flex: 7;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#contact > .right {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+}
+
+#contactInfo h1 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#contactInfo p {
+  font-size: 1rem;
+}
+
+#contactInfo p:last-child {
+  margin-bottom: 10px;
+}
+
+#contactEmails li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+#contactEmails button {
+  font-size: .7rem;
+  padding: 0 5px;
+  margin: 0 5px;
+  text-transform: uppercase;
+  border-radius: 0;
+  background-color: #20afc9;
+  color: #eee;
+  border: 2px solid #0030b4;
+  font-weight: bold;
+  -webkit-transition: 300ms linear;
+  transition: 300ms linear;
+}
+
+#contactEmails button:hover {
+  background-color: #008fc7;
+  border-color: #003c81;
+}
+
+.busStop {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: rgba(176, 200, 252, 0.315);
+}
+
+.busStop h2 {
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.busStop p {
+  font-size: .8rem;
 }
 
 footer > div {

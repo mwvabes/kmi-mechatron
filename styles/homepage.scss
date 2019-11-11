@@ -22,6 +22,9 @@ $actionButtonColor: #f7f7f7;
 $actionButtonBorderColor: #0030b4;
 $actionAnchorColor: #eee;
 
+$actionButtonBgColorHover: #008fc7;
+$actionButtonBorderColorHover: #003c81;
+
 $alphaBackground: rgba(0,0,0,0.2);
 
 $contactBgColor: #FFF;
@@ -32,7 +35,8 @@ body {
     color: #FFF;
 }
 
-section#contact {
+section#contact,
+section#scientificBoard {
     margin-top: 20px;
 }
 
@@ -177,12 +181,20 @@ section#contact {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.1rem;
+    transition: 170ms linear;
+}
+
+.competeActionContainer > button:hover {
+    background-color: $actionButtonBgColorHover;
+    border-color: $actionButtonBorderColorHover;
 }
 
 .competeActionContainer > a {
     color: $actionAnchorColor;
     font-size: .8rem;
 }
+
+
 
 #contact {
     background-color: $contactBgColor;
@@ -198,43 +210,85 @@ section#contact {
     font-weight: bold;
     font-size: 1.8rem;
     padding: 5px;
+    grid-area: title;
+    font-style: normal;
+    position: relative;
+    margin-bottom: 10px;
 }
 
-#contact > .left {
+.title h1:after {
+    position: absolute;
+    content: '';
+    height: 1px;
+    bottom: 0; 
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 250px;
+    background: $greyBorder;
+}
+
+#scientificBoard {
+    background: rgb(55,1,83);
+    background: linear-gradient(130deg, rgba(55,1,83,1) 0%, rgba(0,0,161,1) 52%, rgba(0,212,255,1) 100%);
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    flex: 7;
+    align-items: center;
+}
+
+#scientificBoard .title {
+    font-style: italic;
+    font-size: .8em;
+}
+
+#scientificBoard .name {
+    position: relative;
+}
+
+#scientificBoard .name:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: -2px; 
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 50px;
+    background: $blue;
+}
+
+#scientificBoard .academy {
+    margin-top: 10px;
+    font-size: .7em;
+    text-transform: uppercase;
+    font-weight: bold;;
+}
+
+#mainBoard,
+#primeBoard {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
-#contact > .right {
-    flex: 3;
-    flex-wrap: wrap;
+
+.person {
     display: flex;
+    flex: 1;
+    flex-wrap: wrap;
     flex-direction: column;
-    text-align: left;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 23, 65, 0.8);
+    border: 2px solid $blue;
+    justify-content: center;
 }
 
-#contactInfo h1 {
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-#contactInfo p {
-    font-size: 1rem;
-}
-
-#contactEmails li {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#contactEmails button {
-    font-size: .7rem;
-    padding: 1px;
-    margin: 0 5px;
-    text-transform: uppercase;
-    border-radius: 0;
+.person:hover {
+    transform: scale(1.06);
+    transition: 400ms ease;
 }
 
