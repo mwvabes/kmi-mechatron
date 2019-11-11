@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,13 @@
   <link href="https://fonts.googleapis.com/css?family=Istok+Web:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/homepage.css">
 
   <title>Document</title>
 </head>
+
 <body>
-  
+
   <header>
     <nav>
       <ul>
@@ -29,19 +32,77 @@
 
   <main>
 
-    <section id="welcome">
+    <div>
+      <section id="welcome" class="container">
 
-    </section>
+        <div class="left">
+          <div class="timeRemainingContainer">
+            <h1>Do Konferencji pozostało:</h1>
+            <p id="timeRemaining">
+              <span id="rDays" class="rNum">10</span>dni
+              <span id="rHours" class="rNum">19</span>godzin
+              <span id="rMinutes" class="rNum">47</span>minut
+              <span id="rSeconds" class="rNum">13</span>sekund
 
-    Do Konferencji pozostało
-    <div id="timeRemaining">10 dni, 16 godzin, 8 minut, 32 sekund</div>
+            </p>
+          </div>
+          <div class="categoriesInfoContainer">
+            <h1>Edycja Konkursu w 2020 roku rozgrywa się w trzech kategoriach:</h1>
+            <ul>
+              <li>Projekt wykonany (robot, łazik etc.)</li>
+              <li>Projekt wykonany w środowisku CAD / CAM</li>
+              <li>Projekt IT</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="right">
+          <div class="competeActionContainer">
+            <h1>Masz ciekawy projekt?</h1>
+            <button>Weź udział</button>
+            <a href="!">Regulamin</a>
+          </div>
+        </div>
+
+      </section>
+
+
+      <div class="basis100"></div>
+
+      <section id="conferenceInNumbers">
+        <div class="title">
+          <h1>Konferencja 2019 w liczbach:</h1>
+        </div>
+        <div class="numElements">
+          <div class="numElement"><span class="number" id="numLectures">16</span><span class="title">Prelekcji</span>
+          </div>
+          <div class="numElement"><span class="number" id="numProjects">48</span><span class="title">Projektów</span>
+          </div>
+          <div class="numElement"><span class="number" id="numParticipants">163</span><span
+              class="title">Uczestników</span></div>
+          <div class="numElement"><span class="number" id="numPartners">24</span><span class="title">Partnerów</span>
+          </div>
+          <div class="numElement"><span class="number" id="numSupervisors">9</span><span class="title">Kierowników
+              Naukowych</span></div>
+        </div>
+      </section>
+
+    </div>
 
   </main>
 
   <footer>
-    <div class="left">&copy; 2018-2020 by Koło Naukowe Mechatron, Uniwersytet Rzeszowski</div>
-    <div class="right">Design and coding: <a href="http://vabes.pl">Marcin Wielgos</a></div>
+    <div class="footer">
+      <div class="left">
+        <p>&copy; 2018-2020 by Koło Naukowe Mechatron, Uniwersytet Rzeszowski</p>
+      </div>
+      <div class="right">
+        <p>Design and coding: <a href="http://vabes.pl">Marcin Wielgos</a></p>
+      </div>
+    </div>
   </footer>
 
 </body>
+
 </html>

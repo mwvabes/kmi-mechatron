@@ -1,0 +1,141 @@
+$blue: #008ecf;
+$navy: rgb(0, 12, 68);
+
+$anchorMenuColor: #FFF;
+
+$greyColor: #3f3f3f;
+$greyBorder: #c7c7c7;
+
+$numberColor: #002a61;
+$numberHoverColor: #004299;
+
+$numElementHoverBgColor: #e7e7e7;
+
+$footerBackground: #2e1a1a;
+
+$maxWidth: 1260px;
+
+body {
+    background-color: $navy;
+    color: #FFF;
+}
+
+.timeRemainingContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 1rem;
+    padding: 0 10px;
+}
+
+.timeRemainingContainer > h1 {
+    font-size: 2em;
+}
+
+.rNum {
+    font-size: 1.6em;
+    margin: 5px;
+    line-height: 0.4;
+}
+
+#timeRemaining:first-child {
+    margin-left: 0;
+}
+
+.timeRemainingContainer > p {
+    font-size: 1.2em;
+}
+
+#timeRemaining {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.numElements {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.numElement {
+    border: 1px solid $greyBorder;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.numElement:hover {
+    background-color: $numElementHoverBgColor;
+    transition: 200ms linear;
+}
+
+.numElement > .number {
+    font-size: 50px;
+    color: $numberColor;
+    font-weight: bold;
+}
+
+.numElement > .number:hover {
+    color: $numberHoverColor;
+    transition: 300ms linear;
+}
+
+.numElement > .title {
+    text-transform: uppercase;
+    font-size: .9rem;
+}
+
+#conferenceInNumbers {
+    color: $greyColor;
+    width: 100%;
+    background-color: #FFF;
+    text-align: center;
+}
+
+#conferenceInNumbers > .title > h1 {
+    font-size: 1.6rem;
+    padding: 5px;
+}
+
+#welcome {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#welcome > .left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.categoriesInfoContainer {
+    font-size: 1rem;
+}
+
+.categoriesInfoContainer > h1 {
+    font-size: 1.6em;
+}
+
+#welcome > .right {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 2;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.competeActionContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
