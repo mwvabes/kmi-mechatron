@@ -3,8 +3,10 @@ body {
   color: #FFF;
 }
 
+section#partners,
 section#contact,
-section#scientificBoard {
+section#scientificBoard,
+section#aboutUsInMedia {
   margin-top: 20px;
 }
 
@@ -89,8 +91,8 @@ section#scientificBoard {
 
 .numElement:hover {
   background-color: #e7e7e7;
-  -webkit-transition: 200ms linear;
-  transition: 200ms linear;
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
 }
 
 .numElement > .number {
@@ -101,11 +103,11 @@ section#scientificBoard {
 
 .numElement > .number:hover {
   color: #004299;
-  -webkit-transition: 300ms linear;
-  transition: 300ms linear;
+  -webkit-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
 }
 
-.numElement > .title {
+.numElement > .inNumbersTitle {
   text-transform: uppercase;
   font-size: .9rem;
 }
@@ -209,9 +211,10 @@ section#scientificBoard {
   border-radius: 0;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.1rem;
-  -webkit-transition: 170ms linear;
-  transition: 170ms linear;
+  font-size: 1.4rem;
+  -webkit-transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
+  transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .competeActionContainer > button:hover {
@@ -221,46 +224,13 @@ section#scientificBoard {
 
 .competeActionContainer > a {
   color: #eee;
-  font-size: .8rem;
+  font-size: 1rem;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
 }
 
-#contact {
-  background-color: #FFF;
-  color: #2e1a1a;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 10px 10px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.title h1 {
-  font-weight: bold;
-  font-size: 1.8rem;
-  padding: 5px;
-  grid-area: title;
-  font-style: normal;
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.title h1:after {
-  position: absolute;
-  content: '';
-  height: 1px;
-  bottom: 0;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  width: 250px;
-  background: #c7c7c7;
+.competeActionContainer > a:hover {
+  color: #FFF;
 }
 
 #scientificBoard {
@@ -280,7 +250,7 @@ section#scientificBoard {
           align-items: center;
 }
 
-#scientificBoard .title {
+#scientificBoard .personTitle {
   font-style: italic;
   font-size: .8em;
 }
@@ -289,7 +259,7 @@ section#scientificBoard {
   position: relative;
 }
 
-#scientificBoard .name:after {
+.person .name:after {
   position: absolute;
   content: '';
   height: 2px;
@@ -299,6 +269,15 @@ section#scientificBoard {
   right: 0;
   width: 50px;
   background: #008ecf;
+  -webkit-transition: -webkit-transform 350ms ease-in;
+  transition: -webkit-transform 350ms ease-in;
+  transition: transform 350ms ease-in;
+  transition: transform 350ms ease-in, -webkit-transform 350ms ease-in;
+}
+
+.person:hover p.name:after {
+  -webkit-transform: scaleX(2.6);
+          transform: scaleX(2.6);
 }
 
 #scientificBoard .academy {
@@ -345,12 +324,139 @@ section#scientificBoard {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: -webkit-transform 400ms ease-in-out;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
 }
 
 .person:hover {
   -webkit-transform: scale(1.06);
           transform: scale(1.06);
-  -webkit-transition: 400ms ease;
-  transition: 400ms ease;
+}
+
+section#aboutUsInMedia {
+  background-color: rgba(255, 255, 255, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section#aboutUsInMedia > .title {
+  text-align: center;
+}
+
+.aboutIMElements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.aboutIMElement {
+  position: relative;
+  margin: 5px;
+  min-height: 150px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #FFF;
+  color: #858585;
+  border: 1px solid #8d8d8d;
+  z-index: 1;
+}
+
+.aboutIMElement > h2 {
+  background-color: rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 5px;
+  color: #02005c;
+}
+
+.aboutIMElement > p {
+  font-size: .9rem;
+  padding: 5px;
+  color: #5e5e5e;
+}
+
+.aboutIMElement > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 150px;
+  width: 150px;
+  z-index: 2;
+}
+
+.aboutIMElement > button {
+  font-size: .8rem;
+  position: absolute;
+  bottom: 20px;
+  right: 80px;
+  z-index: 3;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+section#partners {
+  background-color: #e0e0e0;
+  color: #3f3f3f;
+}
+
+section#partners > .title {
+  text-align: center;
+}
+
+section#partners h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+ul.partners {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ul.partners > li {
+  margin: 10px;
+  min-height: 120px;
+  min-width: 200px;
+  max-width: 250px;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 100%;
 }
 /*# sourceMappingURL=homepage.css.map */
