@@ -159,13 +159,14 @@ main > div {
 }
 
 section#contact {
-  background-color: $contactBgColor;
-  color: $contactColor;
+  //background-color: rgb(0, 94, 156);
+  background-image: linear-gradient(to left, #30cfd0 0%, #330867 100%);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 
 section#contact > .title {
@@ -173,16 +174,41 @@ section#contact > .title {
 }
 
 .contactContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.contact {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.contact > div {
+  color: $contactColor;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .contactElement {
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 10px;
   margin: 10px;
-  border: 1px solid black;
+  border: 1px solid $actionButtonBorderColor;
+  border-bottom: 4px solid $actionButtonBgColor;
   font-size: 1rem;
   text-align: center;
+  transition: border 300ms ease-in;
+  box-shadow: 0px 3px 17px rgba(0,0,0,0.75);
+}
+
+.contactElement:hover {
+  border-bottom: 4px solid $actionButtonBorderColor;
 }
 
 .contactElement h1 {
@@ -195,7 +221,7 @@ section#contact > .title {
 .contactElement h1:after {
   position: absolute;
   content: '';
-  height: 1px;
+  height: 2px;
   bottom: 0; 
   margin: 0 auto;
   left: 0;
@@ -213,29 +239,8 @@ section#contact > .title {
   font-size: .9em;
 }
 
-#address {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-#openingHours {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-#contactEmails {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-#busLines {
-  grid-column-start: 1;
-  grid-column-end: -1;
-  grid-row: 2;
-}
-
 #contact p {
-  display: inline
+  display: inline;
 }
 
 #contact button {
@@ -263,7 +268,6 @@ section#contact > .title {
 .busStop {
   margin-bottom: 5px;
   padding: 5px;
-  background-color: $busStopBgColor;
 }
 
 .busStop h2 {
