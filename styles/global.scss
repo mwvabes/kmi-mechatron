@@ -131,6 +131,19 @@ main > div {
 
 
 @media screen and (max-width: 1260px) {
+
+  .navToggle ~ ul {
+    //display: none;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 300ms ease-in-out;
+  }
+
+  .navToggle:checked ~ ul {
+    transform: scale(1,1);
+    display: flex;
+  }
+
   nav {
     position: relative;
     z-index: 9999;
@@ -178,18 +191,6 @@ main > div {
     padding: 10px; 
     min-height: 60px;
     width: 100%;
-  }
-
-  .navToggle ~ ul {
-    //display: none;
-    transform: scale(1,0);
-    transform-origin: top;
-    transition: transform 300ms ease-in-out;
-  }
-
-  .navToggle:checked ~ ul {
-    display: flex;
-    transform: scale(1,1);
   }
 
   nav > ul > li:nth-child(odd) {
