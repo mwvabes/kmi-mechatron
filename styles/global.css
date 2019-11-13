@@ -48,7 +48,7 @@ p {
 
 header {
   background-color: #008ecf;
-  max-height: 80px;
+  max-height: 60px;
 }
 
 nav {
@@ -59,6 +59,15 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 nav > ul,
@@ -118,9 +127,6 @@ main > div {
     z-index: 9999;
   }
   nav > ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-orient: vertical;
@@ -136,49 +142,8 @@ main > div {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-transform-origin: left;
-            transform-origin: left;
-    -webkit-transition: -webkit-transform 300ms ease-in-out;
-    transition: -webkit-transform 300ms ease-in-out;
-    transition: transform 300ms ease-in-out;
-    transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
-    -webkit-transform: scale(1, 0);
-            transform: scale(1, 0);
-    display: none;
     min-height: 60px;
   }
-  /*   .navToggleLabel {
-    display: inline-block;
-    position: relative;
-    min-height: 40px;
-    min-width: 40px;
-    padding: 10px;
-  }
-
-  .navToggleLabel > span,
-  .navToggleLabel > span::after,
-  .navToggleLabel > span::before {
-    display: block;
-    background-color: #FFF;
-    height: 5px;
-    width: 2em;
-    position: relative;
-  }
-
-  .navToggleLabel > span::after,
-  .navToggleLabel > span::before {
-    content: '';
-    position: absolute;
-    display: inline-block;
-  }
-
-  .navToggleLabel > span::before {
-    bottom: 10px;
-  }
-
-  .navToggleLabel > span::after {
-    top: 10px;
-  } */
   .navToggleLabel > span {
     position: relative;
     padding-left: 2em;
@@ -192,8 +157,8 @@ main > div {
     height: 4px;
     border-top: 12px double #FFF;
     border-bottom: 4px solid #FFF;
-    -webkit-transition: border-color 200ms ease-in-out;
-    transition: border-color 200ms ease-in-out;
+    -webkit-transition: border-color 200ms ease-out;
+    transition: border-color 200ms ease-out;
   }
   .navToggleLabel:hover > span:before {
     border-top-color: #1100ff;
@@ -213,7 +178,17 @@ main > div {
     min-height: 60px;
     width: 100%;
   }
-  .navToggle:checked ~ ul > li {
+  .navToggle ~ ul {
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-transition: -webkit-transform 300ms ease-in-out;
+    transition: -webkit-transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  }
+  .navToggle:checked ~ ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
