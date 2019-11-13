@@ -51,6 +51,70 @@ header {
   max-height: 60px;
 }
 
+nav {
+  max-width: 1260px;
+  margin: 0px auto;
+  text-transform: uppercase;
+  min-height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav > ul,
+nav > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2px;
+}
+
+nav > ul > li > a {
+  padding: 5px;
+  color: #FFF;
+  text-decoration: none;
+  font-size: .9rem;
+  -webkit-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
+}
+
+nav > ul > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+main > div:first-child {
+  min-height: calc(100vh - 60px);
+}
+
+main > div {
+  max-width: 1260px;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 @media screen and (min-width: 1261px) {
   .navToggleContainer {
     display: none;
@@ -59,21 +123,23 @@ header {
 
 @media screen and (max-width: 1260px) {
   .navToggle ~ ul {
+    opacity: 0;
     -webkit-transform: scale(1, 0);
             transform: scale(1, 0);
     -webkit-transform-origin: top;
             transform-origin: top;
-    -webkit-transition: -webkit-transform 300ms ease-in-out;
-    transition: -webkit-transform 300ms ease-in-out;
-    transition: transform 300ms ease-in-out;
-    transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+    -webkit-transition: -webkit-transform 300ms ease-in;
+    transition: -webkit-transform 300ms ease-in;
+    transition: transform 300ms ease-in;
+    transition: transform 300ms ease-in, -webkit-transform 300ms ease-in;
   }
   .navToggle:checked ~ ul {
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
   }
   nav {
     position: relative;
@@ -137,70 +203,6 @@ header {
   nav > ul > li:nth-child(even) {
     background-color: #001d6d;
   }
-}
-
-nav {
-  max-width: 1260px;
-  margin: 0px auto;
-  text-transform: uppercase;
-  min-height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-nav > ul,
-nav > ul > li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 2px;
-}
-
-nav > ul > li > a {
-  padding: 5px;
-  color: #FFF;
-  text-decoration: none;
-  font-size: .9rem;
-  -webkit-transition: background-color 100ms linear;
-  transition: background-color 100ms linear;
-}
-
-nav > ul > li > a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-main > div:first-child {
-  min-height: calc(100vh - 60px);
-}
-
-main > div {
-  max-width: 1260px;
-  margin: 0px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .dsNone {
