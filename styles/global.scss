@@ -83,10 +83,9 @@ header {
 nav {
   max-width: $maxWidth;
   margin: 0px auto;
-  display: grid;
-  grid-template-columns: 1fr;
   text-transform: uppercase;
   min-height: 60px;
+  display: flex;
 }
 
 nav > ul,
@@ -119,6 +118,119 @@ main > div {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;;
+}
+
+@media screen and (min-width: 1261px) {
+  .navToggleContainer {
+    display:none;
+  }
+}
+
+
+@media screen and (max-width: 1260px) {
+  nav {
+    position: relative;
+    z-index: 9999;
+  }
+
+  nav > ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  nav > ul > li {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+    transform: scale(1,0);
+    display: none;
+    min-height: 60px;
+  }
+
+/*   .navToggleLabel {
+    display: inline-block;
+    position: relative;
+    min-height: 40px;
+    min-width: 40px;
+    padding: 10px;
+  }
+
+  .navToggleLabel > span,
+  .navToggleLabel > span::after,
+  .navToggleLabel > span::before {
+    display: block;
+    background-color: #FFF;
+    height: 5px;
+    width: 2em;
+    position: relative;
+  }
+
+  .navToggleLabel > span::after,
+  .navToggleLabel > span::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+  }
+
+  .navToggleLabel > span::before {
+    bottom: 10px;
+  }
+
+  .navToggleLabel > span::after {
+    top: 10px;
+  } */
+
+  .navToggleLabel > span {
+    position: relative;
+    padding-left: 2em;
+  }
+  .navToggleLabel > span:before {
+    content: "";
+    position: absolute;
+    top: 0.25em;
+    left: 0;
+    width: 2em;
+    height: 4px; 
+    border-top: 12px double #FFF;
+    border-bottom: 4px solid #FFF;
+    transition: border-color 200ms ease-in-out;
+  }
+
+  .navToggleLabel:hover > span:before {
+    border-top-color: #1100ff;
+    border-bottom-color: #1100ff;
+  }
+
+  .navToggleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    min-height: 60px;
+    width: 100%;
+  }
+
+  .navToggle:checked ~ ul > li {
+    display: flex;
+    transform: scale(1,1);
+  }
+
+  nav > ul > li:nth-child(odd) {
+    background-color: #0060af;
+  }
+
+  nav > ul > li:nth-child(even) {
+    background-color: #001d6d;
+  }
+}
+
+.dsNone {
+  display: none;
 }
 
 .basis100 {
