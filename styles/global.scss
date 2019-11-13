@@ -80,49 +80,6 @@ header {
   max-height: 60px;
 }
 
-nav {
-  max-width: $maxWidth;
-  margin: 0px auto;
-  text-transform: uppercase;
-  min-height: 60px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-nav > ul,
-nav > ul > li {
-  display: flex;
-  align-items: center;
-  margin: 2px;
-}
-
-nav > ul > li > a {
-  padding: 5px;
-  color: $anchorMenuColor;
-  text-decoration: none;
-  font-size: .9rem;
-  transition: background-color 100ms linear;
-}
-
-nav > ul > li > a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-main > div:first-child {
-  min-height: calc(100vh - 60px);
-}
-
-main > div {
-  max-width: 1260px;
-  margin: 0px auto;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;;
-}
-
 @media screen and (min-width: 1261px) {
   .navToggleContainer {
     display:none;
@@ -200,6 +157,49 @@ main > div {
   nav > ul > li:nth-child(even) {
     background-color: #001d6d;
   }
+}
+
+nav {
+  max-width: $maxWidth;
+  margin: 0px auto;
+  text-transform: uppercase;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav > ul,
+nav > ul > li {
+  display: flex;
+  align-items: center;
+  margin: 2px;
+}
+
+nav > ul > li > a {
+  padding: 5px;
+  color: $anchorMenuColor;
+  text-decoration: none;
+  font-size: .9rem;
+  transition: background-color 100ms linear;
+}
+
+nav > ul > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+main > div:first-child {
+  min-height: calc(100vh - 60px);
+}
+
+main > div {
+  max-width: 1260px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;;
 }
 
 .dsNone {
