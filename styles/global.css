@@ -85,20 +85,36 @@ nav > ul > li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 2px;
+}
+
+nav > ul > li:not(:last-child) {
+  margin-right: 2px;
 }
 
 nav > ul > li > a {
-  padding: 5px;
+  padding: 10px;
   color: #FFF;
   text-decoration: none;
   font-size: .9rem;
   -webkit-transition: background-color 100ms linear;
   transition: background-color 100ms linear;
+  position: relative;
 }
 
-nav > ul > li > a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+nav > ul > li:not(:last-child) > a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #FFF;
+  -webkit-transition: width 300ms ease-out;
+  transition: width 300ms ease-out;
+}
+
+nav > ul > li:not(:last-child) > a:hover::before {
+  width: 100%;
 }
 
 .socialLink > a {
