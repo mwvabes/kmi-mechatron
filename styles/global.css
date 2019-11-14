@@ -47,8 +47,15 @@ p {
 }
 
 header {
-  background-color: #008ecf;
+  background-color: #008dcf;
   max-height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  -webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
 }
 
 nav {
@@ -94,6 +101,14 @@ nav > ul > li > a:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.socialLink > a {
+  font-size: 1.4rem;
+}
+
+main {
+  margin-top: 60px;
+}
+
 main > div:first-child {
   min-height: calc(100vh - 60px);
 }
@@ -118,6 +133,9 @@ main > div {
 @media screen and (min-width: 1261px) {
   .navToggleContainer {
     display: none;
+  }
+  .socialLink {
+    margin-left: auto;
   }
 }
 
@@ -455,7 +473,7 @@ footer > div {
   font-size: .8rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 5px;
+  padding: 15px;
   max-width: 1260px;
   margin: 0px auto;
   background-color: #e0e0e0;
@@ -467,16 +485,28 @@ footer > div {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 160px;
 }
 
 footer > * > * > p {
   font-size: inherit;
   text-align: center;
+  display: block;
 }
 
 .footer > .left {
   -ms-flex-line-pack: start;
       align-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .footer > .right {

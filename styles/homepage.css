@@ -301,6 +301,7 @@ section#aboutUsInMedia {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
 }
 
 .person {
@@ -331,6 +332,7 @@ section#aboutUsInMedia {
   transition: -webkit-transform 400ms ease-in-out;
   transition: transform 400ms ease-in-out;
   transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+  min-height: 140px;
 }
 
 .person:hover {
