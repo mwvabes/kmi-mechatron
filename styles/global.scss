@@ -241,6 +241,10 @@ main > div {
   flex-wrap: wrap;
 }
 
+#warning h4 {
+  font-size: .9rem;
+}
+
 #warning > a {
   text-decoration: underline;
   color: $warningColor;
