@@ -101,22 +101,6 @@ nav > ul > li > a {
   position: relative;
 }
 
-nav > ul > li:not(:last-child) > a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2px;
-  width: 0;
-  background-color: #FFF;
-  -webkit-transition: width 300ms ease-out;
-  transition: width 300ms ease-out;
-}
-
-nav > ul > li:not(:last-child) > a:hover::before {
-  width: 100%;
-}
-
 .socialLink > a {
   font-size: 1.4rem;
 }
@@ -152,6 +136,20 @@ main > div {
   }
   .socialLink {
     margin-left: auto;
+  }
+  nav > ul > li:not(:last-child) > a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #FFF;
+    -webkit-transition: width 300ms ease-out;
+    transition: width 300ms ease-out;
+  }
+  nav > ul > li:not(:last-child) > a:hover::before {
+    width: 100%;
   }
 }
 
