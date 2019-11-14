@@ -357,6 +357,10 @@ section#aboutUsInMedia {
     z-index: 2;
 }
 
+.aboutIMElement > a {
+    text-decoration: none;
+}
+
 .aboutIMElement p {
     position: relative;
     z-index: 1;
@@ -413,9 +417,14 @@ section#aboutUsInMedia {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-height: 100%;
-    min-width: 100%;
+    min-height: calc(100% + 4px);
+    min-width: calc(100% + 4px);
     transform: translate(-50%, -50%);
+    transition: filter 200ms ease-in-out;
+}
+
+.aboutIMElement:hover img {
+    filter: brightness(50%);
 }
 
 section#partners {

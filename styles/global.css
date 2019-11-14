@@ -202,25 +202,14 @@ main > div {
     text-align: center;
     padding: 15px;
   }
-  .navToggleLabel > span {
-    position: relative;
-    padding-left: 2em;
+  .navToggleLabel > i {
+    font-size: 2rem;
+    -webkit-transition: color 200ms ease-in-out;
+    transition: color 200ms ease-in-out;
+    color: #FFF;
   }
-  .navToggleLabel > span:before {
-    content: "";
-    position: absolute;
-    top: 0.25em;
-    left: 0;
-    width: 2em;
-    height: 4px;
-    border-top: 12px double #FFF;
-    border-bottom: 4px solid #FFF;
-    -webkit-transition: border-color 200ms ease-out;
-    transition: border-color 200ms ease-out;
-  }
-  .navToggleLabel:active > span:before {
-    border-top-color: #1100ff;
-    border-bottom-color: #1100ff;
+  .navToggleLabel:active > i {
+    color: #003c81;
   }
   .navToggleContainer {
     display: -webkit-box;

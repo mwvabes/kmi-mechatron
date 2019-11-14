@@ -203,25 +203,14 @@ main > div {
     padding: 15px;
   }
 
-  .navToggleLabel > span {
-    position: relative;
-    padding-left: 2em;
-  }
-  .navToggleLabel > span:before {
-    content: "";
-    position: absolute;
-    top: 0.25em;
-    left: 0;
-    width: 2em;
-    height: 4px; 
-    border-top: 12px double #FFF;
-    border-bottom: 4px solid #FFF;
-    transition: border-color 200ms ease-out;
+  .navToggleLabel > i {
+    font-size: 2rem;
+    transition: color 200ms ease-in-out;
+    color: #FFF;
   }
 
-  .navToggleLabel:active > span:before {
-    border-top-color: #1100ff;
-    border-bottom-color: #1100ff;
+  .navToggleLabel:active > i {
+    color: $actionButtonBorderColorHover;
   }
 
   .navToggleContainer {
