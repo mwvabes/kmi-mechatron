@@ -46,6 +46,17 @@ section#contact,
 section#scientificBoard,
 section#aboutUsInMedia {
     margin-top: 20px;
+    overflow: hidden;
+}
+
+.welcomeMessage {
+    text-align: left;
+    padding: 15px 30px;
+}
+
+.welcomeMessage h1 {
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
 .timeRemainingContainer {
@@ -55,6 +66,7 @@ section#aboutUsInMedia {
     font-size: .8rem;
     padding: 15px 30px;
     margin-bottom: 10px;
+    color: #e0e0e0
 }
 
 .timeRemainingContainer > h1 {
@@ -238,11 +250,11 @@ section#aboutUsInMedia {
     right: 0;
     width: 50px;
     background: $blue;
-    transition: transform 350ms ease-in;
+    transition: width 350ms ease-in;
 }
 
 .person:hover p.name:after {
-    transform: scaleX(2.6);
+    width: 100%;
 
 }
 
@@ -285,72 +297,130 @@ section#aboutUsInMedia {
 }
 
 section#aboutUsInMedia {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #FFF;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
+    color: #585858;
+    align-items: center;
 }
 
-section#aboutUsInMedia > .title {
+.aboutUsInMediaContainer > .title {
     text-align: center;
+}
+
+.aboutUsInMediaContainer {
+    max-width: $maxWidth;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .aboutIMElements {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .aboutIMElement {
     position: relative;
-    margin: 5px;
-    min-height: 150px;
-    flex: 1;
     background-color: $IMElBgColor;
     color: $IMElColor;
-    border: 1px solid $IMElBorderColor;
     z-index: 1;
+    padding: 15px;
+    overflow: hidden;
+    flex: 1;
+    margin: 20px 50px;
+    min-height: 350px;
+    min-width: 200px;
+    max-width: 240px;
 }
 
-.aboutIMElement > h2 {
-    background-color: $alphaBackground;
+.aboutIMElement:nth-child(odd) {
+    background-color: #FFE53B;
+    background-image: linear-gradient(315deg, #FFE53B 0%, #FF2525 74%); 
+}
+
+.aboutIMElement:nth-child(even) {
+    background-color: #4158D0;
+    background-image: linear-gradient(135deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);    
+}
+
+.aboutIMElement h2 {
     font-weight: bold;
     font-size: 1.1rem;
     padding: 5px;
-    color: $IMElHColor;
-}
-
-.aboutIMElement > p {
-    font-size: .9rem;
-    padding: 5px;
-    color: $IMElPColor;
-}
-
-.aboutIMElement > img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    min-height: 150px;
-    width: 150px;
+    color: #FFF;
+    position: relative;
     z-index: 2;
 }
 
-.aboutIMElement > button {
-    font-size: .8rem;
-    position: absolute;
-    bottom: 20px;
-    right: 80px;
-    z-index: 3;
-    text-transform: uppercase;
+.aboutIMElement p {
+    position: relative;
+    z-index: 1;
+    font-size: .9rem;
     padding: 5px;
+    color: #eeeeee;
+}
+
+.aboutIMElement button {
+    position: absolute;
+    bottom: 15px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    padding: 5px 15px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border: 1px solid #FFF;
+    color: #FFF;
+    transition: background-color 175ms ease-in-out, border-color 175ms ease-in, color 175ms ease-in, background-image 175ms ease-in;
+    display: flex;
+    align-items: center;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #2f81b8 0%, #262ca1 100%);    
+}
+
+.aboutIMElement a h2 {
+    transition: color 275ms ease-in-out;
+}
+
+.aboutIMElement a:hover h2 {
+    color: #7aafff;
+}
+
+.aboutIMElement button:hover {
+    background-color: $blue;
+    border-color: #FFF;
+    color: #FFF;
+    background-image: none;
+}
+
+.aboutIMElement button i {
+    font-size: .7em;
+    margin-left: 8px;
+}
+
+.aboutIMElement img {
+    z-index: -1;
+    filter: brightness(40%);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
 }
 
 section#partners {
-    background-color: #FFF;
     color: #3f3f3f;
+    background-color: #FFF;
 }
 
 section#partners > .title {

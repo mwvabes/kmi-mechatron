@@ -11,8 +11,8 @@ $greyBorder: #c7c7c7;
 $footerBackground: #e0e0e0;
 $footerColor: #3d3d3d;
 
-$warningBgColor: #9b0000;
-$warningColor: #eee;
+$warningBgColor: #ff173e;
+$warningColor: #ffffff;
 
 $busStopBgColor: rgba(176, 200, 252, 0.315);
 
@@ -33,14 +33,14 @@ $actionButtonBorderColorHover: #003c81;
 $maxWidth: 1260px;
 
 body {
-  font-family: 'Istok Web', 'Arial', sans-serif;
+  font-family: 'Source Sans Pro', 'Arial', sans-serif;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
 button {
-  font-family: 'Istok Web', 'Arial', sans-serif;
+  font-family: 'Source Sans Pro', 'Arial', sans-serif;
 }
 
 :root {
@@ -240,6 +240,15 @@ main > div {
   nav > ul > li:nth-child(even) {
     background-color: #001d6d;
   }
+
+  .timeRemainingContainer {
+    text-align: center;
+  }
+
+  #timeRemaining {
+    justify-content: center;
+  }
+
 }
 
 .dsNone {
@@ -398,17 +407,18 @@ section#contact > .title {
   font-size: .8rem;
 }
 
-section > .title h1 {
+section > .title h1,
+.aboutUsInMediaContainer > .title h1 {
   font-weight: bold;
   font-size: 1.8rem;
   padding: 5px;
-  grid-area: title;
   font-style: normal;
   position: relative;
   margin: 10px 0;
 }
 
-section > .title h1:after {
+section > .title h1::after,
+.aboutUsInMediaContainer > .title h1::after {
   position: absolute;
   content: '';
   height: 1px;
@@ -461,11 +471,4 @@ footer > * > * > p {
   border: 1px solid $actionButtonBorderColor;
   color: $actionButtonColor;
   background-color: $actionButtonBgColor;
-}
-
-.btnYoutube {
-  border: 0px;
-  border-bottom: 4px solid rgb(82, 0, 0);
-  color: #eee;
-  background-color: rgb(185, 0, 0);
 }
