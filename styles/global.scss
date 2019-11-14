@@ -21,8 +21,8 @@ $actionButtonColor: #f7f7f7;
 $actionButtonBorderColor: #0030b4;
 $actionAnchorColor: #eee;
 
-$contactBgColor: #dfdfdf;
-$contactColor: #2e1a1a;
+$contactBgColor: #111111;
+$contactColor: #ffffff;
 
 $actionButtonBgColorHover: #008fc7;
 $actionButtonBorderColorHover: #003c81;
@@ -83,7 +83,8 @@ header {
   left: 0;
   right: 0;
   z-index: 9999;
-  box-shadow: 0px 2px 15px rgba(0,0,0,0.5);;
+  box-shadow: 0px 2px 15px rgba(0,0,0,0.5);
+  background-image: url(/img/zig-blue.png);
 }
 
 nav {
@@ -114,10 +115,6 @@ nav > ul > li > a {
   font-size: .9rem;
   transition: background-color 100ms linear;
   position: relative;
-}
-
-nav > ul > li > a:hover {
-  //background-color: rgba(255, 255, 255, 0.3);
 }
 
 .socialLink > a {
@@ -292,55 +289,47 @@ main > div {
 
 section#contact {
   //background-color: rgb(0, 94, 156);
-  background-image: linear-gradient(to left, #30cfd0 0%, #330867 100%);
+  background-color: $contactBgColor;
+  color: $contactColor;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
+  margin-bottom: 20px;
 }
 
 section#contact > .title {
   text-align: center;
+  background-image: url(/img/zig-dark.png);
 }
 
 .contactContainer {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .contact {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .contact > div {
-  color: $contactColor;
   flex: auto;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: flex-start;
 }
 
 .contactElement {
-  background-color: rgba(255, 255, 255, 0.9);
   padding: 10px;
-  margin: 10px;
-  border: 1px solid $actionButtonBorderColor;
-  border-bottom: 4px solid $actionButtonBgColor;
+  border: 0px;
   font-size: 1rem;
-  text-align: center;
   transition: border 300ms ease-in;
-  box-shadow: 0px 3px 17px rgba(0,0,0,0.75);
-}
-
-.contactElement:hover {
-  border-bottom: 4px solid $actionButtonBorderColor;
 }
 
 .contactElement h1 {
@@ -350,25 +339,24 @@ section#contact > .title {
   position: relative;
 }
 
-.contactElement h1:after {
-  position: absolute;
-  content: '';
-  height: 2px;
-  bottom: 0; 
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  width: 50px;
-  background: $blue;
-  transition: transform 170ms ease-in-out;
-}
-
-.contactElement:hover h1:after {
-  transform: scaleX(2);
-}
-
 .contactElement p {
   font-size: .9em;
+}
+
+.contactMap {
+  max-height: 350px;
+  filter: grayscale(90%);
+  transition: filter 175ms ease-in-out;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.contactMap > img {
+  width: 100%;
+}
+
+.contactMap:hover {
+  filter: grayscale(0%);
 }
 
 #contact p {
@@ -399,7 +387,6 @@ section#contact > .title {
 
 .busStop {
   margin-bottom: 5px;
-  padding: 5px;
 }
 
 .busStop h2 {

@@ -189,13 +189,15 @@ section#aboutUsInMedia {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.4rem;
-    transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out;
+    transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, background-image 170ms ease-in-out;
     text-shadow: 0px 3px 5px rgba(0,0,0,0.5);
+    background-image: url(/img/zig-blue.png);
 }
 
 .competeActionContainer > button:hover {
     background-color: $actionButtonBgColorHover;
     border-color: $actionButtonBorderColorHover;
+    background-image: none;
 }
 
 .competeActionContainer > a {
@@ -396,7 +398,7 @@ ul.partners > li {
     justify-content: center;
     display: flex;
     align-items: center;
-    transition: filter 175ms ease-in, opacity 175ms ease-in;
+    transition: filter 175ms ease-in-out, opacity 175ms ease-in, transform 175ms ease-in-out;
     filter: grayscale(90%);
     opacity: .6;
 }
@@ -419,6 +421,7 @@ ul.partners > li > img {
 
 ul.partners > li:hover {
     filter: grayscale(0%);
+    transform: scale(1.01);
     opacity: 1;
 }
 
