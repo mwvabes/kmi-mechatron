@@ -21,10 +21,19 @@ section#aboutUsInMedia {
   font-weight: bold;
 }
 
-.timeRemainingContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+#timeRemainingContainer {
+  visibility: hidden;
+}
+
+#conferenceIsNowContainer,
+#timeUpContainer {
+  display: none;
+}
+
+.timeRemainingContainer,
+.conferenceIsNowContainer,
+.timeUpContainer {
+  opacity: 0;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: vertical;
@@ -35,10 +44,36 @@ section#aboutUsInMedia {
   padding: 15px 30px;
   margin-bottom: 10px;
   color: #e0e0e0;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  position: relative;
 }
 
-.timeRemainingContainer > h1 {
-  font-size: 1.2em;
+.timeRemainingContainer > h1,
+.conferenceIsNowContainer > h1,
+.timeUpContainer > h1 {
+  font-size: 1.4em;
+}
+
+.conferenceIsNowContainer > p,
+.timeUpContainer > p {
+  font-weight: normal;
+  color: #FFF;
+  font-style: italic;
+}
+
+.timeRemainingContainer a,
+.conferenceIsNowContainer a,
+.timeUpContainer a {
+  color: #FFF;
+  -webkit-transition: color 175ms ease-in-out;
+  transition: color 175ms ease-in-out;
+}
+
+.timeRemainingContainer a:hover,
+.conferenceIsNowContainer a:hover,
+.timeUpContainer a:hover {
+  color: #008ecf;
 }
 
 .rNum {

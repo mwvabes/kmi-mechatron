@@ -20,17 +20,18 @@ var countdown = setInterval(function () {
         document.getElementById("rSeconds").innerHTML = seconds;
 
         if (!counterShowed) {
+            document.getElementById("timeRemainingContainer").style.visibility = "visible";
             document.getElementById("timeRemainingContainer").style.opacity = "1";
             counterShowed = true;
         }
     } else {
-        document.getElementById("timeRemainingContainer").style.display = "none";
-        document.getElementById("timeUpContainer").style.display = "flex";
-        document.getElementById("timeUpContainer").innerHTML = "Konferencja trwa";
+        document.getElementById("conferenceIsNowContainer").style.display = "flex";
+        document.getElementById("conferenceIsNowContainer").style.opacity = "1";
         clearInterval(countdown);
     }
 }, 1000);
 
-var eventEnded = setTimeout(function () {
-    document.getElementById("timeUpContainer").innerHTML = "Konferencja już się odbyła";
-}, eventEndDate - now);
+/* var eventEnded = setTimeout(function () {
+    document.getElementById("timeUpContainer").style.display = "flex";;
+    document.getElementById("timeUpContainer").style.opacity = "1";
+}, eventEndDate - now); */

@@ -59,18 +59,53 @@ section#aboutUsInMedia {
     font-weight: bold;
 }
 
-.timeRemainingContainer {
-    display: flex;
+#timeRemainingContainer {
+    visibility: hidden;
+}
+
+#conferenceIsNowContainer,
+#timeUpContainer {
+    display: none;
+}
+
+.timeRemainingContainer,
+.conferenceIsNowContainer,
+.timeUpContainer {
+    opacity: 0;
     flex-wrap: wrap;
     flex-direction: column;
     font-size: .8rem;
     padding: 15px 30px;
     margin-bottom: 10px;
-    color: #e0e0e0
+    color: #e0e0e0;
+    transition: opacity 200ms ease-in-out;
+    position: relative;
 }
 
-.timeRemainingContainer > h1 {
-    font-size: 1.2em;
+.timeRemainingContainer > h1,
+.conferenceIsNowContainer > h1,
+.timeUpContainer > h1 {
+    font-size: 1.4em;
+}
+
+.conferenceIsNowContainer > p,
+.timeUpContainer > p {
+    font-weight: normal;
+    color: #FFF;
+    font-style: italic;
+}
+
+.timeRemainingContainer a,
+.conferenceIsNowContainer a,
+.timeUpContainer a {
+    color: $anchorMenuColor;
+    transition: color 175ms ease-in-out;
+}
+
+.timeRemainingContainer a:hover,
+.conferenceIsNowContainer a:hover,
+.timeUpContainer a:hover {
+    color: $blue;
 }
 
 .rNum {
