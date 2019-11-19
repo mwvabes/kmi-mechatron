@@ -1,6 +1,7 @@
 var eventStartDate = new Date(2020, 00, 01, 00, 00, 00).getTime();
 var eventEndDate = new Date(2020, 00, 01, 12, 00, 00).getTime();
 var now = new Date().getTime();
+var counterShowed = false;
 
 var countdown = setInterval(function () {
     var now = new Date().getTime();
@@ -17,6 +18,11 @@ var countdown = setInterval(function () {
         document.getElementById("rHours").innerHTML = hours;
         document.getElementById("rMinutes").innerHTML = minutes;
         document.getElementById("rSeconds").innerHTML = seconds;
+
+        if (!counterShowed) {
+            document.getElementById("timeRemainingContainer").style.opacity = "1";
+            counterShowed = true;
+        }
     } else {
         document.getElementById("timeRemainingContainer").style.display = "none";
         document.getElementById("timeUpContainer").style.display = "flex";
