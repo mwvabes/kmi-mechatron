@@ -1,5 +1,5 @@
-var eventStartDate = new Date(2019, 10, 19, 15, 29, 00).getTime();
-var eventEndDate = new Date(2019, 10, 19, 15, 29, 15).getTime();
+var eventStartDate = new Date(2020, 00, 01, 00, 00, 00).getTime();
+var eventEndDate = new Date(2020, 00, 01, 12, 00, 00).getTime();
 var now = new Date().getTime();
 
 var countdown = setInterval(function () {
@@ -18,11 +18,13 @@ var countdown = setInterval(function () {
         document.getElementById("rMinutes").innerHTML = minutes;
         document.getElementById("rSeconds").innerHTML = seconds;
     } else {
-        document.getElementById("timeRemaining").innerHTML = "Konferencja trwa";
+        document.getElementById("timeRemainingContainer").style.display = "none";
+        document.getElementById("timeUpContainer").style.display = "flex";
+        document.getElementById("timeUpContainer").innerHTML = "Konferencja trwa";
         clearInterval(countdown);
     }
 }, 1000);
 
 var eventEnded = setTimeout(function () {
-    document.getElementById("timeRemaining").innerHTML = "Konferencja już się odbyła";
+    document.getElementById("timeUpContainer").innerHTML = "Konferencja już się odbyła";
 }, eventEndDate - now);
