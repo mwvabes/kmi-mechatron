@@ -127,6 +127,7 @@ main {
 
 main > div:first-child {
   min-height: calc(100vh - 60px);
+  //background-image: url(/img/background.png);
 }
 
 main > div {
@@ -235,6 +236,11 @@ main > div {
   }
 
   #timeRemaining {
+    justify-content: center;
+  }
+
+  footer > div {
+    flex-direction: column;
     justify-content: center;
   }
 
@@ -418,6 +424,15 @@ section > .title h1::after,
   width: 50px;
   background: $greyBorder;
   transition: width 170ms ease-in-out;
+}
+
+footer a {
+  color: $blue;
+  transition: color 175ms ease-in-out;
+}
+
+footer a:hover {
+  color: #001d6d;
 }
 
 footer > div {

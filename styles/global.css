@@ -239,6 +239,15 @@ main > div {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  footer > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .dsNone {
@@ -470,6 +479,16 @@ section > .title h1::after,
   background: #c7c7c7;
   -webkit-transition: width 170ms ease-in-out;
   transition: width 170ms ease-in-out;
+}
+
+footer a {
+  color: #008ecf;
+  -webkit-transition: color 175ms ease-in-out;
+  transition: color 175ms ease-in-out;
+}
+
+footer a:hover {
+  color: #001d6d;
 }
 
 footer > div {
