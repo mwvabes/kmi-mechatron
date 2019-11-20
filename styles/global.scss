@@ -125,10 +125,10 @@ main {
   margin-top: 60px;
 }
 
-main > div:first-child {
+/* main > div:first-child {
   min-height: calc(100vh - 60px);
   //background-image: url(/img/background.png);
-}
+} */
 
 main > div {
   max-width: 1260px;
@@ -161,6 +161,14 @@ main > div {
   
   nav > ul > li:not(:last-child) > a:hover::before {
     width: 100%;
+  }
+
+  .contact {
+    flex-direction: row;
+  }
+
+  .contact > div {
+    align-items: flex-start;
   }
 
 }
@@ -244,6 +252,16 @@ main > div {
     justify-content: center;
   }
 
+  .contact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact > div {
+    align-items: center;
+    text-align: center;
+  }
+
 }
 
 .dsNone {
@@ -318,7 +336,6 @@ section#contact > .title {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
 }
 
 .contact > div {
@@ -326,7 +343,6 @@ section#contact > .title {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: flex-start;
 }
 
 .contactElement {
@@ -412,8 +428,8 @@ section > .title h1,
   margin: 10px 0;
 }
 
-section > .title h1::after,
-.aboutUsInMediaContainer > .title h1::after {
+section .title h1::after,
+.aboutUsInMediaContainer .title h1::after {
   position: absolute;
   content: '';
   height: 1px;
@@ -427,7 +443,7 @@ section > .title h1::after,
 }
 
 footer a {
-  color: $blue;
+  color: #0030b4;
   transition: color 175ms ease-in-out;
 }
 

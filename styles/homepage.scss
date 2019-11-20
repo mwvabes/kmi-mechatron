@@ -45,8 +45,8 @@ section#partners,
 section#contact,
 section#scientificBoard,
 section#aboutUsInMedia {
-    margin-top: 20px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .welcomeMessage {
@@ -136,6 +136,7 @@ section#aboutUsInMedia {
 .numElements {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .numElement {
@@ -172,22 +173,48 @@ section#aboutUsInMedia {
 
 #conferenceInNumbers {
     color: $greyColor;
-    width: 100%;
     background-color: #FFF;
     text-align: center;
+    max-width: $maxWidth;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.welcomeScreen {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 #welcome {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    background-image: url(/img/background.png);
+    flex: 1;
 }
 
-#welcome > .left {
+#welcome .left {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     flex: 6;
+}
+
+#welcome > div {
+    max-width: $maxWidth;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcomeContainer {
+    display: flex;
+    flex-direction: row;
 }
 
 .categoriesInfoContainer {
@@ -208,7 +235,7 @@ section#aboutUsInMedia {
     list-style-type: disclosure-closed;
 }
 
-#welcome > .right {
+#welcome .right {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -227,7 +254,7 @@ section#aboutUsInMedia {
     align-items: center;
 }
 
-.competeActionContainer > button {
+.competeActionContainer button {
     padding: 25px 60px;
     background-color: $actionButtonBgColor;
     color: $actionButtonColor;
@@ -367,7 +394,7 @@ section#aboutUsInMedia {
     padding: 15px;
     overflow: hidden;
     flex: 1;
-    margin: 20px 50px;
+    margin: 0px 50px 30px;
     min-height: 350px;
     min-width: 200px;
     max-width: 240px;
