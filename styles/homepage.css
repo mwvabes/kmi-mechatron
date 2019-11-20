@@ -182,7 +182,7 @@ section#aboutUsInMedia {
 }
 
 .welcomeScreen {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 40px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,22 +192,19 @@ section#aboutUsInMedia {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-bottom: 20px;
+  background-image: url(/img/background.png);
 }
 
 #welcome {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url(/img/background.png);
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -719,5 +716,24 @@ ul.partners > li:hover {
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
   opacity: 1;
+}
+
+@media screen and (min-width: 1261px) {
+  #welcome {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  #welcome,
+  .welcomeContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=homepage.css.map */

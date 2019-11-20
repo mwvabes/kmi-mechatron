@@ -183,18 +183,18 @@ section#aboutUsInMedia {
 }
 
 .welcomeScreen {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 40px);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    padding-bottom: 20px;
+    background-image: url(/img/background.png);
 }
 
 #welcome {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url(/img/background.png);
     flex: 1;
 }
 
@@ -566,3 +566,15 @@ ul.partners > li:hover {
     opacity: 1;
 }
 
+@media screen and (min-width: 1261px) {
+    #welcome {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    #welcome,
+    .welcomeContainer {
+        flex-direction: column;
+    }
+}
