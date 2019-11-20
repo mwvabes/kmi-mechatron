@@ -176,17 +176,31 @@ main>div {
 
 @media screen and (max-width: 1260px) {
 
-  .navToggle~ul {
-    opacity: 0;
-    transform: scale(1, 0);
+
+  #contactEmails button {
+    padding: 10px !important;
+  }
+
+  #contactEmails button:active {
+    background-color: #003c81;
+  }
+
+  .navToggle ~ ul {
+    //display: none;
+    //opacity: 0;
+    max-height: 0px;
+    overflow: hidden;
+    transform: scale(1,0);
     transform-origin: top;
     transition: transform 300ms ease-in;
   }
 
   .navToggle:checked~ul {
     display: flex;
-    opacity: 1;
-    transform: scale(1, 1);
+
+    max-height: 100%;
+    //opacity: 1;
+    transform: scale(1,1);
   }
 
   nav {
@@ -390,6 +404,7 @@ section#contact>.title {
 }
 
 #contactEmails button {
+  cursor: pointer;
   font-size: .7rem;
   padding: 0 5px;
   margin: 0 5px;
@@ -428,14 +443,15 @@ section>.title h1,
   font-style: normal;
   position: relative;
   margin: 10px 0;
+  text-align: center;
 }
 
 section .title h1::after,
 .aboutUsInMediaContainer .title h1::after {
   position: absolute;
   content: '';
-  height: 1px;
-  bottom: 0;
+  height: 2px;
+  bottom: 0; 
   margin: 0 auto;
   left: 0;
   right: 0;
