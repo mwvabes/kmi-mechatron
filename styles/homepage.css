@@ -3,6 +3,7 @@ body {
   color: #FFF;
 }
 
+section#aboutConference,
 section#partners,
 section#contact,
 section#scientificBoard,
@@ -336,6 +337,33 @@ section#aboutUsInMedia {
   color: #FFF;
 }
 
+#aboutConference {
+  background-color: #FFF;
+  color: #3f3f3f;
+  text-align: center;
+}
+
+#aboutConference p {
+  padding: 10px;
+}
+
+#organiser {
+  background: #370153;
+  background: linear-gradient(130deg, #005b80 0%, #0000a1 52%, #008cff 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 #scientificBoard {
   background: #370153;
   background: linear-gradient(130deg, #370153 0%, #0000a1 52%, #00d4ff 100%);
@@ -358,7 +386,7 @@ section#aboutUsInMedia {
   font-size: .8em;
 }
 
-#scientificBoard .name {
+.board .name {
   position: relative;
 }
 
@@ -380,15 +408,14 @@ section#aboutUsInMedia {
   width: 100%;
 }
 
-#scientificBoard .academy {
+.academy {
   margin-top: 10px;
   font-size: .7em;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-#mainBoard,
-#primeBoard {
+.board {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
