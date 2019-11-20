@@ -42,7 +42,9 @@
   </header>
 
   <main>
-    <div>
+
+    <section class="welcomeScreen">
+
 
       <section id="warning">
         <h4>UWAGA! Pozostało tylko <span class="remainedDaysToRegistration">7</span> dni na zgłoszenie projektu!</h4>
@@ -50,77 +52,84 @@
       </section>
 
       <section id="welcome" class="container">
+        <div>
+          <div class="welcomeMessage">
+            <h1>OGÓLNOPOLSKA KONFERENCJA NAUKOWA MŁODYCH INŻYNIERÓW <br /> Przy obchodach Światowych Dni Telekomunikacji
+              i
+              Społeczeństwa Informacyjnego </h1>
+          </div>
 
-        <div class="welcomeMessage">
-          <h1>OGÓLNOPOLSKA KONFERENCJA NAUKOWA MŁODYCH INŻYNIERÓW <br /> Przy obchodach Światowych Dni Telekomunikacji i
-            Społeczeństwa Informacyjnego </h1>
+          <div class="welcomeContainer">
+            <div class="left">
+              <div class="timeRemainingContainer" id="timeRemainingContainer">
+                <h1>Do Konferencji pozostało:</h1>
+                <p id="timeRemaining"><span id="rDays" class="rNum">10</span>dni
+                  <span id="rHours" class="rNum">19</span>godzin
+                  <span id="rMinutes" class="rNum">47</span>minut
+                  <span id="rSeconds" class="rNum">13</span>sekund
+
+                </p>
+              </div>
+              <div class="timeUpContainer" id="timeUpContainer">
+                <h1>Konferencja już się odbyła</h1>
+                <p>Zapraszamy w przyszłej edycji!</p>
+              </div>
+              <div class="conferenceIsNowContainer" id="conferenceIsNowContainer">
+                <h1>Konferencja właśnie się odbywa</h1>
+                <p><a href="!">Szczegóły tutaj</a></p>
+              </div>
+              <div class="categoriesInfoContainer">
+                <h1>Edycja Konkursu w 2019 roku rozgrywa się w trzech kategoriach:</h1>
+                <ul>
+                  <li>Projekt wykonany (robot, łazik etc.)</li>
+                  <li>Projekt wykonany w środowisku CAD / CAM</li>
+                  <li>Projekt IT</li>
+                </ul>
+              </div>
+            </div>
+
+
+            <div class="right">
+              <div class="competeActionContainer">
+                <h1>Masz ciekawy projekt?</h1>
+                <a href="/wez-udzial.html"><button>Weź udział</button></a>
+                <a href="!">: Regulamin :</a>
+              </div>
+            </div>
+          </div>
+
+
         </div>
 
-        <div class="left">
-          <div class="timeRemainingContainer" id="timeRemainingContainer">
-            <h1>Do Konferencji pozostało:</h1>
-            <p id="timeRemaining"><span id="rDays" class="rNum">10</span>dni
-              <span id="rHours" class="rNum">19</span>godzin
-              <span id="rMinutes" class="rNum">47</span>minut
-              <span id="rSeconds" class="rNum">13</span>sekund
 
-            </p>
-          </div>
-          <div class="timeUpContainer" id="timeUpContainer">
-            <h1>Konferencja już się odbyła</h1>
-            <p>Zapraszamy w przyszłej edycji!</p>
-          </div>
-          <div class="conferenceIsNowContainer" id="conferenceIsNowContainer">
-            <h1>Konferencja właśnie się odbywa</h1>
-            <p><a href="!">Szczegóły tutaj</a></p>
-          </div>
-          <div class="categoriesInfoContainer">
-            <h1>Edycja Konkursu w 2019 roku rozgrywa się w trzech kategoriach:</h1>
-            <ul>
-              <li>Projekt wykonany (robot, łazik etc.)</li>
-              <li>Projekt wykonany w środowisku CAD / CAM</li>
-              <li>Projekt IT</li>
-            </ul>
-          </div>
-        </div>
+        <div class="basis100"></div>
 
-
-        <div class="right">
-          <div class="competeActionContainer">
-            <h1>Masz ciekawy projekt?</h1>
-            <button>Weź udział</button>
-            <a href="!">: Regulamin :</a>
+        <section id="conferenceInNumbers">
+          <div class="title">
+            <h1>Konferencja 2019 w liczbach:</h1>
           </div>
-        </div>
+          <div class="numElements">
+            <div class="numElement"><span class="number" id="numLectures">16</span><span
+                class="inNumbersTitle">Prelekcji</span>
+            </div>
+            <div class="numElement"><span class="number" id="numProjects">48</span><span
+                class="inNumbersTitle">Projektów</span>
+            </div>
+            <div class="numElement"><span class="number" id="numParticipants">163</span><span
+                class="inNumbersTitle">Uczestników</span></div>
+            <div class="numElement"><span class="number" id="numPartners">24</span><span
+                class="inNumbersTitle">Partnerów</span>
+            </div>
+            <div class="numElement"><span class="number" id="numSupervisors">9</span><span
+                class="inNumbersTitle">Kierowników
+                Naukowych</span></div>
+          </div>
+        </section>
 
       </section>
 
+    </section>
 
-      <div class="basis100"></div>
-
-      <section id="conferenceInNumbers">
-        <div class="title">
-          <h1>Konferencja 2019 w liczbach:</h1>
-        </div>
-        <div class="numElements">
-          <div class="numElement"><span class="number" id="numLectures">16</span><span
-              class="inNumbersTitle">Prelekcji</span>
-          </div>
-          <div class="numElement"><span class="number" id="numProjects">48</span><span
-              class="inNumbersTitle">Projektów</span>
-          </div>
-          <div class="numElement"><span class="number" id="numParticipants">163</span><span
-              class="inNumbersTitle">Uczestników</span></div>
-          <div class="numElement"><span class="number" id="numPartners">24</span><span
-              class="inNumbersTitle">Partnerów</span>
-          </div>
-          <div class="numElement"><span class="number" id="numSupervisors">9</span><span
-              class="inNumbersTitle">Kierowników
-              Naukowych</span></div>
-        </div>
-      </section>
-
-    </div>
 
     <section id="partners">
       <div class="title">
@@ -129,51 +138,40 @@
       <div class="partnersSection">
         <h2>Organizatorzy</h2>
         <ul class="partners">
-          <li><img src="http://www.ur.edu.pl/file/74161/logo+UR.jpg" title="Uniwersytet Rzeszowski" alt=""></li>
-          <li><img
-              src="https://scontent-frt3-2.xx.fbcdn.net/v/t1.0-9/18767877_298701460587174_3593933786697803638_n.png?_nc_cat=109&_nc_oc=AQnvVwsddoO9G60rHvN2WNVRUWeTbR4McAmDmt20KFZStcroH4hKEiDLcX87RHx4-so&_nc_ht=scontent-frt3-2.xx&oh=08934cc426b958f328032aeb48d7dfcd&oe=5E4E45CF"
-              title="Koło Naukowe Mechatron" alt=""></li>
-          <li><img src="https://portal.pti.org.pl/wp-content/uploads/2019/01/logo_PTI_RGB-01.png" alt=""></li>
-          <li><img
-              src="https://bpnt.bialystok.pl/Api/Files/Get//sites/bpntportal/BPNTPortal_Pictures/b47c788a0dfa45b39050b30f7d6e5356/SAMSUNG_INKUBATOR_LOGO_PION_KOLOR-(1).png"
-              alt=""></li>
+          <li><img src="/logos/logo-urz.png" title="Uniwersytet Rzeszowski" alt=""></li>
+          <li><img src="/logos/logo-mechatron.png" title="Koło Naukowe Mechatron" alt=""></li>
+          <li><img src="/logos/logo-pti.png" alt=""></li>
+          <li><img src="/logos/logo-samsunginkubator.png" alt=""></li>
         </ul>
       </div>
       <div class="partnersSection">
         <h2>Patronat Honorowy</h2>
         <ul class="partners">
-          <li><img
-              src="https://debica.tv/wp-content/uploads/2017/02/marszalek-woj-podkarpackiego-logo-20170202121109.png"
-              alt=""></li>
-          <li><img src="https://www.senat.gov.pl/szablony/senat/images/orzel-senat.png" alt=""></li>
-          <li><img src="https://rzemioslo.it/img/partners/prezydent.png" alt=""></li>
-          <li><img src="https://sepgorzow.pl/zasoby/grafiki/logoSEP.gif" alt=""></li>
-          <li><img src="http://visit.przemysl.pl/media/photo/3494?size=noresize" alt=""></li>
-          <li><img src="https://uslugirozwojowe.parp.gov.pl/podmioty/get-file?id=3438&pid=8790" alt=""></li>
+          <li><img src="/logos/logo-marszalekwojpodkarpackiego.png" alt=""></li>
+          <li><img src="/logos/logo-kancelariasenatu.png" alt=""></li>
+          <li><img src="/logos/logo-prezydentmiastarzeszowa.png" alt=""></li>
+          <li><img src="/logos/logo-podkarpackiurzadwojewodzki.png" alt=""></li>
+          <li><img src="/logos/logo-sep.png" alt=""></li>
+          <li><img src="/logos/logo-not.png" alt=""></li>
         </ul>
       </div>
       <div class="partnersSection">
         <h2>Patronat Akademicki</h2>
         <ul class="partners">
-          <li><img src="http://www.ur.edu.pl/file/74161/logo+UR.jpg" alt=""></li>
-          <li><img
-              src="https://w.prz.edu.pl/fcp/uGBUYJwtaJGghSQQ9SlkTBlkCBzETDwENCi5DHUQDEyAGFUBpVgxiB2cdRmhZWhFTDUhBf3ZdVEAU/953/ansys_prz_edu_pl/logo_prz.png"
-              alt=""></li>
-          <li><img src="https://alo.rzeszow.pl/img/wsiz.png" alt=""></li>
+          <li><img src="/logos/logo-urz.png" alt=""></li>
+          <li><img src="/logos/logo-politechnikarzeszowska.png" alt=""></li>
+          <li><img src="/logos/logo-wsiiz.png" alt=""></li>
         </ul>
       </div>
       <div class="partnersSection">
         <h2>Partnerzy</h2>
         <ul class="partners">
-          <li><img src="https://mlodziprzyglosie.pl/wp-content/themes/mpg/img/head-partnerzy.png" alt=""></li>
-          <li><img src="https://inveo.com.pl/wp-content/uploads/2019/04/Botland-logo.png" alt=""></li>
-          <li><img src="https://s.tvp.pl/repository/attachment/7/5/c/75cf0b84f6f3d36be0c62f9a41e806a81473943034729.jpg"
-              alt=""></li>
-          <li><img src="https://www.techkiller.pl/wp-content/uploads/2018/02/jjo.png" alt=""></li>
-          <li><img
-              src="http://ilovenysa.pl/wp-content/uploads/2018/05/31503788_1404379076374972_6201200135607681024_n.jpg"
-              alt=""></li>
-          <li><img src="https://l.gpcdn.pl/3/30/306/306557/_res/softsystem_logo.jpg" alt=""></li>
+          <li><img src="/logos/logo-botland.png" alt=""></li>
+          <li><img src="/logos/logo-softsystem.png" alt=""></li>
+          <li><img src="/logos/logo-juniorjobsonly.png" alt=""></li>
+          <li><img src="/logos/logo-yep.png" alt=""></li>
+          <li><img src="/logos/logo-tvp3rzeszow.png" alt=""></li>
+          <li><img src="/logos/logo-zwolnienizteorii.png" alt=""></li>
         </ul>
       </div>
 
@@ -419,7 +417,8 @@
         <p>&copy; 2018-2020 by Koło Naukowe Mechatron, Uniwersytet Rzeszowski</p>
       </div>
       <div class="right">
-        <p>Projekt i realizacja: <a href="https://www.linkedin.com/in/karol-lech/" target="_blank">Karol Lech</a> | <a href="https://github.com/mwvabes" target="_blank">Marcin Wielgos</a></p>
+        <p>Projekt i realizacja: <a href="https://www.linkedin.com/in/karol-lech/" target="_blank">Karol Lech</a> | <a
+            href="https://github.com/mwvabes" target="_blank">Marcin Wielgos</a></p>
       </div>
     </div>
   </footer>

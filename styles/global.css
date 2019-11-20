@@ -110,10 +110,10 @@ main {
   margin-top: 60px;
 }
 
-main > div:first-child {
+/* main > div:first-child {
   min-height: calc(100vh - 60px);
-}
-
+  //background-image: url(/img/background.png);
+} */
 main > div {
   max-width: 1260px;
   margin: 0px auto;
@@ -151,6 +151,17 @@ main > div {
   }
   nav > ul > li:not(:last-child) > a:hover::before {
     width: 100%;
+  }
+  .contact {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .contact > div {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
@@ -247,6 +258,21 @@ main > div {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact > div {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
   }
 }
 
@@ -350,10 +376,6 @@ section#contact > .title {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 .contact > div {
@@ -369,9 +391,6 @@ section#contact > .title {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
 }
 
 .contactElement {
@@ -466,8 +485,8 @@ section > .title h1,
   margin: 10px 0;
 }
 
-section > .title h1::after,
-.aboutUsInMediaContainer > .title h1::after {
+section .title h1::after,
+.aboutUsInMediaContainer .title h1::after {
   position: absolute;
   content: '';
   height: 1px;
@@ -482,7 +501,7 @@ section > .title h1::after,
 }
 
 footer a {
-  color: #008ecf;
+  color: #0030b4;
   -webkit-transition: color 175ms ease-in-out;
   transition: color 175ms ease-in-out;
 }
