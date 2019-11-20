@@ -1,7 +1,20 @@
 var eventStartDate = new Date(2019, 10, 20, 12, 28, 00).getTime();
 var eventEndDate = new Date(2019, 10, 20, 12, 28, 10).getTime();
+var registrationDateEnd = new Date(2019, 10, 19).getTime();
+
 var now = new Date().getTime();
+
 var toEventEnd = eventEndDate - now;
+var daysToRegistrationEnd = Math.ceil((registrationDateEnd - now) / (1000 * 60 * 60 * 24)) + 1;
+
+if (daysToRegistrationEnd < 1) {
+    document.getElementById("warning").style.visibility = "visible";
+    document.querySelector('#warning a').style.display = "none";
+    document.querySelector('#warning h4').innerHTML = "Czas na zgłosznie projektu już minął!";
+} else if (daysToRegistrationEnd < 15) {
+    document.getElementById("warning").style.visibility = "visible";
+    document.querySelector('#warning > h4 > span.remainedDaysToRegistration').innerHTML = daysToRegistrationEnd;
+}
 
 if (now < eventStartDate) {
     var countdown = setInterval(function () {
