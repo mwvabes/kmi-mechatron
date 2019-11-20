@@ -3,6 +3,7 @@ body {
   color: #FFF;
 }
 
+section#aboutConference,
 section#partners,
 section#contact,
 section#scientificBoard,
@@ -182,7 +183,7 @@ section#aboutUsInMedia {
 }
 
 .welcomeScreen {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 40px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,22 +193,19 @@ section#aboutUsInMedia {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-bottom: 20px;
+  background-image: url(/img/background.png);
 }
 
 #welcome {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url(/img/background.png);
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -339,6 +337,33 @@ section#aboutUsInMedia {
   color: #FFF;
 }
 
+#aboutConference {
+  background-color: #FFF;
+  color: #3f3f3f;
+  text-align: center;
+}
+
+#aboutConference p {
+  padding: 10px;
+}
+
+#organiser {
+  background: #370153;
+  background: linear-gradient(130deg, #005b80 0%, #0000a1 52%, #008cff 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 #scientificBoard {
   background: #370153;
   background: linear-gradient(130deg, #370153 0%, #0000a1 52%, #00d4ff 100%);
@@ -361,7 +386,7 @@ section#aboutUsInMedia {
   font-size: .8em;
 }
 
-#scientificBoard .name {
+.board .name {
   position: relative;
 }
 
@@ -383,15 +408,14 @@ section#aboutUsInMedia {
   width: 100%;
 }
 
-#scientificBoard .academy {
+.academy {
   margin-top: 10px;
   font-size: .7em;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-#mainBoard,
-#primeBoard {
+.board {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -719,5 +743,24 @@ ul.partners > li:hover {
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
   opacity: 1;
+}
+
+@media screen and (min-width: 1261px) {
+  #welcome {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  #welcome,
+  .welcomeContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=homepage.css.map */

@@ -41,6 +41,7 @@ body {
     color: #FFF;
 }
 
+section#aboutConference,
 section#partners,
 section#contact,
 section#scientificBoard,
@@ -183,18 +184,18 @@ section#aboutUsInMedia {
 }
 
 .welcomeScreen {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 40px);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    padding-bottom: 20px;
+    background-image: url(/img/background.png);
 }
 
 #welcome {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url(/img/background.png);
     flex: 1;
 }
 
@@ -284,6 +285,25 @@ section#aboutUsInMedia {
     color: $actionAnchorColorHover;
 }
 
+#aboutConference {
+    background-color: #FFF;
+    color: #3f3f3f;
+    text-align: center;
+}
+
+#aboutConference p {
+    padding: 10px;
+}
+
+#organiser {
+    background: rgb(55,1,83);
+    background: linear-gradient(130deg, rgb(0, 91, 128) 0%, rgba(0,0,161,1) 52%, rgb(0, 140, 255) 100%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
 #scientificBoard {
     background: rgb(55,1,83);
     background: linear-gradient(130deg, rgba(55,1,83,1) 0%, rgba(0,0,161,1) 52%, rgba(0,212,255,1) 100%);
@@ -298,7 +318,7 @@ section#aboutUsInMedia {
     font-size: .8em;
 }
 
-#scientificBoard .name {
+.board .name {
     position: relative;
 }
 
@@ -320,15 +340,14 @@ section#aboutUsInMedia {
 
 }
 
-#scientificBoard .academy {
+.academy {
     margin-top: 10px;
     font-size: .7em;
     text-transform: uppercase;
     font-weight: bold;;
 }
 
-#mainBoard,
-#primeBoard {
+.board {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -566,3 +585,15 @@ ul.partners > li:hover {
     opacity: 1;
 }
 
+@media screen and (min-width: 1261px) {
+    #welcome {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    #welcome,
+    .welcomeContainer {
+        flex-direction: column;
+    }
+}
