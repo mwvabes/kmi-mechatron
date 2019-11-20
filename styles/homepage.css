@@ -193,7 +193,6 @@ section#aboutUsInMedia {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-bottom: 20px;
   background-image: url(/img/background.png);
 }
 
