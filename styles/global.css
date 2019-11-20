@@ -316,6 +316,7 @@ main > div {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  visibility: hidden;
 }
 
 #warning h4 {
