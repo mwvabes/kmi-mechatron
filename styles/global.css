@@ -14,6 +14,14 @@ button {
   font-family: 'Source Sans Pro', 'Arial', sans-serif;
 }
 
+.center {
+  text-align: center;
+}
+
+strong {
+  font-weight: bold;
+}
+
 :root {
   font-size: 18px;
 }
@@ -88,10 +96,6 @@ nav > ul > li {
           align-items: center;
 }
 
-nav > ul > li:not(:last-child) {
-  margin-right: 2px;
-}
-
 nav > ul > li > a {
   padding: 10px;
   color: #FFF;
@@ -102,7 +106,7 @@ nav > ul > li > a {
   position: relative;
 }
 
-.socialLink > a {
+.iconLink > a {
   font-size: 1.4rem;
 }
 
@@ -132,6 +136,9 @@ main > div {
 }
 
 @media screen and (min-width: 1261px) {
+  nav > ul > li:not(:last-child) {
+    margin-right: 2px;
+  }
   .navToggleContainer {
     display: none;
   }
@@ -328,6 +335,7 @@ main > div {
 
 #warning h4 {
   font-size: .9rem;
+  color: #FFF;
 }
 
 #warning > a {
@@ -540,7 +548,7 @@ footer > div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 160px;
+  min-height: 140px;
 }
 
 footer > * > * > p {

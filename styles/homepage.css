@@ -235,6 +235,9 @@ section#aboutUsInMedia {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .welcomeContainer {
@@ -319,13 +322,14 @@ section#aboutUsInMedia {
   background-image: url(/img/zig-blue.png);
 }
 
-.competeActionContainer > button:hover {
+.competeActionContainer button:hover {
   background-color: #008fc7;
   border-color: #003c81;
   background-image: none;
 }
 
 .competeActionContainer > a {
+  margin-top: 10px;
   color: #eee;
   font-size: 1rem;
   -webkit-transition: color 200ms ease-in-out;
@@ -340,10 +344,12 @@ section#aboutUsInMedia {
   background-color: #FFF;
   color: #3f3f3f;
   text-align: center;
+  padding: 60px 0px;
 }
 
 #aboutConference p {
   padding: 10px;
+  font-size: 1.2rem;
 }
 
 #organiser {
@@ -434,9 +440,9 @@ section#aboutUsInMedia {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(100% / 6 - 20px);
-          flex: 0 0 calc(100% / 6 - 20px);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 calc(100% / 6 - 20px);
+          flex: 1 0 calc(100% / 6 - 20px);
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: vertical;
@@ -462,8 +468,8 @@ section#aboutUsInMedia {
 }
 
 .person:hover {
-  -webkit-transform: scale(1.06);
-          transform: scale(1.06);
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
 }
 
 section#aboutUsInMedia {

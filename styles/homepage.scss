@@ -210,6 +210,7 @@ section#aboutUsInMedia {
     margin: 0px auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .welcomeContainer {
@@ -268,13 +269,14 @@ section#aboutUsInMedia {
     background-image: url(/img/zig-blue.png);
 }
 
-.competeActionContainer>button:hover {
+.competeActionContainer button:hover {
     background-color: $actionButtonBgColorHover;
     border-color: $actionButtonBorderColorHover;
     background-image: none;
 }
 
-.competeActionContainer>a {
+.competeActionContainer > a {
+    margin-top: 10px;
     color: $actionAnchorColor;
     font-size: 1rem;
     transition: color 200ms ease-in-out;
@@ -288,10 +290,12 @@ section#aboutUsInMedia {
     background-color: #FFF;
     color: #3f3f3f;
     text-align: center;
+    padding: 60px 0px;
 }
 
 #aboutConference p {
     padding: 10px;
+    font-size: 1.2rem;
 }
 
 #organiser {
@@ -358,7 +362,7 @@ section#aboutUsInMedia {
 
 .person {
     display: flex;
-    flex: 0 0 calc(100% / 6 - 20px);
+    flex: 1 0 calc(100% / 6 - 20px);
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
@@ -370,11 +374,11 @@ section#aboutUsInMedia {
     justify-content: center;
     transition: transform 400ms ease-in-out;
     min-height: 140px;
+    //flex: 1;
 }
 
 .person:hover {
-    transform: scale(1.06);
-
+    transform: scale(1.01);
 }
 
 section#aboutUsInMedia {
