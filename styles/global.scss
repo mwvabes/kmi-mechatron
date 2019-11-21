@@ -1,7 +1,7 @@
 $blue: #008ecf;
 $navy: rgb(0, 12, 68);
 
-$alphaBackground: rgba(0,0,0,0.2);
+$alphaBackground: rgba(0, 0, 0, 0.2);
 
 $anchorMenuColor: #FFF;
 
@@ -91,7 +91,7 @@ header {
   left: 0;
   right: 0;
   z-index: 9999;
-  box-shadow: 0px 2px 15px rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
   background-image: url(/img/zig-blue.png);
 }
 
@@ -104,12 +104,6 @@ nav {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-nav > ul,
-nav > ul > li {
-  display: flex;
-  align-items: center;
 }
 
 nav > ul > li > a {
@@ -134,13 +128,14 @@ main {
   //background-image: url(/img/background.png);
 } */
 
-main > div {
+main>div {
   max-width: 1260px;
   margin: 0px auto;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-between;;
+  justify-content: space-between;
+  ;
 }
 
 @media screen and (min-width: 1261px) {
@@ -150,14 +145,14 @@ main > div {
   }
   
   .navToggleContainer {
-    display:none;
+    display: none;
   }
 
   .socialLink {
     margin-left: auto;
   }
 
-  nav > ul > li:not(:last-child) > a::before {
+  nav>ul>li:not(:last-child)>a::before {
     content: '';
     position: absolute;
     top: 0;
@@ -167,8 +162,8 @@ main > div {
     background-color: $anchorMenuColor;
     transition: width 300ms ease-out;
   }
-  
-  nav > ul > li:not(:last-child) > a:hover::before {
+
+  nav>ul>li:not(:last-child)>a:hover::before {
     width: 100%;
   }
 
@@ -176,13 +171,14 @@ main > div {
     flex-direction: row;
   }
 
-  .contact > div {
+  .contact>div {
     align-items: flex-start;
   }
 
 }
 
 @media screen and (max-width: 1260px) {
+
 
   #contactEmails button {
     padding: 10px !important;
@@ -202,8 +198,9 @@ main > div {
     transition: transform 300ms ease-in;
   }
 
-  .navToggle:checked ~ ul {
+  .navToggle:checked~ul {
     display: flex;
+
     max-height: 100%;
     //opacity: 1;
     transform: scale(1,1);
@@ -214,32 +211,32 @@ main > div {
     z-index: 9999;
   }
 
-  nav > ul {
+  nav>ul {
     flex-wrap: wrap;
     flex-direction: column;
     margin: 0;
   }
 
-  nav > ul > li {
+  nav>ul>li {
     margin: 0;
     width: 100%;
     justify-content: center;
     min-height: 60px;
   }
 
-  nav > ul > li > a {
+  nav>ul>li>a {
     flex: 1;
     text-align: center;
     padding: 15px;
   }
 
-  .navToggleLabel > i {
+  .navToggleLabel>i {
     font-size: 2rem;
     transition: color 200ms ease-in-out;
     color: #FFF;
   }
 
-  .navToggleLabel:active > i {
+  .navToggleLabel:active>i {
     color: $actionButtonBorderColorHover;
   }
 
@@ -247,16 +244,16 @@ main > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px; 
+    padding: 10px;
     min-height: 60px;
     width: 100%;
   }
 
-  nav > ul > li:nth-child(odd) {
+  nav>ul>li:nth-child(odd) {
     background-color: #0060af;
   }
 
-  nav > ul > li:nth-child(even) {
+  nav>ul>li:nth-child(even) {
     background-color: #001d6d;
   }
 
@@ -268,7 +265,7 @@ main > div {
     justify-content: center;
   }
 
-  footer > div {
+  footer>div {
     flex-direction: column;
     justify-content: center;
   }
@@ -278,7 +275,7 @@ main > div {
     align-items: center;
   }
 
-  .contact > div {
+  .contact>div {
     align-items: center;
     text-align: center;
   }
@@ -317,6 +314,7 @@ main > div {
   text-align: center;
   justify-content: center;
   flex-wrap: wrap;
+  visibility: hidden;
 }
 
 #warning h4 {
@@ -324,7 +322,7 @@ main > div {
   color: #FFF;
 }
 
-#warning > a {
+#warning>a {
   text-decoration: underline;
   color: $warningColor;
   margin: 0 5px;
@@ -343,7 +341,7 @@ section#contact {
   margin-bottom: 20px;
 }
 
-section#contact > .title {
+section#contact>.title {
   text-align: center;
   background-image: url(/img/zig-dark.png);
 }
@@ -360,7 +358,7 @@ section#contact > .title {
   flex-wrap: wrap;
 }
 
-.contact > div {
+.contact>div {
   flex: auto;
   display: flex;
   flex-direction: column;
@@ -393,7 +391,7 @@ section#contact > .title {
   justify-content: center;
 }
 
-.contactMap > img {
+.contactMap>img {
   width: 100%;
 }
 
@@ -441,8 +439,8 @@ section#contact > .title {
   font-size: .8rem;
 }
 
-section  .title h1,
-.aboutUsInMediaContainer > .title h1 {
+section>.title h1,
+.aboutUsInMediaContainer>.title h1 {
   font-weight: bold;
   font-size: 1.8rem;
   padding: 5px;
@@ -475,7 +473,7 @@ footer a:hover {
   color: #001d6d;
 }
 
-footer > div {
+footer>div {
   color: $footerColor;
   font-size: .8rem;
   box-sizing: border-box;
@@ -490,23 +488,23 @@ footer > div {
   min-height: 140px;
 }
 
-footer > * > * > p {
+footer>*>*>p {
   font-size: inherit;
   text-align: center;
   display: block;
 }
 
-.footer > .left {
+.footer>.left {
   align-content: flex-start;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.footer > .right {
+.footer>.right {
   align-content: flex-end;
 }
 
-.footer > p {
+.footer>p {
   padding: 5px;
 }
 

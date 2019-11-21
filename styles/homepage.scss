@@ -26,7 +26,7 @@ $actionAnchorColorHover: #FFF;
 $actionButtonBgColorHover: #008fc7;
 $actionButtonBorderColorHover: #003c81;
 
-$alphaBackground: rgba(0,0,0,0.2);
+$alphaBackground: rgba(0, 0, 0, 0.2);
 $contactBgColor: #FFF;
 $contactColor: #2e1a1a;
 
@@ -83,14 +83,14 @@ section#aboutUsInMedia {
     position: relative;
 }
 
-.timeRemainingContainer > h1,
-.conferenceIsNowContainer > h1,
-.timeUpContainer > h1 {
+.timeRemainingContainer>h1,
+.conferenceIsNowContainer>h1,
+.timeUpContainer>h1 {
     font-size: 1.4em;
 }
 
-.conferenceIsNowContainer > p,
-.timeUpContainer > p {
+.conferenceIsNowContainer>p,
+.timeUpContainer>p {
     font-weight: normal;
     color: #FFF;
     font-style: italic;
@@ -123,7 +123,7 @@ section#aboutUsInMedia {
     margin-left: 0;
 }
 
-.timeRemainingContainer > p {
+.timeRemainingContainer>p {
     font-size: 1em;
 }
 
@@ -156,18 +156,18 @@ section#aboutUsInMedia {
     transition: background-color 200ms linear;
 }
 
-.numElement > .number {
+.numElement>.number {
     font-size: 50px;
     color: $numberColor;
     font-weight: bold;
 }
 
-.numElement > .number:hover {
+.numElement>.number:hover {
     color: $numberHoverColor;
     transition: background-color 300ms linear;
 }
 
-.numElement > .inNumbersTitle {
+.numElement>.inNumbersTitle {
     text-transform: uppercase;
     font-size: .9rem;
 }
@@ -188,7 +188,6 @@ section#aboutUsInMedia {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding-bottom: 20px;
     background-image: url(/img/background.png);
 }
 
@@ -206,7 +205,7 @@ section#aboutUsInMedia {
     flex: 6;
 }
 
-#welcome > div {
+#welcome>div {
     max-width: $maxWidth;
     margin: 0px auto;
     display: flex;
@@ -226,13 +225,13 @@ section#aboutUsInMedia {
     margin-bottom: 10px;
 }
 
-.categoriesInfoContainer > h1 {
+.categoriesInfoContainer>h1 {
     font-size: 1.2em;
     line-height: 1.2;
     margin-bottom: 10px;
 }
 
-.categoriesInfoContainer > ul {
+.categoriesInfoContainer>ul {
     font-size: .8em;
     list-style-type: disclosure-closed;
 }
@@ -266,7 +265,7 @@ section#aboutUsInMedia {
     font-weight: bold;
     font-size: 1.4rem;
     transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, background-image 170ms ease-in-out;
-    text-shadow: 0px 3px 5px rgba(0,0,0,0.5);
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     background-image: url(/img/zig-blue.png);
 }
 
@@ -283,7 +282,7 @@ section#aboutUsInMedia {
     transition: color 200ms ease-in-out;
 }
 
-.competeActionContainer > a:hover {
+.competeActionContainer>a:hover {
     color: $actionAnchorColorHover;
 }
 
@@ -309,8 +308,8 @@ section#aboutUsInMedia {
 }
 
 #scientificBoard {
-    background: rgb(55,1,83);
-    background: linear-gradient(130deg, rgba(55,1,83,1) 0%, rgba(0,0,161,1) 52%, rgba(0,212,255,1) 100%);
+    background: rgb(55, 1, 83);
+    background: linear-gradient(130deg, rgba(55, 1, 83, 1) 0%, rgba(0, 0, 161, 1) 52%, rgba(0, 212, 255, 1) 100%);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -330,7 +329,7 @@ section#aboutUsInMedia {
     position: absolute;
     content: '';
     height: 2px;
-    bottom: -2px; 
+    bottom: -2px;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -348,7 +347,8 @@ section#aboutUsInMedia {
     margin-top: 10px;
     font-size: .7em;
     text-transform: uppercase;
-    font-weight: bold;;
+    font-weight: bold;
+    ;
 }
 
 .board {
@@ -379,7 +379,6 @@ section#aboutUsInMedia {
 
 .person:hover {
     transform: scale(1.01);
-    
 }
 
 section#aboutUsInMedia {
@@ -392,7 +391,7 @@ section#aboutUsInMedia {
     align-items: center;
 }
 
-.aboutUsInMediaContainer > .title {
+.aboutUsInMediaContainer>.title {
     text-align: center;
 }
 
@@ -426,12 +425,12 @@ section#aboutUsInMedia {
 
 .aboutIMElement:nth-child(odd) {
     background-color: #FFE53B;
-    background-image: linear-gradient(315deg, #FFE53B 0%, #FF2525 74%); 
+    background-image: linear-gradient(315deg, #FFE53B 0%, #FF2525 74%);
 }
 
 .aboutIMElement:nth-child(even) {
     background-color: #4158D0;
-    background-image: linear-gradient(135deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);    
+    background-image: linear-gradient(135deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 }
 
 .aboutIMElement h2 {
@@ -443,7 +442,7 @@ section#aboutUsInMedia {
     z-index: 2;
 }
 
-.aboutIMElement > a {
+.aboutIMElement>a {
     text-decoration: none;
 }
 
@@ -473,7 +472,7 @@ section#aboutUsInMedia {
     display: flex;
     align-items: center;
     background-color: #8BC6EC;
-    background-image: linear-gradient(135deg, #2f81b8 0%, #262ca1 100%);    
+    background-image: linear-gradient(135deg, #2f81b8 0%, #262ca1 100%);
 }
 
 .aboutIMElement a h2 {
@@ -518,7 +517,7 @@ section#partners {
     background-color: #FFF;
 }
 
-section#partners > .title {
+section#partners>.title {
     text-align: center;
 }
 
@@ -553,7 +552,7 @@ ul.partners::after {
     bottom: 5px;
 }
 
-ul.partners > li {
+ul.partners>li {
     margin: 10px;
     height: 120px;
     /*min-width: 200px;
@@ -568,23 +567,23 @@ ul.partners > li {
     opacity: .6;
 }
 
-ul.partners > li::selection,
-ul.partners > li img::selection,
-ul.partners > li::-moz-selection,
-ul.partners > li img::-moz-selection {
+ul.partners>li::selection,
+ul.partners>li img::selection,
+ul.partners>li::-moz-selection,
+ul.partners>li img::-moz-selection {
     background: none;
 }
 
-.partnersSection:hover > h2 {
+.partnersSection:hover>h2 {
     color: $numberHoverColor;
 }
 
-ul.partners > li > img {
+ul.partners>li>img {
     max-width: 100%;
     max-height: 100%;
 }
 
-ul.partners > li:hover {
+ul.partners>li:hover {
     filter: grayscale(0%);
     transform: scale(1.01);
     opacity: 1;
