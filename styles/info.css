@@ -1,0 +1,202 @@
+body {
+  background-color: #FFF;
+  background-image: url(/img/papyrus.png);
+}
+
+h1 {
+  color: #001679;
+}
+
+h2 {
+  color: #001679;
+}
+
+h3 {
+  color: #001679;
+}
+
+h4 {
+  color: #001679;
+}
+
+h5 {
+  color: #001679;
+}
+
+h6 {
+  color: #001679;
+}
+
+ol {
+  list-style: inside number;
+}
+
+.bigTitle {
+  padding: 70px 0px;
+  width: 100vw;
+  text-align: center;
+  background-color: #001263;
+  background-image: url(/img/background.png);
+  position: absolute;
+  z-index: 0;
+}
+
+.bigTitle h1 {
+  margin: 0px auto;
+  color: #FFF;
+  position: relative;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.bigTitle h1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 2px;
+  background-color: #008ecf;
+  margin: 0px auto;
+}
+
+section.information {
+  position: relative;
+  z-index: 1;
+  top: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 1260px;
+  margin: 0px auto;
+  padding: 15px;
+  min-height: calc(100vh - 200px);
+  border: 1px solid #e0e0e0;
+  background-color: #FFF;
+  border-radius: 50px 50px 0 0;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* .information h1,
+.information h2,
+.information h3,
+.information h4,
+.information h5,
+.information h6 {
+  margin-left: 20px;
+} */
+.information section {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.information section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 1px;
+  background-color: #b1b1b1;
+  margin: 0px auto;
+}
+
+.information a {
+  color: #004faa;
+  -webkit-transition: color 175ms ease-in-out;
+  transition: color 175ms ease-in-out;
+}
+
+.information a:hover {
+  color: #0030b4;
+}
+
+.informationContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.information .infLeft {
+  -webkit-box-flex: 7;
+      -ms-flex: 7;
+          flex: 7;
+  padding: 10px;
+}
+
+.information .infRight {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  padding: 10px;
+}
+
+.buttonSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.buttonSection button {
+  padding: 15px 10px;
+  background-color: #20afc9;
+  color: #f7f7f7;
+  border: 2px solid #0030b4;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: .9rem;
+  -webkit-transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, background-image 170ms ease-in-out;
+  transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, background-image 170ms ease-in-out;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  background-image: url(/img/zig-blue.png);
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.buttonSection button:hover {
+  background-color: #008fc7;
+  border-color: #004faa;
+  background-image: none;
+  color: #e4e4e4;
+}
+
+.paymentInfo {
+  padding: 5px;
+  background-color: #effbff;
+  border: 2px solid #008ecf;
+  margin: 5px 20px;
+}
+
+.paymentInfo h4 {
+  font-size: .9rem;
+}
+
+.paymentInfo span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.extInfo {
+  font-size: .8em;
+}
+/*# sourceMappingURL=info.css.map */

@@ -1,0 +1,193 @@
+$blue: #008ecf;
+$navyHeadings: rgb(0, 22, 121);
+$navy: rgb(0, 18, 99);
+
+$actionButtonBgColor: #20afc9;
+$actionButtonColor: #f7f7f7;
+$actionButtonBorderColor: #0030b4;
+$actionAnchorColor: #eee;
+$actionAnchorColorHover: #FFF;
+
+$actionButtonBgColorHover: #008fc7;
+$actionButtonBorderColorHover: #004faa;
+
+$maxWidth: 1260px;
+
+body {
+  background-color: #FFF;
+  background-image: url(/img/papyrus.png);
+}
+
+h1 {
+  color: $navyHeadings;
+}
+
+h2 {
+  color: $navyHeadings;
+}
+
+h3 {
+  color: $navyHeadings;
+}
+
+h4 {
+  color: $navyHeadings;
+}
+
+h5 {
+  color: $navyHeadings;
+}
+
+h6 {
+  color: $navyHeadings;
+}
+
+ol {
+  list-style: inside number;
+}
+
+.bigTitle {
+  padding: 70px 0px;
+  width: 100vw;
+  text-align: center;
+  background-color: $navy;
+  background-image: url(/img/background.png);
+  position: absolute;
+  z-index: 0;
+}
+
+.bigTitle h1 {
+  margin: 0px auto;
+  color: #FFF;
+  position: relative;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.bigTitle h1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 2px;
+  background-color: $blue;
+  margin: 0px auto;
+}  
+
+section.information {
+  position: relative;
+  z-index: 1;
+  top: 160px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: $maxWidth;
+  margin: 0px auto;
+  padding: 15px;
+  min-height: calc(100vh - 200px);
+  border: 1px solid #e0e0e0;
+  background-color: #FFF;
+  border-radius: 50px 50px 0 0;
+  box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75);
+}
+
+/* .information h1,
+.information h2,
+.information h3,
+.information h4,
+.information h5,
+.information h6 {
+  margin-left: 20px;
+} */
+
+.information section {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.information section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 1px;
+  background-color: #b1b1b1;
+  margin: 0px auto;
+}
+
+.information a {
+  color: #004faa;
+  transition: color 175ms ease-in-out;
+}
+
+.information a:hover {
+  color: #0030b4;
+}
+
+.informationContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.information .infLeft {
+  flex: 7;
+  padding: 10px;
+}
+
+.information .infRight {
+  flex: 3;
+  padding: 10px;
+}
+
+.buttonSection {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.buttonSection button {
+  padding: 15px 10px;
+  background-color: $actionButtonBgColor;
+  color: $actionButtonColor;
+  border: 2px solid $actionButtonBorderColor;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: .9rem;
+  transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, background-image 170ms ease-in-out;
+  text-shadow: 0px 3px 5px rgba(0,0,0,0.5);
+  background-image: url(/img/zig-blue.png);
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.buttonSection button:hover {
+  background-color: $actionButtonBgColorHover;
+  border-color: $actionButtonBorderColorHover;
+  background-image: none;
+  color: #e4e4e4;
+}
+
+.paymentInfo {
+  padding: 5px;
+  background-color: #effbff;
+  border: 2px solid $blue;
+  margin: 5px 20px;
+}
+
+.paymentInfo h4 {
+  font-size: .9rem;
+}
+
+.paymentInfo span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.extInfo {
+  font-size: .8em;
+}
