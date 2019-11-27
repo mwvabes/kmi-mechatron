@@ -96,6 +96,7 @@ header {
 }
 
 nav {
+  color: #FFF;
   max-width: $maxWidth;
   margin: 0px auto;
   text-transform: uppercase;
@@ -104,6 +105,16 @@ nav {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+nav > ul,
+nav > ul > li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 nav > ul > li > a {
@@ -266,7 +277,7 @@ main>div {
   }
 
   footer>div {
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
   }
 
@@ -450,19 +461,19 @@ section>.title h1,
   text-align: center;
 }
 
-section .title h1::after,
-.aboutUsInMediaContainer .title h1::after {
-  position: absolute;
-  content: '';
-  height: 2px;
-  bottom: 0; 
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  width: 50px;
-  background: $greyBorder;
-  transition: width 170ms ease-in-out;
-}
+// section .title h1::after,
+// .aboutUsInMediaContainer .title h1::after {
+//   position: absolute;
+//   content: '';
+//   height: 2px;
+//   bottom: 0; 
+//   margin: 0 auto;
+//   left: 0;
+//   right: 0;
+//   width: 50px;
+//   background: $greyBorder;
+//   transition: width 170ms ease-in-out;
+// }
 
 footer a {
   color: #0030b4;

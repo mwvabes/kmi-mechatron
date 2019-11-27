@@ -54,6 +54,7 @@ ol {
   background-image: url(/img/background.png);
   position: absolute;
   z-index: 0;
+  top: 60px;
 }
 
 .bigTitle h1 {
@@ -79,7 +80,7 @@ ol {
 section.information {
   position: relative;
   z-index: 1;
-  top: 160px;
+  top: 170px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -131,6 +132,7 @@ section.information {
 .informationContainer {
   display: flex;
   flex-direction: row;
+  word-wrap: break-word;
 }
 
 .information .infLeft {
@@ -190,4 +192,44 @@ section.information {
 
 .extInfo {
   font-size: .8em;
+}
+
+section#warning {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+@media screen and (max-width: 1260px) {
+  .bigTitle {
+    position: static;
+  }
+
+  section.information {
+    border-radius: 0px;
+    position: static;
+    flex-wrap: unset;
+  }
+
+  .informationContainer {
+    flex-direction: column-reverse;
+  }
+
+  .buttonSection {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .buttonSection a {
+    margin: 5px;
+    flex: 1;
+  }
+
+  .buttonSection button {
+    min-height: 75px;
+    height: 100%;
+  }
+
 }
