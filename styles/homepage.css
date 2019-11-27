@@ -12,6 +12,10 @@ section#aboutUsInMedia {
   margin-bottom: 20px;
 }
 
+section#aboutConference {
+  margin-top: 20px;
+}
+
 .welcomeMessage {
   text-align: left;
   padding: 15px 30px;
@@ -183,7 +187,7 @@ section#aboutUsInMedia {
 }
 
 .welcomeScreen {
-  min-height: calc(100vh - 40px);
+  min-height: calc(100vh - 60px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,7 +197,11 @@ section#aboutUsInMedia {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-image: url(/img/background.png);
+  background-size: cover;
 }
 
 #welcome {

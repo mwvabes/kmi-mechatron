@@ -1,6 +1,6 @@
-var eventStartDate = new Date(2019, 10, 20, 12, 28, 00).getTime();
-var eventEndDate = new Date(2019, 10, 20, 12, 28, 10).getTime();
-var registrationDateEnd = new Date(2019, 10, 19).getTime();
+var eventStartDate = new Date(2020, 02, 02, 12, 00, 00).getTime();
+var eventEndDate = new Date(2020, 02, 20, 15, 28, 10).getTime();
+var registrationDateEnd = new Date(2019, 11, 20).getTime();
 
 var now = new Date().getTime();
 
