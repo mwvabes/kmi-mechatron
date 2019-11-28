@@ -10,7 +10,7 @@ var daysToRegistrationEnd = Math.ceil((registrationDateEnd - now) / (1000 * 60 *
 if (daysToRegistrationEnd < 1) {
     document.getElementById("warning").style.visibility = "visible";
     document.querySelector('#warning a').style.display = "none";
-    document.querySelector('#warning h4').innerHTML = "Czas na zgłosznie projektu już minął!";
+    document.querySelector('#warning h4').innerHTML = "Czas na zgłoszenie projektu już minął";
 } else if (daysToRegistrationEnd < 15) {
     document.getElementById("warning").style.visibility = "visible";
     document.querySelector('#warning > h4 > span.remainedDaysToRegistration').innerHTML = daysToRegistrationEnd;
@@ -19,8 +19,8 @@ if (daysToRegistrationEnd < 1) {
 if (now < eventStartDate) {
     var countdown = setInterval(function () {
         count();
+        showCounter();
     }, 1000);
-    showCounter();
 } else if (now >= eventStartDate && now < eventEndDate) {
     showConferenceIsNow();
 } else {
