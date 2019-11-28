@@ -107,6 +107,11 @@ nav {
   justify-content: center;
 }
 
+nav a {
+  color: #FFF;
+  text-decoration: none;
+}
+
 nav > ul,
 nav > ul > li {
   display: -webkit-box;
@@ -197,6 +202,49 @@ main>div {
 
   #contactEmails button:active {
     background-color: #003c81;
+  }
+
+  .navToggleLabel {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #FFF;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navToggleLabel > span {
+    display: block;
+    background-color: #FFF;
+    height: 6px;
+    width: 30px;
+    position: relative;
+  }
+
+  .navToggleLabel > span::before, 
+  .navToggleLabel > span::after {
+    content: '';
+    background-color: #FFF;
+    height: 6px;
+    width: 30px;
+    position: absolute;
+  }
+
+  .navToggleLabel > span::before {
+    top: -10px;
+  }
+
+  .navToggleLabel > span::after {
+    bottom: -10px;
+  }
+
+  .navToggleLabel:active span,
+  .navToggleLabel:active span::before,
+  .navToggleLabel:active span::after {
+    background-color: #0030b4;
   }
 
   .navToggle ~ ul {
