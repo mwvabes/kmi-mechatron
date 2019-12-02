@@ -12,10 +12,6 @@ section#aboutUsInMedia {
   margin-bottom: 20px;
 }
 
-section#aboutConference {
-  margin-top: 20px;
-}
-
 .welcomeMessage {
   text-align: left;
   padding: 15px 30px;
@@ -187,7 +183,7 @@ section#aboutConference {
 }
 
 .welcomeScreen {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 40px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,8 +196,9 @@ section#aboutConference {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url(/img/background.png);
+  background: url(/img/background.png) no-repeat center center fixed;
   background-size: cover;
+  padding-bottom: 20px;
 }
 
 #welcome {
@@ -475,11 +472,6 @@ section#aboutConference {
   min-height: 140px;
 }
 
-.person:hover {
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
-}
-
 section#aboutUsInMedia {
   background-color: #FFF;
   display: -webkit-box;
@@ -606,12 +598,13 @@ section#aboutUsInMedia {
 }
 
 .aboutIMElement a h2 {
-  -webkit-transition: color 275ms ease-in-out;
-  transition: color 275ms ease-in-out;
+  -webkit-transition: color 175ms ease-in-out, text-shadow 175ms ease-in-out;
+  transition: color 175ms ease-in-out, text-shadow 175ms ease-in-out;
 }
 
 .aboutIMElement a:hover h2 {
-  color: #7aafff;
+  color: #ececec;
+  text-shadow: 0px 0px 6px #3f4475;
 }
 
 .aboutIMElement button:hover {
@@ -638,13 +631,14 @@ section#aboutUsInMedia {
   min-width: calc(100% + 4px);
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: -webkit-filter 200ms ease-in-out;
-  transition: -webkit-filter 200ms ease-in-out;
-  transition: filter 200ms ease-in-out;
-  transition: filter 200ms ease-in-out, -webkit-filter 200ms ease-in-out;
+  -webkit-transition: -webkit-filter 175ms ease-in-out;
+  transition: -webkit-filter 175ms ease-in-out;
+  transition: filter 175ms ease-in-out;
+  transition: filter 175ms ease-in-out, -webkit-filter 175ms ease-in-out;
 }
 
-.aboutIMElement:hover img {
+.aboutIMElement a:hover ~ img,
+.aboutIMElement button:hover ~ img {
   -webkit-filter: brightness(50%);
           filter: brightness(50%);
 }
@@ -725,6 +719,9 @@ ul.partners > li {
   -webkit-filter: grayscale(90%);
           filter: grayscale(90%);
   opacity: .6;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
 }
 
 ul.partners > li::-moz-selection,

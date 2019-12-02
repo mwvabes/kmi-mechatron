@@ -417,6 +417,14 @@ section#contact>.title {
   flex-wrap: wrap;
 }
 
+.contact a {
+  color: inherit;
+}
+
+.contact a:hover {
+  color: #dadada;
+}
+
 .contact>div {
   flex: auto;
   display: flex;
@@ -442,15 +450,32 @@ section#contact>.title {
   font-size: .9em;
 }
 
+.routePlannerButton {
+  background-color: #FFF;
+  border: 1px solid #dadada;
+  color: #0044ff;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: .9rem;
+  margin-top: 5px;
+  border-bottom: 4px solid $blue;
+  transition: background-color 175ms ease-in-out, color 175ms ease-in-out;
+}
+
+.routePlannerButton:hover {
+  background-color: #e0e0e0;
+  color: $blue;
+}
+
 .contactMap {
-  max-height: 350px;
+  height: 350px;
   filter: grayscale(90%);
   transition: filter 175ms ease-in-out;
   overflow: hidden;
   justify-content: center;
-}
-
-.contactMap>img {
+  background: url(/img/mapa.png) no-repeat;
+  background-size: cover;
   width: 100%;
 }
 

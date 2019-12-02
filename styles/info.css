@@ -33,7 +33,7 @@ ol {
 
 .bigTitle {
   padding: 70px 0px;
-  width: 100vw;
+  width: 100%;
   text-align: center;
   background-color: #001263;
   background-image: url(/img/background.png);
@@ -77,13 +77,16 @@ section.information {
       flex-wrap: wrap;
   max-width: 1260px;
   margin: 0px auto;
-  padding: 15px;
   min-height: calc(100vh - 200px);
   border: 1px solid #e0e0e0;
   background-color: #FFF;
   border-radius: 50px 50px 0 0;
   -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.75);
+}
+
+section.information > *:not(:last-child) {
+  padding: 15px;
 }
 
 /* .information h1,
