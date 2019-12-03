@@ -179,6 +179,9 @@ main > div {
 }
 
 @media screen and (max-width: 1260px) {
+  .welcomeScreen {
+    margin: 8px;
+  }
   #contactEmails button {
     padding: 10px !important;
   }
@@ -647,5 +650,56 @@ footer > * > * > p {
   border: 1px solid #0030b4;
   color: #f7f7f7;
   background-color: #20afc9;
+}
+
+.seeYouSoon {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(0, 49, 39, 0.8);
+  border: 4px solid #006e6e;
+  color: #f3f3f3;
+  max-width: 1260px;
+  text-align: center;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 10px;
+  background: linear-gradient(233deg, #17ddaa, #000ed1);
+  background-size: 400% 400%;
+  -webkit-animation: seeYouSoonAnimation 20s ease infinite;
+          animation: seeYouSoonAnimation 20s ease infinite;
+}
+
+@-webkit-keyframes seeYouSoonAnimation {
+  0% {
+    background-position: 96% 0%;
+  }
+  50% {
+    background-position: 5% 100%;
+  }
+  100% {
+    background-position: 96% 0%;
+  }
+}
+
+@keyframes seeYouSoonAnimation {
+  0% {
+    background-position: 96% 0%;
+  }
+  50% {
+    background-position: 5% 100%;
+  }
+  100% {
+    background-position: 96% 0%;
+  }
+}
+
+.seeYouSoon p {
+  font-size: 1.1rem;
 }
 /*# sourceMappingURL=global.css.map */

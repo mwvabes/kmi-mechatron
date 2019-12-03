@@ -7,7 +7,8 @@ section#aboutConference,
 section#partners,
 section#contact,
 section#scientificBoard,
-section#aboutUsInMedia {
+section#aboutUsInMedia
+section#organiser {
   overflow: hidden;
   margin-bottom: 20px;
 }
@@ -325,6 +326,35 @@ section#aboutUsInMedia {
   transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, background-image 170ms ease-in-out;
   text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
   background-image: url(/img/zig-blue.png);
+  background: -webkit-gradient(linear, left top, left bottom, from(#008ecf), to(#ff16e0));
+  background: linear-gradient(180deg, #008ecf, #ff16e0);
+  background-size: 400% 400%;
+  -webkit-animation: seeYouSoonAnimation 6s ease infinite;
+          animation: seeYouSoonAnimation 6s ease infinite;
+}
+
+@-webkit-keyframes seeYouSoonAnimation {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
+}
+
+@keyframes seeYouSoonAnimation {
+  0% {
+    background-position: 51% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 51% 0%;
+  }
 }
 
 .competeActionContainer button:hover {
@@ -697,8 +727,6 @@ ul.partners::after {
 ul.partners > li {
   margin: 10px;
   height: 120px;
-  /*min-width: 200px;
-    max-width: 250px; */
   background-color: #FFF;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 250px;
