@@ -196,7 +196,7 @@ main>div {
 @media screen and (max-width: 1260px) {
 
   .welcomeScreen {
-    margin: 8px;
+    margin: 0px 8px;
   }
 
   #contactEmails button {
@@ -377,6 +377,8 @@ main>div {
   justify-content: center;
   flex-wrap: wrap;
   visibility: hidden;
+  flex-direction: column;
+  width: 100%;
 }
 
 #warning h4 {
@@ -612,9 +614,9 @@ footer>*>*>p {
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
-  margin: 0px 15px;
-  margin-bottom: 10px;
+  margin: 10px 15px;
+  flex: 1;
+  width: calc(100% - 30px);
 
   background: linear-gradient(180deg, #00a2ff, #0054d1);
   background-size: 600% 600%;

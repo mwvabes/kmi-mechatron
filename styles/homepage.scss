@@ -45,7 +45,7 @@ section#aboutConference,
 section#partners,
 section#contact,
 section#scientificBoard,
-section#aboutUsInMedia
+section#aboutUsInMedia,
 section#organiser {
     overflow: hidden;
     margin-bottom: 20px;
@@ -600,7 +600,6 @@ ul.partners>li>img {
 
 ul.partners>li:hover {
     filter: grayscale(0%);
-    transform: scale(1.01);
     opacity: 1;
 }
 

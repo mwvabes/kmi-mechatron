@@ -180,7 +180,7 @@ main > div {
 
 @media screen and (max-width: 1260px) {
   .welcomeScreen {
-    margin: 8px;
+    margin: 0px 8px;
   }
   #contactEmails button {
     padding: 10px !important;
@@ -387,6 +387,11 @@ main > div {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   visibility: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
 }
 
 #warning h4 {
@@ -667,10 +672,11 @@ footer > * > * > p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  margin: 0px 15px;
-  margin-bottom: 10px;
+  margin: 10px 15px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: calc(100% - 30px);
   background: -webkit-gradient(linear, left top, left bottom, from(#00a2ff), to(#0054d1));
   background: linear-gradient(180deg, #00a2ff, #0054d1);
   background-size: 600% 600%;

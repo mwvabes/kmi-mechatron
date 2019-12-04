@@ -7,7 +7,7 @@ section#aboutConference,
 section#partners,
 section#contact,
 section#scientificBoard,
-section#aboutUsInMedia
+section#aboutUsInMedia,
 section#organiser {
   overflow: hidden;
   margin-bottom: 20px;
@@ -778,8 +778,6 @@ ul.partners > li > img {
 ul.partners > li:hover {
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
   opacity: 1;
 }
 
