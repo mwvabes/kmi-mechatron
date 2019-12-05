@@ -7,7 +7,7 @@ section#aboutConference,
 section#partners,
 section#contact,
 section#scientificBoard,
-section#aboutUsInMedia
+section#aboutUsInMedia,
 section#organiser {
   overflow: hidden;
   margin-bottom: 20px;
@@ -554,7 +554,7 @@ section#aboutUsInMedia {
           justify-content: space-evenly;
 }
 
-.aboutIMElement {
+.aboutIMElementAnchor {
   position: relative;
   background-color: #FFF;
   color: #858585;
@@ -570,12 +570,12 @@ section#aboutUsInMedia {
   max-width: 240px;
 }
 
-.aboutIMElement:nth-child(odd) {
+.aboutIMElementAnchor:nth-child(odd) {
   background-color: #FFE53B;
   background-image: linear-gradient(315deg, #FFE53B 0%, #FF2525 74%);
 }
 
-.aboutIMElement:nth-child(even) {
+.aboutIMElementAnchor:nth-child(even) {
   background-color: #4158D0;
   background-image: linear-gradient(135deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 }
@@ -587,10 +587,6 @@ section#aboutUsInMedia {
   color: #FFF;
   position: relative;
   z-index: 2;
-}
-
-.aboutIMElement > a {
-  text-decoration: none;
 }
 
 .aboutIMElement p {
@@ -627,17 +623,17 @@ section#aboutUsInMedia {
   background-image: linear-gradient(135deg, #2f81b8 0%, #262ca1 100%);
 }
 
-.aboutIMElement a h2 {
+.aboutIMElement button h2 {
   -webkit-transition: color 175ms ease-in-out, text-shadow 175ms ease-in-out;
   transition: color 175ms ease-in-out, text-shadow 175ms ease-in-out;
 }
 
-.aboutIMElement a:hover h2 {
+.aboutIMElement button:hover h2 {
   color: #ececec;
   text-shadow: 0px 0px 6px #3f4475;
 }
 
-.aboutIMElement button:hover {
+.aboutIMElementAnchor:hover button.more {
   background-color: #008ecf;
   border-color: #FFF;
   color: #FFF;
@@ -667,8 +663,7 @@ section#aboutUsInMedia {
   transition: filter 175ms ease-in-out, -webkit-filter 175ms ease-in-out;
 }
 
-.aboutIMElement a:hover ~ img,
-.aboutIMElement button:hover ~ img {
+a:hover > .aboutIMElement > img {
   -webkit-filter: brightness(50%);
           filter: brightness(50%);
 }
@@ -778,8 +773,6 @@ ul.partners > li > img {
 ul.partners > li:hover {
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
   opacity: 1;
 }
 
