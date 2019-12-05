@@ -329,8 +329,8 @@ section#organiser {
   background: -webkit-gradient(linear, left top, left bottom, from(#008ecf), to(#ff16e0));
   background: linear-gradient(180deg, #008ecf, #ff16e0);
   background-size: 400% 400%;
-  -webkit-animation: seeYouSoonAnimation 6s ease infinite;
-          animation: seeYouSoonAnimation 6s ease infinite;
+  -webkit-animation: seeYouSoonAnimation 6s ease-in-out infinite;
+          animation: seeYouSoonAnimation 6s ease-in-out infinite;
 }
 
 @-webkit-keyframes seeYouSoonAnimation {

@@ -674,11 +674,10 @@ footer > * > * > p {
           flex-direction: column;
   margin: 10px 15px;
   width: calc(100% - 30px);
-  background: -webkit-gradient(linear, left top, left bottom, from(#00a2ff), to(#0054d1));
-  background: linear-gradient(180deg, #00a2ff, #0054d1);
-  background-size: 600% 600%;
-  -webkit-animation: seeYouSoonAnimation 6s ease infinite;
-          animation: seeYouSoonAnimation 6s ease infinite;
+  background: linear-gradient(30deg, #00aeff, #002896);
+  background-size: 300% 300%;
+  -webkit-animation: seeYouSoonAnimation 10s ease infinite;
+          animation: seeYouSoonAnimation 10s ease infinite;
 }
 
 @-webkit-keyframes seeYouSoonAnimation {

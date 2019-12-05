@@ -617,10 +617,10 @@ footer>*>*>p {
   margin: 10px 15px;
   width: calc(100% - 30px);
 
-  background: linear-gradient(180deg, #00a2ff, #0054d1);
-  background-size: 600% 600%;
+  background: linear-gradient(30deg, #00aeff, #002896);
+  background-size: 300% 300%;
   
-  animation: seeYouSoonAnimation 6s ease infinite;
+  animation: seeYouSoonAnimation 10s ease infinite;
   
   @keyframes seeYouSoonAnimation {
     0%{background-position:51% 0%}

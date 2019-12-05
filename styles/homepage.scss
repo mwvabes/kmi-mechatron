@@ -275,7 +275,7 @@ section#organiser {
     background: linear-gradient(180deg, #008ecf, #ff16e0);
     background-size: 400% 400%;
     
-    animation: seeYouSoonAnimation 6s ease infinite;
+    animation: seeYouSoonAnimation 6s ease-in-out infinite;
     
     @keyframes seeYouSoonAnimation {
         0%{background-position:51% 0%}
