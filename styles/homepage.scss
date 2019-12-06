@@ -627,9 +627,6 @@ ul.partners>li {
     transition: filter 175ms ease-in-out, opacity 175ms ease-in, transform 175ms ease-in-out;
     filter: grayscale(90%);
     opacity: .6;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
 }
 
 ul.partners>li::selection,

@@ -813,9 +813,6 @@ ul.partners > li {
   -webkit-filter: grayscale(90%);
           filter: grayscale(90%);
   opacity: .6;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
 }
 
 ul.partners > li::-moz-selection,

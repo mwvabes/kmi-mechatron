@@ -591,25 +591,59 @@ section > .title h1,
   text-align: center;
 }
 
-footer a {
-  color: #0030b4;
-  -webkit-transition: color 175ms ease-in-out;
-  transition: color 175ms ease-in-out;
+.footer {
+  border-top: 6px solid #006e6e;
+  -webkit-animation: footerBorderAnimation 2s ease-in-out infinite;
+          animation: footerBorderAnimation 2s ease-in-out infinite;
 }
 
-footer a:hover {
-  color: #001d6d;
+@-webkit-keyframes footerBorderAnimation {
+  0% {
+    border-color: #006e6e;
+  }
+  50% {
+    border-color: #ff16e0;
+  }
+  100% {
+    border-color: #006e6e;
+  }
+}
+
+@keyframes footerBorderAnimation {
+  0% {
+    border-color: #006e6e;
+  }
+  50% {
+    border-color: #ff16e0;
+  }
+  100% {
+    border-color: #006e6e;
+  }
+}
+
+.footer .right a,
+.footer .left a {
+  color: #ffffff;
+  -webkit-transition: color 175ms ease-in-out;
+  transition: color 175ms ease-in-out;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer .right a:hover,
+.footer .left a:hover {
+  color: #67d4ff;
 }
 
 footer > div {
-  color: #3d3d3d;
+  color: #f5f5f5;
   font-size: .8rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 15px;
   max-width: 1260px;
   margin: 0px auto;
-  background-color: #e0e0e0;
+  background-color: #242424;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

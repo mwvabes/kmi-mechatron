@@ -8,8 +8,8 @@ $anchorMenuColor: #FFF;
 $greyColor: #3f3f3f;
 $greyBorder: #c7c7c7;
 
-$footerBackground: #e0e0e0;
-$footerColor: #3d3d3d;
+$footerBackground: #242424;
+$footerColor: #f5f5f5;
 
 $warningBgColor: #ff173e;
 $warningColor: #ffffff;
@@ -540,13 +540,32 @@ section>.title h1,
   text-align: center;
 }
 
-footer a {
-  color: #0030b4;
-  transition: color 175ms ease-in-out;
+$FCol1: #006e6e;
+$FCol2: #ff16e0;
+
+.footer {
+  border-top: 6px solid #006e6e;
+  
+  animation: footerBorderAnimation 2s ease-in-out infinite;
+  
+  @keyframes footerBorderAnimation {
+    0%{border-color: $FCol1}
+    50%{border-color: $FCol2}
+    100%{border-color: $FCol1}
+  }
 }
 
-footer a:hover {
-  color: #001d6d;
+.footer .right a,
+.footer .left a {
+  color: #ffffff;
+  transition: color 175ms ease-in-out;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer .right a:hover,
+.footer .left a:hover {
+  color: #67d4ff;
 }
 
 footer>div {
