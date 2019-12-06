@@ -199,11 +199,11 @@ main>div {
     margin: 0px 8px;
   }
 
-  #contactEmails button {
+  .copyButton {
     padding: 10px !important;
   }
 
-  #contactEmails button:active {
+  .copyButton:active {
     background-color: #003c81;
   }
 
@@ -496,21 +496,22 @@ section#contact>.title {
   display: inline;
 }
 
-#contactEmails button {
+.copyButton {
   cursor: pointer;
   font-size: .7rem;
-  padding: 0 5px;
+  padding: 2px 5px;
   margin: 0 5px;
+  margin-bottom: 3px;
   text-transform: uppercase;
   border-radius: 0;
   background-color: $actionButtonBgColor;
-  color: $actionAnchorColor;
+  color: #FFF;
   border: 2px solid $actionButtonBorderColor;
   font-weight: bold;
   transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
 }
 
-#contactEmails button:hover {
+.copyButton:hover {
   background-color: $actionButtonBgColorHover;
   border-color: $actionButtonBorderColorHover;
 }
@@ -538,20 +539,6 @@ section>.title h1,
   margin: 10px 0;
   text-align: center;
 }
-
-// section .title h1::after,
-// .aboutUsInMediaContainer .title h1::after {
-//   position: absolute;
-//   content: '';
-//   height: 2px;
-//   bottom: 0; 
-//   margin: 0 auto;
-//   left: 0;
-//   right: 0;
-//   width: 50px;
-//   background: $greyBorder;
-//   transition: width 170ms ease-in-out;
-// }
 
 footer a {
   color: #0030b4;
@@ -632,4 +619,8 @@ footer>*>*>p {
 
 .seeYouSoon p {
   font-size: 1.1rem;
+}
+
+.email {
+  text-decoration: underline;
 }

@@ -7,6 +7,10 @@ for (const item of navItems) {
     });
 }
 
+document.getElementById("aboutConferenceNav").addEventListener("click", function () {
+    navItemScrool(this);
+});
+
 document.getElementById("scientificBoardNav").addEventListener("click", function () {
     navItemScrool(this);
 });

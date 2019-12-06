@@ -182,10 +182,10 @@ main > div {
   .welcomeScreen {
     margin: 0px 8px;
   }
-  #contactEmails button {
+  .copyButton {
     padding: 10px !important;
   }
-  #contactEmails button:active {
+  .copyButton:active {
     background-color: #003c81;
   }
   .navToggleLabel {
@@ -546,22 +546,23 @@ section#contact > .title {
   display: inline;
 }
 
-#contactEmails button {
+.copyButton {
   cursor: pointer;
   font-size: .7rem;
-  padding: 0 5px;
+  padding: 2px 5px;
   margin: 0 5px;
+  margin-bottom: 3px;
   text-transform: uppercase;
   border-radius: 0;
   background-color: #20afc9;
-  color: #eee;
+  color: #FFF;
   border: 2px solid #0030b4;
   font-weight: bold;
   -webkit-transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
   transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
 }
 
-#contactEmails button:hover {
+.copyButton:hover {
   background-color: #008fc7;
   border-color: #003c81;
 }
@@ -706,5 +707,9 @@ footer > * > * > p {
 
 .seeYouSoon p {
   font-size: 1.1rem;
+}
+
+.email {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=global.css.map */
