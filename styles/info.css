@@ -32,7 +32,6 @@ ol {
 }
 
 .bigTitle {
-  padding: 70px 0px;
   width: 100%;
   text-align: center;
   background-color: #001263;
@@ -40,9 +39,11 @@ ol {
   position: absolute;
   z-index: 0;
   top: 60px;
+  overflow: hidden;
 }
 
 .bigTitle h1 {
+  padding: 40px 0px 70px;
   margin: 0px auto;
   color: #FFF;
   position: relative;
@@ -55,7 +56,7 @@ ol {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 70px;
   width: 100px;
   height: 2px;
   background-color: #008ecf;
@@ -89,14 +90,6 @@ section.information > *:not(:last-child) {
   padding: 15px;
 }
 
-/* .information h1,
-.information h2,
-.information h3,
-.information h4,
-.information h5,
-.information h6 {
-  margin-left: 20px;
-} */
 .information section {
   position: relative;
   margin-bottom: 40px;
@@ -135,14 +128,14 @@ section.information > *:not(:last-child) {
   word-wrap: break-word;
 }
 
-.information .infLeft {
+.infLeft {
   -webkit-box-flex: 7;
       -ms-flex: 7;
           flex: 7;
   padding: 10px;
 }
 
-.information .infRight {
+.infRight {
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
@@ -205,13 +198,6 @@ section.information > *:not(:last-child) {
   font-size: .8em;
 }
 
-section#warning {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
 @media screen and (max-width: 1260px) {
   .bigTitle {
     position: static;
@@ -245,6 +231,13 @@ section#warning {
   .buttonSection button {
     min-height: 75px;
     height: 100%;
+  }
+  .paymentInfo {
+    margin: 5px 0px;
+  }
+  .infLeft,
+  .infRight {
+    padding: 5px 0px;
   }
 }
 /*# sourceMappingURL=info.css.map */

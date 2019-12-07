@@ -13,6 +13,22 @@ section#organiser {
   margin-bottom: 20px;
 }
 
+section > .title:first-child {
+  position: relative;
+}
+
+section > .title:first-child::after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  bottom: 8px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 150px;
+  background: #c7c7c7;
+}
+
 .welcomeMessage {
   text-align: left;
   padding: 15px 30px;
@@ -382,9 +398,63 @@ section#organiser {
   padding: 60px 0px;
 }
 
+#aboutConference .title:not(:first-child) {
+  margin-top: 60px;
+}
+
+#aboutConference .title h1 {
+  position: relative;
+}
+
+#aboutConference .title h1::after {
+  content: '';
+  width: 150px;
+  height: 1px;
+  background-color: #008ecf;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
 #aboutConference p {
   padding: 10px;
   font-size: 1.2rem;
+}
+
+#aboutConference > div {
+  max-width: 1260px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.aboutUsWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #organiser {
@@ -588,6 +658,8 @@ section#aboutUsInMedia {
   color: #FFF;
   position: relative;
   z-index: 2;
+  -webkit-transition: color 175ms ease-out;
+  transition: color 175ms ease-out;
 }
 
 .aboutIMElement p {
@@ -596,6 +668,8 @@ section#aboutUsInMedia {
   font-size: .9rem;
   padding: 5px;
   color: #eeeeee;
+  -webkit-transition: color 175ms ease-out;
+  transition: color 175ms ease-out;
 }
 
 .aboutIMElement button {
@@ -639,6 +713,11 @@ section#aboutUsInMedia {
   border-color: #FFF;
   color: #FFF;
   background-image: none;
+}
+
+.aboutIMElementAnchor:hover p,
+.aboutIMElementAnchor:hover .title {
+  color: #7cdaff;
 }
 
 .aboutIMElement button i {
@@ -743,9 +822,6 @@ ul.partners > li {
   -webkit-filter: grayscale(90%);
           filter: grayscale(90%);
   opacity: .6;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
 }
 
 ul.partners > li::-moz-selection,
