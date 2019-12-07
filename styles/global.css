@@ -825,6 +825,7 @@ footer > * > * > p {
             justify-content: center;
     -webkit-transition: color 175ms ease-in-out, opacity 175ms ease-in-out;
     transition: color 175ms ease-in-out, opacity 175ms ease-in-out;
+    cursor: pointer;
   }
   .takeMeUp:hover {
     color: #67d4ff;
