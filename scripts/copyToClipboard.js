@@ -45,19 +45,30 @@ window.Clipboard = (function (window, document, navigator) {
 
 })(window, document, navigator)
 
-
-function copyKonkurs() {
-    Clipboard.copy('mlodzikonkurs@urz.pl');
+function copySuccessful(btn) {
+    btn.classList.add("copySuccessful");
+    let content = btn.innerHTML;
+    btn.innerHTML = "Skopiowano!";
+    setTimeout(function () {
+        btn.classList.remove("copySuccessful");
+        btn.innerHTML = content;
+    }, 3000);
 }
 
-function copyKonferencja() {
+function copyKonkurs(btn) {
+    Clipboard.copy('mlodzikonkurs@urz.pl');
+    copySuccessful(btn);
+}
+
+function copyKonferencja(btn) {
     Clipboard.copy('mlodzikonferencja@urz.pl');
+    copySuccessful(btn);
 }
 
 document.getElementById("copyEmailMlodziKonkurs").addEventListener("click", function () {
-    copyKonkurs();
+    copyKonkurs(this);
 });
 
 document.getElementById("copyEmailMlodziKonferencja").addEventListener("click", function () {
-    copyKonferencja();
+    copyKonferencja(this);
 });
