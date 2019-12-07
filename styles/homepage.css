@@ -658,6 +658,8 @@ section#aboutUsInMedia {
   color: #FFF;
   position: relative;
   z-index: 2;
+  -webkit-transition: color 175ms ease-out;
+  transition: color 175ms ease-out;
 }
 
 .aboutIMElement p {
@@ -666,6 +668,8 @@ section#aboutUsInMedia {
   font-size: .9rem;
   padding: 5px;
   color: #eeeeee;
+  -webkit-transition: color 175ms ease-out;
+  transition: color 175ms ease-out;
 }
 
 .aboutIMElement button {
@@ -709,6 +713,11 @@ section#aboutUsInMedia {
   border-color: #FFF;
   color: #FFF;
   background-image: none;
+}
+
+.aboutIMElementAnchor:hover p,
+.aboutIMElementAnchor:hover .title {
+  color: #7cdaff;
 }
 
 .aboutIMElement button i {

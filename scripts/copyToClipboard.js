@@ -46,10 +46,18 @@ window.Clipboard = (function (window, document, navigator) {
 })(window, document, navigator)
 
 
-document.getElementById("copyEmailMlodziKonkurs").addEventListener("click", function () {
+function copyKonkurs() {
     Clipboard.copy('mlodzikonkurs@urz.pl');
+}
+
+function copyKonferencja() {
+    Clipboard.copy('mlodzikonferencja@urz.pl');
+}
+
+document.getElementById("copyEmailMlodziKonkurs").addEventListener("click", function () {
+    copyKonkurs();
 });
 
 document.getElementById("copyEmailMlodziKonferencja").addEventListener("click", function () {
-    Clipboard.copy('mlodzikonferencja@urz.pl');
+    copyKonferencja();
 });

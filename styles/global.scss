@@ -139,11 +139,6 @@ main {
   margin-top: 60px;
 }
 
-/* main > div:first-child {
-  min-height: calc(100vh - 60px);
-  //background-image: url(/img/background.png);
-} */
-
 main>div {
   max-width: 1260px;
   margin: 0px auto;
@@ -168,7 +163,7 @@ main>div {
     margin-left: auto;
   }
 
-  nav>ul>li:not(:last-child)>a::before {
+  nav>ul>li>a::before {
     content: '';
     position: absolute;
     top: 0;
@@ -179,7 +174,7 @@ main>div {
     transition: width 300ms ease-out;
   }
 
-  nav>ul>li:not(:last-child)>a:hover::before {
+  nav>ul>li>a:hover::before {
     width: 100%;
   }
 
@@ -189,157 +184,6 @@ main>div {
 
   .contact>div {
     align-items: flex-start;
-  }
-
-}
-
-@media screen and (max-width: 1260px) {
-
-  .welcomeScreen {
-    margin: 0px 8px;
-  }
-
-  .copyButton {
-    padding: 10px !important;
-  }
-
-  .copyButton:active {
-    background-color: #003c81;
-  }
-
-  .navToggleLabel {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #FFF;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .navToggleLabel > span {
-    display: block;
-    background-color: #FFF;
-    height: 6px;
-    width: 30px;
-    position: relative;
-  }
-
-  .navToggleLabel > span::before, 
-  .navToggleLabel > span::after {
-    content: '';
-    background-color: #FFF;
-    height: 6px;
-    width: 30px;
-    position: absolute;
-  }
-
-  .navToggleLabel > span::before {
-    top: -10px;
-  }
-
-  .navToggleLabel > span::after {
-    bottom: -10px;
-  }
-
-  .navToggleLabel:active span,
-  .navToggleLabel:active span::before,
-  .navToggleLabel:active span::after {
-    background-color: #0030b4;
-  }
-
-  .navToggle ~ ul {
-    //display: none;
-    //opacity: 0;
-    max-height: 0px;
-    overflow: hidden;
-    transform: scale(1,0);
-    transform-origin: top;
-    transition: transform 300ms ease-in;
-  }
-
-  .navToggle:checked~ul {
-    display: flex;
-
-    max-height: 100%;
-    //opacity: 1;
-    transform: scale(1,1);
-  }
-
-  nav {
-    position: relative;
-    z-index: 9999;
-  }
-
-  nav>ul {
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin: 0;
-  }
-
-  nav>ul>li {
-    margin: 0;
-    width: 100%;
-    justify-content: center;
-    min-height: 60px;
-  }
-
-  nav>ul>li>a {
-    flex: 1;
-    text-align: center;
-    padding: 15px;
-  }
-
-  .navToggleLabel>i {
-    font-size: 2rem;
-    transition: color 200ms ease-in-out;
-    color: #FFF;
-  }
-
-  .navToggleLabel:active>i {
-    color: $actionButtonBorderColorHover;
-  }
-
-  .navToggleContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    min-height: 60px;
-    width: 100%;
-  }
-
-  nav>ul>li:nth-child(odd) {
-    background-color: #0060af;
-  }
-
-  nav>ul>li:nth-child(even) {
-    background-color: #001d6d;
-  }
-
-  .timeRemainingContainer {
-    text-align: center;
-  }
-
-  #timeRemaining {
-    justify-content: center;
-  }
-
-  footer>div {
-    flex-direction: column-reverse;
-    justify-content: center;
-  }
-
-  .contact {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contact>div {
-    align-items: center;
-    text-align: center;
   }
 
 }
@@ -377,8 +221,11 @@ main>div {
   justify-content: center;
   flex-wrap: wrap;
   visibility: hidden;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
+  border-bottom: 1px solid #ff6600;
+  transition: opacity 175ms ease-in-out;
+  align-items: center;
 }
 
 #warning h4 {
@@ -393,8 +240,18 @@ main>div {
   font-weight: normal;
 }
 
+#hideWarning {
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: color 175ms ease-in;
+  margin-left: 10px;
+}
+
+#hideWarning:hover {
+  color: #e0e0e0;
+}
+
 section#contact {
-  //background-color: rgb(0, 94, 156);
   background-color: $contactBgColor;
   color: $contactColor;
   display: flex;
@@ -469,8 +326,8 @@ section#contact>.title {
 }
 
 .routePlannerButton:hover {
-  background-color: #e0e0e0;
-  color: $blue;
+  color: #00810b;
+  border-color: #00be10;
 }
 
 .contactMap {
@@ -561,12 +418,32 @@ $FCol2: #ff16e0;
   transition: color 175ms ease-in-out;
   font-weight: bold;
   text-decoration: none;
+  position: relative;
+}
+
+.footer .right a::after,
+.footer .left a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: $blue;
+  bottom: 0;
+  left: 0;
+  transition: width 175ms ease-in-out;
+}
+
+.footer .right a:hover::after,
+.footer .left a:hover::after {
+  width: 100%;
 }
 
 .footer .right a:hover,
 .footer .left a:hover {
   color: #67d4ff;
 }
+
+
 
 footer>div {
   color: $footerColor;
@@ -642,4 +519,192 @@ footer>*>*>p {
 
 .email {
   text-decoration: underline;
+}
+
+
+@media screen and (max-width: 1260px) {
+
+  #warning {
+    flex-direction: column;
+  }
+
+  .welcomeScreen {
+    margin: 0px 8px;
+  }
+
+  .copyButton {
+    padding: 10px !important;
+  }
+
+  .copyButton:active {
+    background-color: #003c81;
+  }
+
+  .navToggleLabel {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #FFF;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navToggleLabel > span {
+    display: block;
+    background-color: #FFF;
+    height: 6px;
+    width: 30px;
+    position: relative;
+  }
+
+  .navToggleLabel > span::before, 
+  .navToggleLabel > span::after {
+    content: '';
+    background-color: #FFF;
+    height: 6px;
+    width: 30px;
+    position: absolute;
+  }
+
+  .navToggleLabel > span::before {
+    top: -10px;
+  }
+
+  .navToggleLabel > span::after {
+    bottom: -10px;
+  }
+
+  .navToggleLabel:active span,
+  .navToggleLabel:active span::before,
+  .navToggleLabel:active span::after {
+    background-color: #0030b4;
+  }
+
+  .navToggle ~ ul {
+    max-height: 0px;
+    overflow: hidden;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 300ms ease-in;
+  }
+
+  .navToggle:checked~ul {
+    display: flex;
+    max-height: 100%;
+    transform: scale(1,1);
+  }
+
+  nav {
+    position: relative;
+    z-index: 9999;
+  }
+
+  nav>ul {
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  nav>ul>li {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    min-height: 60px;
+  }
+
+  nav>ul>li>a {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .navToggleLabel>i {
+    font-size: 2rem;
+    transition: color 200ms ease-in-out;
+    color: #FFF;
+  }
+
+  .navToggleLabel:active>i {
+    color: $actionButtonBorderColorHover;
+  }
+
+  .navToggleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    min-height: 60px;
+    width: 100%;
+  }
+
+  nav>ul>li:nth-child(odd) {
+    background-color: #0060af;
+  }
+
+  nav>ul>li:nth-child(even) {
+    background-color: #001d6d;
+  }
+
+  .timeRemainingContainer {
+    text-align: center;
+  }
+
+  #timeRemaining {
+    justify-content: center;
+  }
+
+  footer>div {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact>div {
+    align-items: center;
+    text-align: center;
+  }
+
+  .seeYouSoon {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+  }
+
+}
+
+.takeMeUp {
+  display: none;
+}
+
+@media screen and (min-width: 1390px) {
+  .takeMeUp {
+    opacity: 0;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 9999;
+    border-radius: 25px;
+    background-color: #0030b4;
+    border: 3px solid $blue;
+    color: #FFF;
+    text-align: center;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    transition: color 175ms ease-in-out, opacity 175ms ease-in-out;
+  }
+
+  .takeMeUp:hover {
+    color: #67d4ff;
+  }
 }
