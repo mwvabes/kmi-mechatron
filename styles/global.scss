@@ -365,11 +365,15 @@ section#contact>.title {
   color: #FFF;
   border: 2px solid $actionButtonBorderColor;
   font-weight: bold;
-  transition: background-color 300ms ease-in-out, border-color 300ms ease-in-out;
+  transition: background-color 175ms ease-in-out, border-color 300ms ease-in-out, width 300ms ease-in-out;
+  overflow: hidden;
+}
+
+.copySuccessful {
+  background-color: #00be10;
 }
 
 .copyButton:hover {
-  background-color: $actionButtonBgColorHover;
   border-color: $actionButtonBorderColorHover;
 }
 
