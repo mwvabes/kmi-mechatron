@@ -183,6 +183,8 @@ section.information > *:not(:last-child) {
   background-color: #effbff;
   border: 2px solid #008ecf;
   margin: 5px 20px;
+  color: #002472;
+  font-size: .9rem;
 }
 
 .paymentInfo h4 {
@@ -191,7 +193,7 @@ section.information > *:not(:last-child) {
 
 .paymentInfo span {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .extInfo {
