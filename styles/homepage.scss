@@ -668,4 +668,10 @@ ul.partners>li:hover {
     .welcomeContainer {
         flex-direction: column;
     }
+
+    .timeRemainingContainer,
+    .conferenceIsNowContainer,
+    .timeUpContainer {
+    padding: 15px 0px;
+}
 }
