@@ -870,5 +870,10 @@ ul.partners > li:hover {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .timeRemainingContainer,
+  .conferenceIsNowContainer,
+  .timeUpContainer {
+    padding: 15px 0px;
+  }
 }
 /*# sourceMappingURL=homepage.css.map */
