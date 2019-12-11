@@ -643,12 +643,12 @@ section#aboutUsInMedia {
 
 .aboutIMElementAnchor:nth-child(odd) {
   background-color: #FFE53B;
-  background-image: linear-gradient(315deg, #FFE53B 0%, #FF2525 74%);
+  background-image: linear-gradient(210deg, #667eea 0%, #764ba2 100%);
 }
 
 .aboutIMElementAnchor:nth-child(even) {
   background-color: #4158D0;
-  background-image: linear-gradient(135deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  background-image: linear-gradient(210deg, #4facfe 0%, #00f2fe 100%);
 }
 
 .aboutIMElement h2 {
