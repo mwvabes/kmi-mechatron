@@ -39,6 +39,11 @@ body {
   flex-direction: column;
 }
 
+ul li,
+ol li {
+  display: list-item;
+}
+
 button {
   font-family: 'Source Sans Pro', 'Arial', sans-serif;
 }
@@ -423,6 +428,7 @@ $FCol2: #ff16e0;
   font-weight: bold;
   text-decoration: none;
   position: relative;
+  padding: 5px 0px;
 }
 
 .footer .right a::after,

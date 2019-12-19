@@ -377,18 +377,20 @@ section > .title:first-child::after {
   background-color: #008fc7;
   border-color: #003c81;
   background-image: none;
+  color: #e9fcff;
 }
 
 .competeActionContainer > a {
-  margin-top: 10px;
+  margin-top: 2px;
   color: #eee;
   font-size: 1rem;
   -webkit-transition: color 200ms ease-in-out;
   transition: color 200ms ease-in-out;
+  padding: 5px;
 }
 
 .competeActionContainer > a:hover {
-  color: #FFF;
+  color: #e9fcff;
 }
 
 #aboutConference {

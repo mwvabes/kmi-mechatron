@@ -21,7 +21,7 @@ $actionButtonBgColor: #20afc9;
 $actionButtonColor: #f7f7f7;
 $actionButtonBorderColor: #0030b4;
 $actionAnchorColor: #eee;
-$actionAnchorColorHover: #FFF;
+$actionAnchorColorHover: #e9fcff;
 
 $actionButtonBgColorHover: #008fc7;
 $actionButtonBorderColorHover: #003c81;
@@ -305,13 +305,15 @@ section > .title:first-child::after {
     background-color: $actionButtonBgColorHover;
     border-color: $actionButtonBorderColorHover;
     background-image: none;
+    color: $actionAnchorColorHover;
 }
 
 .competeActionContainer > a {
-    margin-top: 10px;
+    margin-top: 2px;
     color: $actionAnchorColor;
     font-size: 1rem;
     transition: color 200ms ease-in-out;
+    padding: 5px;
 }
 
 .competeActionContainer>a:hover {

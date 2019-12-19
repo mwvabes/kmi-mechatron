@@ -98,6 +98,12 @@ section.information > *:not(:last-child) {
   padding: 15px;
 }
 
+.information h3 {
+  font-weight: bold;
+  padding: 5px 0px;
+  color: #004faa;
+}
+
 .information section {
   position: relative;
   margin-bottom: 40px;
