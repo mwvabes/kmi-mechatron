@@ -801,6 +801,10 @@ footer > * > * > p {
   }
 }
 
+#takeMeUpNav {
+  display: none;
+}
+
 .takeMeUp {
   display: none;
 }
