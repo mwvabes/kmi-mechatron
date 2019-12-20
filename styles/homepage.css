@@ -41,17 +41,10 @@ section > .title:first-child::after {
 
 #timeRemainingContainer {
   visibility: hidden;
-}
-
-#conferenceIsNowContainer,
-#timeUpContainer {
-  display: none;
-}
-
-.timeRemainingContainer,
-.conferenceIsNowContainer,
-.timeUpContainer {
   opacity: 0;
+}
+
+.timeRemainingContainer {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: vertical;
@@ -67,30 +60,17 @@ section > .title:first-child::after {
   position: relative;
 }
 
-.timeRemainingContainer > h1,
-.conferenceIsNowContainer > h1,
-.timeUpContainer > h1 {
-  font-size: 1.4em;
+.timeRemainingContainer > h1 {
+  font-size: 2em;
 }
 
-.conferenceIsNowContainer > p,
-.timeUpContainer > p {
-  font-weight: normal;
-  color: #FFF;
-  font-style: italic;
-}
-
-.timeRemainingContainer a,
-.conferenceIsNowContainer a,
-.timeUpContainer a {
+.timeRemainingContainer a {
   color: #FFF;
   -webkit-transition: color 175ms ease-in-out;
   transition: color 175ms ease-in-out;
 }
 
-.timeRemainingContainer a:hover,
-.conferenceIsNowContainer a:hover,
-.timeUpContainer a:hover {
+.timeRemainingContainer a:hover {
   color: #008ecf;
 }
 
@@ -168,10 +148,17 @@ section > .title:first-child::after {
   font-size: 50px;
   color: #002a61;
   font-weight: bold;
+  -webkit-transition: color 175ms ease-in;
+  transition: color 175ms ease-in;
+}
+
+.numElement > .highlightNumber {
+  font-size: 50px;
+  color: #0059ff;
+  font-weight: bold;
 }
 
 .numElement > .number:hover {
-  color: #004299;
   -webkit-transition: background-color 300ms linear;
   transition: background-color 300ms linear;
 }
@@ -230,6 +217,8 @@ section > .title:first-child::after {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  max-width: 1260px;
+  width: 100%;
 }
 
 #welcome .left {
@@ -257,9 +246,10 @@ section > .title:first-child::after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
 }
 
 .welcomeContainer {
@@ -274,19 +264,19 @@ section > .title:first-child::after {
 
 .categoriesInfoContainer {
   font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0.2);
+  color: #98c0ff;
   padding: 15px 30px;
   margin-bottom: 10px;
 }
 
 .categoriesInfoContainer > h1 {
-  font-size: 1.2em;
+  font-size: .95em;
   line-height: 1.2;
   margin-bottom: 10px;
 }
 
 .categoriesInfoContainer > ul {
-  font-size: .8em;
+  font-size: .95em;
   list-style: inside circle;
 }
 
@@ -877,5 +867,9 @@ ul.partners > li:hover {
   .timeUpContainer {
     padding: 15px 0px;
   }
+}
+
+.conferenceState {
+  color: #00eeff;
 }
 /*# sourceMappingURL=homepage.css.map */
