@@ -1,6 +1,6 @@
 //Settings
-const eventStartDate = new Date(2019, 02, 02, 12, 0, 0).getTime();
-const eventEndDate = new Date(2021, 02, 20, 15, 28, 10).getTime();
+const eventStartDate = new Date(2020, 02, 02, 12, 0, 0).getTime();
+const eventEndDate = new Date(2020, 02, 20, 15, 28, 10).getTime();
 const registrationDateEnd = new Date(2020, 02, 12).getTime();
 
 let now = new Date().getTime();
@@ -11,10 +11,10 @@ const daysRemainedContent = '<span id="rDays" class="rNum"></span> dni ' +
   '<span id="rSeconds" class="rNum"></span> sekund ';
 
 const conferenceIsFinishedContent = '<h1 class="conferenceState">Konferencja już się odbyła</h1>' +
-  '<p>Zapraszamy w przyszłej edycji!</p>';
+  '<p class="conferenceState">Zapraszamy w przyszłej edycji!</p>';
 
 const conferenceIsNowContent = '<h1 class="conferenceState">Konferencja właśnie się odbywa</h1>' +
-  '<p></p>';
+  '<p class="conferenceState"></p>';
 
 // --------------------
 
@@ -91,7 +91,8 @@ let renderTime = () => {
       structureConferenceIsNow();
       timeRemainingVisible();
     } else {
-      showTimeUp();
+      structureTimeUp();
+      timeRemainingVisible();
     }
   }
 };
