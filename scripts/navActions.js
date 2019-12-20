@@ -55,6 +55,9 @@ document.getElementById("takeMeUpNav").addEventListener("click", function () {
 window.addEventListener("scroll", function() {
   if (window.scrollY > 200) document.getElementById("takeMeUpNav").style.opacity = 1;
   else document.getElementById("takeMeUpNav").style.opacity = 0;
+
+  if (window.scrollY > 100) document.getElementById("takeMeUpNav").style.display = "flex";
+  else document.getElementById("takeMeUpNav").style.display = "none";
 })
 
 document.getElementById("hideWarning").addEventListener("click", function() {
