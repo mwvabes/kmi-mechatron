@@ -84,6 +84,7 @@ section.information {
   border-radius: 50px 50px 0 0;
   -webkit-box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.75);
+  border-bottom: 1px solid #000;
 }
 
 section.information > *:not(:last-child) {
