@@ -1,77 +1,101 @@
-var eventStartDate = new Date(2020, 02, 02, 12, 00, 00).getTime();
-var eventEndDate = new Date(2020, 02, 20, 15, 28, 10).getTime();
-var registrationDateEnd = new Date(2020, 02, 12).getTime();
+//Settings
+const eventStartDate = new Date(2019, 02, 02, 12, 0, 0).getTime();
+const eventEndDate = new Date(2021, 02, 20, 15, 28, 10).getTime();
+const registrationDateEnd = new Date(2020, 02, 12).getTime();
 
-var now = new Date().getTime();
+let now = new Date().getTime();
 
-var toEventEnd = eventEndDate - now;
-var daysToRegistrationEnd = Math.ceil((registrationDateEnd - now) / (1000 * 60 * 60 * 24)) + 1;
+const daysRemainedContent = '<span id="rDays" class="rNum"></span> dni ' +
+  '<span id="rHours" class="rNum"></span> godzin ' +
+  '<span id="rMinutes" class="rNum"></span> minut ' +
+  '<span id="rSeconds" class="rNum"></span> sekund ';
 
-if (daysToRegistrationEnd < 1) {
+const conferenceIsFinishedContent = '<h1 class="conferenceState">Konferencja już się odbyła</h1>' +
+  '<p>Zapraszamy w przyszłej edycji!</p>';
+
+const conferenceIsNowContent = '<h1 class="conferenceState">Konferencja właśnie się odbywa</h1>' +
+  '<p></p>';
+
+// --------------------
+
+let timeRemainingVisible = () => {
+  setTimeout(function () {
+    document.getElementById("timeRemainingContainer").style.visibility = "visible";
+    document.getElementById("timeRemainingContainer").style.opacity = 1;
+  }, 500);
+};
+
+let structureTimeUp = () => {
+  document.getElementById("timeRemainingContainer").innerHTML = conferenceIsFinishedContent;
+};
+
+let structureCounter = () => {
+  document.getElementById("timeRemainingContainer").innerHTML = daysRemainedContent;
+};
+
+let structureConferenceIsNow = () => {
+  document.getElementById("timeRemainingContainer").innerHTML = conferenceIsNowContent;
+
+  let now = new Date().getTime();
+  let toEventEnd = eventEndDate - now;
+
+  let eventEnded = setTimeout(function () {
+    showTimeUp();
+  }, toEventEnd);
+};
+
+let count = () => {
+  let now = new Date().getTime();
+
+  if (now < eventStartDate) {
+    let remaininigTime = eventStartDate - now;
+
+    let days = Math.floor(remaininigTime / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((remaininigTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((remaininigTime % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((remaininigTime % (1000 * 60)) / 1000);
+
+    document.getElementById("rDays").innerHTML = days;
+    document.getElementById("rHours").innerHTML = hours;
+    document.getElementById("rMinutes").innerHTML = minutes;
+    document.getElementById("rSeconds").innerHTML = seconds;
+  } else {
+    showConferenceIsNow();
+    clearInterval(countdown);
+  }
+};
+
+let renderTime = () => {
+
+  const toEventEnd = eventEndDate - now;
+  let daysToRegistrationEnd = Math.ceil((registrationDateEnd - now) / (1000 * 60 * 60 * 24)) + 1;
+
+  if (daysToRegistrationEnd < 1) {
     document.getElementById("warning").style.visibility = "visible";
     document.querySelector('#warning a').style.display = "none";
     document.querySelector('#warning h4').innerHTML = "Czas na zgłoszenie projektu już minął";
-} else if (daysToRegistrationEnd < 15) {
+  } else if (daysToRegistrationEnd < 15) {
     document.getElementById("warning").style.visibility = "visible";
     document.querySelector('#warning > h4 > span.remainedDaysToRegistration').innerHTML = daysToRegistrationEnd;
-}
+  }
 
-if (now < eventStartDate) {
-    var countdown = setInterval(function () {
-        count();
-        showCounter();
-    }, 1000);
-} else if (now >= eventStartDate && now < eventEndDate) {
-    showConferenceIsNow();
-} else {
-    showTimeUp();
-}
-
-function count() {
-    var now = new Date().getTime();
-
+  if (document.getElementById("welcome")) {
     if (now < eventStartDate) {
-        var remaininigTime = eventStartDate - now;
-
-        var days = Math.floor(remaininigTime / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((remaininigTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((remaininigTime % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((remaininigTime % (1000 * 60)) / 1000);
-
-        document.getElementById("rDays").innerHTML = days;
-        document.getElementById("rHours").innerHTML = hours;
-        document.getElementById("rMinutes").innerHTML = minutes;
-        document.getElementById("rSeconds").innerHTML = seconds;
+      structureCounter();
+      count();
+      let countdown = setInterval(function () {
+        count();
+      }, 1000);
+      timeRemainingVisible();
+    } else if (now >= eventStartDate && now < eventEndDate) {
+      structureConferenceIsNow();
+      timeRemainingVisible();
     } else {
-        showConferenceIsNow();
-        clearInterval(countdown);
+      showTimeUp();
     }
-}
+  }
+};
 
-function showCounter() {
-    document.getElementById("timeRemainingContainer").style.visibility = "visible";
-    document.getElementById("timeRemainingContainer").style.opacity = "1";
-}
-
-function showConferenceIsNow() {
-    document.getElementById("timeRemainingContainer").style.visibility = "hidden";
-    document.getElementById("timeRemainingContainer").style.opacity = "0";
-    document.getElementById("conferenceIsNowContainer").style.display = "block";
-    document.getElementById("conferenceIsNowContainer").style.opacity = "1";
-
-    var now = new Date().getTime();
-    var toEventEnd = eventEndDate - now;
-
-    var eventEnded = setTimeout(function () {
-        showTimeUp();
-    }, toEventEnd);
-}
-
-function showTimeUp() {
-    document.getElementById("timeRemainingContainer").style.visibility = "hidden";
-    document.getElementById("timeRemainingContainer").style.opacity = "0";
-    document.getElementById("conferenceIsNowContainer").style.display = "none";
-    document.getElementById("conferenceIsNowContainer").style.opacity = "0";
-    document.getElementById("timeUpContainer").style.display = "block";
-    document.getElementById("timeUpContainer").style.opacity = "1";
-}
+document.addEventListener("DOMContentLoaded", function () {
+  renderTime();
+});
