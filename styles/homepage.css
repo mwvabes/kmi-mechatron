@@ -8,30 +8,29 @@ section#partners,
 section#contact,
 section#scientificBoard,
 section#aboutUsInMedia,
-section#organiser {
+section#organiser,
+section#quickContact {
   overflow: hidden;
   margin-bottom: 20px;
 }
 
-section > .title:first-child {
-  position: relative;
+.numbersSplitter {
+  display: none;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
-section > .title:first-child::after {
-  position: absolute;
-  content: '';
-  height: 1px;
-  bottom: 8px;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  width: 150px;
-  background: #c7c7c7;
+@media screen and (max-width: 400px) {
+  .numbersSplitter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .welcomeMessage {
   text-align: left;
-  padding: 15px 30px;
+  padding: 25px 30px;
 }
 
 .welcomeMessage h1 {
@@ -398,18 +397,17 @@ section > .title:first-child::after {
   position: relative;
 }
 
-#aboutConference .title h1::after {
-  content: '';
-  width: 150px;
-  height: 1px;
-  background-color: #008ecf;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-
+/* #aboutConference .title h1::after {
+    content: '';
+    width: 150px;
+    height: 1px;
+    background-color: $blue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+} */
 #aboutConference p {
   padding: 10px;
   font-size: 1.2rem;

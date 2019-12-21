@@ -47,30 +47,26 @@ section#partners,
 section#contact,
 section#scientificBoard,
 section#aboutUsInMedia,
-section#organiser {
+section#organiser,
+section#quickContact {
     overflow: hidden;
     margin-bottom: 20px;
 }
 
-section > .title:first-child {
-    position: relative;
+.numbersSplitter {
+    display: none;
+    flex-basis: 100%;
 }
 
-section > .title:first-child::after {
-    position: absolute;
-    content: '';
-    height: 1px;
-    bottom: 8px; 
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    width: 150px;
-    background: $greyBorder;
+@media screen and (max-width: 400px) {
+    .numbersSplitter {
+        display: flex;
+    }
 }
 
 .welcomeMessage {
     text-align: left;
-    padding: 15px 30px;
+    padding: 25px 30px;
 }
 
 .welcomeMessage h1 {
@@ -325,7 +321,7 @@ section > .title:first-child::after {
     position: relative;
 }
 
-#aboutConference .title h1::after {
+/* #aboutConference .title h1::after {
     content: '';
     width: 150px;
     height: 1px;
@@ -335,7 +331,7 @@ section > .title:first-child::after {
     left: 0;
     right: 0;
     margin: 0 auto;
-}
+} */
 
 #aboutConference p {
     padding: 10px;
