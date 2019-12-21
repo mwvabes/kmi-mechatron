@@ -108,17 +108,20 @@ nav > ul > li {
 }
 
 nav > ul > li > a {
-  padding: 10px;
+  padding: 10px 6px;
   color: #FFF;
   text-decoration: none;
   font-size: .9rem;
   -webkit-transition: background-color 100ms linear;
   transition: background-color 100ms linear;
   position: relative;
+  font-weight: bold;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .iconLink > a {
   font-size: 1.4rem;
+  font-weight: normal;
 }
 
 main {
@@ -165,6 +168,9 @@ main > div {
   }
   nav > ul > li > a:hover::before {
     width: 100%;
+  }
+  nav > ul > li > a:hover {
+    background-color: rgba(7, 0, 110, 0.1);
   }
   .contact {
     -webkit-box-orient: horizontal;
@@ -435,15 +441,26 @@ section#contact > .title {
   font-size: .8rem;
 }
 
-section > .title h1,
-.aboutUsInMediaContainer > .title h1 {
+.sectionTitle {
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.8rem !important;
   padding: 5px;
   font-style: normal;
   position: relative;
   margin: 10px 0;
   text-align: center;
+}
+
+.sectionTitle::after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  bottom: 4px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 150px;
+  background: #c7c7c7;
 }
 
 .footer {
@@ -515,7 +532,7 @@ footer > div {
   font-size: .8rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 15px;
+  padding: 15px 20px;
   max-width: 1260px;
   margin: 0px auto;
   background-color: #242424;
@@ -623,6 +640,9 @@ footer > * > * > p {
 }
 
 @media screen and (max-width: 1260px) {
+  .takeMeUp {
+    display: none !important;
+  }
   #warning {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -778,6 +798,9 @@ footer > * > * > p {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .footer > .left {
+    margin-top: 5px;
   }
   .contact {
     -webkit-box-orient: vertical;

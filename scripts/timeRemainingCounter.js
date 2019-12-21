@@ -5,7 +5,8 @@ const registrationDateEnd = new Date(2020, 02, 12).getTime();
 
 let now = new Date().getTime();
 
-const daysRemainedContent = '<span id="rDays" class="rNum"></span> dni ' +
+const daysRemainedContent = '<h1>Do Konferencji pozostało:</h1>' +
+  '<span id="rDays" class="rNum"></span> dni ' +
   '<span id="rHours" class="rNum"></span> godzin ' +
   '<span id="rMinutes" class="rNum"></span> minut ' +
   '<span id="rSeconds" class="rNum"></span> sekund ';
