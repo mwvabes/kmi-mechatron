@@ -102,7 +102,11 @@ section.information > *:not(:last-child) {
   margin-bottom: 40px;
 }
 
-.information section::after {
+.information section#quickContact {
+  margin-bottom: 20px;
+}
+
+.information section::after:not(:last-child) {
   content: '';
   position: absolute;
   left: 0;

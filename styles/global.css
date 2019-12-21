@@ -183,6 +183,9 @@ main > div {
         -ms-flex-align: start;
             align-items: flex-start;
   }
+  .quickContactLeft > .quickContactElement {
+    margin-right: 100px;
+  }
 }
 
 .dsNone {
@@ -212,9 +215,7 @@ main > div {
 
 #warning {
   font-size: .9rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   background-color: #ff173e;
   color: #ffffff;
   font-weight: bold;
@@ -310,6 +311,7 @@ section#contact > .title {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding: 25px 0px;
 }
 
 .contact a {
@@ -344,10 +346,9 @@ section#contact > .title {
 }
 
 .contactElement h1 {
-  font-size: .9em;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-size: 1.1em;
   position: relative;
+  margin-bottom: 10px;
 }
 
 .contactElement p {
@@ -426,6 +427,7 @@ section#contact > .title {
 
 .copyButton:hover {
   border-color: #003c81;
+  background-color: #0030b4;
 }
 
 .busStop {
@@ -438,7 +440,7 @@ section#contact > .title {
 }
 
 .busStop p {
-  font-size: .8rem;
+  font-size: .9rem;
 }
 
 .sectionTitle {
@@ -461,6 +463,107 @@ section#contact > .title {
   right: 0;
   width: 150px;
   background: #c7c7c7;
+}
+
+#quickContact {
+  background-color: #303030;
+  color: #FFF;
+  font-size: 1rem;
+  border-top: 4px solid #3f3f3f;
+  border-bottom: 4px solid #3f3f3f;
+}
+
+#quickContact a,
+#quickContact a i {
+  color: #FFF;
+  text-decoration: none;
+  -webkit-transition: color 175ms ease-in;
+  transition: color 175ms ease-in;
+}
+
+#quickContact a:hover i {
+  color: #67d4ff;
+}
+
+#quickContact > div {
+  max-width: 1260px;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 15px 10px;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.quickContactElement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#quickContact h4 {
+  font-size: .95em;
+  font-weight: bold;
+  color: inherit;
+}
+
+#quickContact p {
+  font-size: .95em;
+  color: inherit;
+}
+
+#quickContact .quickContactLeft a {
+  text-decoration: underline;
+}
+
+.quickContactRight {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.quickContactRight .quickContactElement {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.quickContactLeft,
+.quickContactRight {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.quickContactRight a {
+  font-size: .95em;
+  padding: 2px;
+  margin: 3px;
+  -webkit-transition: color 175 ease-in;
+  transition: color 175 ease-in;
 }
 
 .footer {
@@ -821,6 +924,36 @@ footer > * > * > p {
     margin-left: 0px;
     margin-right: 0px;
     width: 100%;
+  }
+  #quickContact > div,
+  .quickContactLeft {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .quickContactLeft,
+  .quickContactRight {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .quickContactRight {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .quickContactRight .quickContactElement:last-child {
+    margin-bottom: 0;
+  }
+  .quickContactRight .quickContactElement a:first-child {
+    margin-left: 0;
+  }
+  .quickContactElement {
+    margin-bottom: 20px;
+  }
+  .quickContactRight a {
+    font-size: 1.2em;
   }
 }
 

@@ -8,6 +8,7 @@ let now = new Date().getTime();
 const daysRemainedContent = '<h1>Do Konferencji pozostało:</h1>' +
   '<span id="rDays" class="rNum"></span> dni ' +
   '<span id="rHours" class="rNum"></span> godzin ' +
+  '<div class="numbersSplitter"></div>' +
   '<span id="rMinutes" class="rNum"></span> minut ' +
   '<span id="rSeconds" class="rNum"></span> sekund ';
 

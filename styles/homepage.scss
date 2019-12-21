@@ -47,14 +47,26 @@ section#partners,
 section#contact,
 section#scientificBoard,
 section#aboutUsInMedia,
-section#organiser {
+section#organiser,
+section#quickContact {
     overflow: hidden;
     margin-bottom: 20px;
 }
 
+.numbersSplitter {
+    display: none;
+    flex-basis: 100%;
+}
+
+@media screen and (max-width: 400px) {
+    .numbersSplitter {
+        display: flex;
+    }
+}
+
 .welcomeMessage {
     text-align: left;
-    padding: 15px 30px;
+    padding: 25px 30px;
 }
 
 .welcomeMessage h1 {

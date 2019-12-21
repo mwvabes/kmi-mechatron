@@ -198,6 +198,10 @@ main>div {
     align-items: flex-start;
   }
 
+  .quickContactLeft > .quickContactElement {
+    margin-right: 100px;
+  }
+
 }
 
 .dsNone {
@@ -224,7 +228,7 @@ main>div {
 
 #warning {
   font-size: .9rem;
-  display: flex;
+  display: none;
   background-color: $warningBgColor;
   color: $warningColor;
   font-weight: bold;
@@ -289,6 +293,7 @@ section#contact>.title {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
+  padding: 25px 0px;
 }
 
 .contact a {
@@ -314,10 +319,9 @@ section#contact>.title {
 }
 
 .contactElement h1 {
-  font-size: .9em;
-  font-weight: bold;
-  text-transform: uppercase;
+  font-size: 1.1em;
   position: relative;
+  margin-bottom: 10px;
 }
 
 .contactElement p {
@@ -387,6 +391,7 @@ section#contact>.title {
 
 .copyButton:hover {
   border-color: $actionButtonBorderColorHover;
+  background-color: #0030b4;
 }
 
 .busStop {
@@ -399,7 +404,7 @@ section#contact>.title {
 }
 
 .busStop p {
-  font-size: .8rem;
+  font-size: .9rem;
 }
 
 .sectionTitle {
@@ -422,6 +427,82 @@ section#contact>.title {
   right: 0;
   width: 150px;
   background: $greyBorder;
+}
+
+#quickContact {
+  background-color: #303030;
+  color: #FFF;
+  font-size: 1rem;
+  border-top: 4px solid #3f3f3f;
+  border-bottom: 4px solid #3f3f3f;
+}
+
+#quickContact a,
+#quickContact a i {
+  color: #FFF;
+  text-decoration: none;
+  transition: color 175ms ease-in;
+}
+
+#quickContact a:hover i {
+  color: #67d4ff;
+}
+
+#quickContact > div {
+  max-width: $maxWidth;
+  margin: 0px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 15px 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.quickContactElement {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#quickContact h4 {
+  font-size: .95em;
+  font-weight: bold;
+  color: inherit;
+}
+
+#quickContact p {
+  font-size: .95em;
+  color: inherit;
+}
+
+.quickContactLeft {
+}
+
+#quickContact .quickContactLeft a {
+  text-decoration: underline;
+}
+
+.quickContactRight {
+  justify-content: flex-end;
+}
+
+.quickContactRight .quickContactElement {
+  flex-direction: row;
+}
+
+.quickContactLeft,
+.quickContactRight {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.quickContactRight a {
+  font-size: .95em;
+  padding: 2px;
+  margin: 3px;
+  transition: color 175 ease-in;
 }
 
 $FCol1: #006e6e;
@@ -470,8 +551,6 @@ $FCol2: #ff16e0;
 .footer .left a:hover {
   color: #67d4ff;
 }
-
-
 
 footer>div {
   color: $footerColor;
@@ -713,6 +792,36 @@ footer>*>*>p {
     width: 100%;
   }
 
+  #quickContact > div,
+  .quickContactLeft {
+    flex-direction: column;
+  }
+
+  .quickContactLeft,
+  .quickContactRight {
+    align-items: flex-start;
+  }
+
+  .quickContactRight {
+    justify-content: flex-start;
+  }
+
+  .quickContactRight .quickContactElement:last-child {
+    margin-bottom: 0;
+  }
+
+  .quickContactRight .quickContactElement a:first-child {
+    margin-left: 0;
+  }
+
+  .quickContactElement {
+    margin-bottom: 20px;
+  }
+
+  .quickContactRight a {
+    font-size: 1.2em;
+  }
+
 }
 
 #takeMeUpNav {
@@ -749,3 +858,5 @@ footer>*>*>p {
     color: #67d4ff;
   }
 }
+
+
