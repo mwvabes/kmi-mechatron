@@ -481,6 +481,10 @@ section#contact > .title {
   transition: color 175ms ease-in;
 }
 
+#quickContact a:hover {
+  color: #b3b3b3;
+}
+
 #quickContact a:hover i {
   color: #67d4ff;
 }
