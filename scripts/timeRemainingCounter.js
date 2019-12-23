@@ -1,6 +1,6 @@
 //Settings
-const eventStartDate = new Date(2020, 02, 02, 12, 0, 0).getTime();
-const eventEndDate = new Date(2020, 02, 20, 15, 28, 10).getTime();
+const eventStartDate = new Date(2020, 04, 27, 9, 0, 0).getTime();
+const eventEndDate = new Date(2020, 04, 28, 15, 28, 10).getTime();
 const registrationDateEnd = new Date(2020, 02, 12).getTime();
 
 let now = new Date().getTime();
