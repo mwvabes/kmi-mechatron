@@ -370,12 +370,11 @@ section#quickContact {
 }
 
 .competeActionContainer > a {
-  margin-top: 2px;
   color: #eee;
   font-size: 1rem;
   -webkit-transition: color 200ms ease-in-out;
   transition: color 200ms ease-in-out;
-  padding: 5px;
+  padding: 2px 0px 5px;
 }
 
 .competeActionContainer > a:hover {
@@ -873,5 +872,10 @@ h1.conferenceState {
 
 p.conferenceState {
   font-size: 1rem;
+}
+
+.timeRemainingToParticipate {
+  font-size: .75em;
+  color: #d4d4d4;
 }
 /*# sourceMappingURL=homepage.css.map */
