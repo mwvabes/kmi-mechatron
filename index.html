@@ -21,9 +21,6 @@
   <title>Konkurs i Konferencja Młodych Inżynierów</title>
 
   <script src="https://kit.fontawesome.com/7f492f3a8a.js" crossorigin="anonymous" async></script>
-
-  <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
-
 </head>
 
 <body>
@@ -42,11 +39,11 @@
       if (d.getElementById(id)) return;
       js = d.createElement(s);
       js.id = id;
-      js.src = 'https://connect.facebook.net/pl_PL/sdk/xfbml.customerchat.js';
+      js.src =
+        'https://connect.facebook.net/pl_PL/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
   </script>
-
 
   <!-- Your customer chat code -->
   <div class="fb-customerchat" page_id="315637235646012">
