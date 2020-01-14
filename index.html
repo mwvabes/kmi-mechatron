@@ -21,10 +21,33 @@
   <title>Konkurs i Konferencja Młodych Inżynierów</title>
 
   <script src="https://kit.fontawesome.com/7f492f3a8a.js" crossorigin="anonymous" async></script>
-
 </head>
 
 <body>
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v5.0'
+      });
+    };
+
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src =
+        'https://connect.facebook.net/pl_PL/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <!-- Your customer chat code -->
+  <div class="fb-customerchat" page_id="631487323851690">
+  </div>
 
   <header>
     <nav>
@@ -67,7 +90,7 @@
           <div class="welcomeContainer">
             <div class="left">
               <div class="timeRemainingContainer" id="timeRemainingContainer">
-                
+
               </div>
               <div class="categoriesInfoContainer">
                 <h1>Edycja Konkursu w 2020 roku rozgrywa się w dwóch kategoriach:</h1>
@@ -117,7 +140,7 @@
       <div>
         <div class="title">
           <h1 class="sectionTitle">O Konferencji</h1>
- 
+
         </div>
         <p>Konferencja skierowana jest do studentów i doktorantów kierunków technicznych z całej Polski.</p>
         <p>Jej celem jest przedstawienie oraz zapoznanie się z pracami i osiągnięciami badawczymi młodych inżynierów z
@@ -208,7 +231,7 @@
       <div class="aboutUsInMediaContainer">
         <div class="title">
           <h1 class="sectionTitle">Konferencja w mediach</h1>
- 
+
         </div>
         <div class="aboutIMElements">
           <a href="https://youtu.be/NGRYiAGQHfI" class="aboutIMElementAnchor">
@@ -299,7 +322,7 @@
       <section id="scientificBoard">
         <div class="title">
           <h1 class="sectionTitle">Rada Naukowa</h1>
- 
+
         </div>
         <!-- <div id="mainBoard" class="board">
           <div class="person mainBoard">
@@ -367,7 +390,7 @@
     <section id="partners">
       <div class="title">
         <h1 class="sectionTitle">Partnerzy</h1>
- 
+
       </div>
       <div class="partnersSection">
         <h2>Organizatorzy</h2>
@@ -413,14 +436,22 @@
     <section id="quickContact">
       <div>
         <div class="quickContactLeft">
-          <div class="quickContactElement"><h4>Napisz do nas</h4><p>mlodzikonferencja@urz.pl</p></div>
-          <div class="quickContactElement"><h4>Polub nas</h4><p>na <a href="https://www.facebook.com/URmechatron/" target="_blank">facebooku!</a></p></div>
+          <div class="quickContactElement">
+            <h4>Napisz do nas</h4>
+            <p>mlodzikonferencja@urz.pl</p>
+          </div>
+          <div class="quickContactElement">
+            <h4>Polub nas</h4>
+            <p>na <a href="https://www.facebook.com/URmechatron/" target="_blank">facebooku!</a></p>
+          </div>
         </div>
         <div class="quickContactRight">
           <div class="quickContactElement">
             <a href="https://www.facebook.com/URmechatron/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-            <a href="https://www.youtube.com/channel/UCwe4A9Hjio8zK9gd5aSkByQ" target="_blank"><i class="fab fa-youtube-square"></i></a>
-            <a href="https://www.facebook.com/events/1950488678363301/" target="_blank"><i class="fas fa-calendar-check"></i></a>
+            <a href="https://www.youtube.com/channel/UCwe4A9Hjio8zK9gd5aSkByQ" target="_blank"><i
+                class="fab fa-youtube-square"></i></a>
+            <a href="https://www.facebook.com/events/1950488678363301/" target="_blank"><i
+                class="fas fa-calendar-check"></i></a>
             <a href="./index.html"><i class="fas fa-globe"></i></a>
             <a href="./przewodnik2020.html" target="_blank"><i class="fas fa-info-circle"></i></a>
             <a href="https://goo.gl/maps/LrYksJsvqrWZQkcMA" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
