@@ -829,7 +829,7 @@ footer>*>*>p {
 }
 
 #takeMeUpNav {
-  display: none;
+  display: none !important;
 }
 
 .takeMeUp {
@@ -837,6 +837,10 @@ footer>*>*>p {
 }
 
 @media screen and (min-width: 1390px) {
+  #takeMeUpNav {
+    display: flex;
+  }
+
   .takeMeUp {
     opacity: 0;
     display: flex;
