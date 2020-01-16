@@ -351,8 +351,14 @@ section#contact > .title {
   margin-bottom: 10px;
 }
 
+.contactElement h2 {
+  font-size: .95em;
+  font-weight: bold;
+  color: inherit;
+}
+
 .contactElement p {
-  font-size: .9em;
+  font-size: .95em;
 }
 
 .routePlannerButton {
@@ -961,19 +967,17 @@ footer > * > * > p {
   }
 }
 
-#takeMeUpNav {
-  display: none !important;
-}
-
-.takeMeUp {
-  display: none;
+@media screen and (max-width: 1389px) {
+  #takeMeUpNav {
+    display: none !important;
+  }
 }
 
 @media screen and (min-width: 1390px) {
   #takeMeUpNav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
   }
   .takeMeUp {
     opacity: 0;
