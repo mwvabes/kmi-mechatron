@@ -42,6 +42,7 @@ body {
     color: #FFF;
 }
 
+section#winners,
 section#aboutConference,
 section#partners,
 section#contact,
@@ -136,6 +137,7 @@ section#quickContact {
 
 .numElement {
     border: 1px solid $greyBorder;
+    border-bottom: 4px solid #262ca1;
     margin: 5px;
     padding: 5px;
     display: flex;
@@ -252,24 +254,53 @@ section#quickContact {
     justify-content: center;
 }
 
+.competeActionButtonSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.competeActionButtons span {
+    padding: 5px;
+}
+
+.competeActionButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.competeActionButtonSectionSpan {
+    padding: 5px 20px;
+}
+
 .competeActionContainer {
-    padding: 25px 60px;
+    padding: 25px 20px;
     background-color: $alphaBackground;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
+}
+
+.competeActionContainer h1 {
+    font-size: 40px;
 }
 
 .competeActionContainer button {
-    padding: 25px 60px;
+    min-width: 240px;
+    padding: 20px 40px;
     background-color: $actionButtonBgColor;
     color: $actionButtonColor;
     border: 4px solid $actionButtonBorderColor;
     border-radius: 0;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 1rem;
     transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, background-image 170ms ease-in-out;
     text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     background-image: url(/img/zig-blue.png);
@@ -644,9 +675,109 @@ ul.partners>li:hover {
     opacity: 1;
 }
 
+h1.conferenceState {
+    color: #00eeff;
+}
+
+p.conferenceState {
+    font-size: 1rem;
+}
+
+.timeRemainingToParticipate {
+    font-size: .75em;
+    color: #d4d4d4;
+}
+
+.timeRemainingToParticipate .dateRemaining {
+    text-decoration: underline;
+}
+
+#winners {
+    background-color: #002a61;
+    background: url(/img/zig-dark.png);
+}
+
+.winnersYearSection {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.prizes {
+    padding: 20px;
+    color: #FFF;
+    background-color: #002a61;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    // border-top: 4px solid #667eea;
+    // border-bottom: 4px solid #667eea;
+}
+
+.prizesSub {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.prize {
+    margin: 15px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
+    background-color: rgba(68, 143, 212, 0.3);
+    //border-radius: 15px;
+    border-bottom: 4px solid $blue;
+}
+
+.yearSectionTitle {
+    color: #2f81b8;
+    font-weight: bold;
+    text-shadow: 0px 0px 30px rgba(0, 195, 255, 0.3);
+    text-align: center;
+}
+
+.prizesSubtitle {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.prizeValue {
+    color: #00eeff;
+    font-size: .8rem;
+}
+
+.prizePlace {
+    padding: 5px;
+    color: #e7e7e7;
+    font-size: .8rem;
+}
+
 @media screen and (min-width: 1261px) {
     #welcome {
         flex-direction: row;
+    }
+
+    .yearSectionTitle {
+        font-size: 100px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .prizes {
+        position: relative;
+        top: -55px;
+        left: 0;
+        right: 0;
     }
 }
 
@@ -661,17 +792,15 @@ ul.partners>li:hover {
     .timeUpContainer {
         padding: 15px 0px;
     }
-}
 
-h1.conferenceState {
-    color: #00eeff;
-}
+    .yearSectionTitle {
+        margin-top: 30px;
+        font-size: 3rem;
+        background-color: rgba(0, 119, 255, 0.3);
+    }
 
-p.conferenceState {
-    font-size: 1rem;
-}
+    .prizesSubtitle {
+        margin-top: 5px;
+    }
 
-.timeRemainingToParticipate {
-    font-size: .75em;
-    color: #d4d4d4;
 }
