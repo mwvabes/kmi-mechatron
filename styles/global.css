@@ -753,6 +753,9 @@ footer > * > * > p {
 }
 
 @media screen and (max-width: 1260px) {
+  .mobileHide {
+    display: none;
+  }
   .takeMeUp {
     display: none !important;
   }
@@ -791,6 +794,10 @@ footer > * > * > p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .spanMobileMain {
+    font-size: .8rem;
+    text-align: right;
   }
   .navToggleLabel > span {
     display: block;

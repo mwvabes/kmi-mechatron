@@ -54,12 +54,12 @@
       <input type="checkbox" id="navToggle" class="navToggle dsNone">
       <div class="navToggleContainer">
         <label for="navToggle" class="navToggleLabel"><span></span></label>
-        <span><a href="./index.html">KMI</a></span>
+        <span class="spanMobileMain"><a href="#">OGÓLNOPOLSKA KONFERENCJA NAUKOWA <br> MŁODYCH INŻYNIERÓW</a></span>
       </div>
       <ul>
         <li class="iconLink"><a href="/index.html"><i class="fas fa-home"></i></a></li>
         <li><a href="/przewodnik2020.html">Konferencja 2020</a></li>
-        <li><a href="/konferencja2019.html">Konferencja 2019</a></li>
+        <li><a href="#zwyciezcy" id="winnersNav" data-target-id="winners">Zwycięzcy</a></li>
         <li><a href="#o-nas" id="aboutConferenceNav" data-target-id="aboutConference">O nas</a></li>
         <li><a href="#komitet-organizacyjny" id="organiserNav" data-target-id="organiser">Komitet Organizacyjny</a></li>
         <li><a href="#w-mediach" id="aboutUsInMediaNav" data-target-id="aboutUsInMedia">Konferencja w mediach</a></li>
@@ -84,7 +84,7 @@
       <section id="welcome" class="container">
         <div>
           <div class="welcomeMessage">
-            <h1>OGÓLNOPOLSKA KONFERENCJA NAUKOWA MŁODYCH INŻYNIERÓW <br /> Przy obchodach Światowych Dni Telekomunikacji
+            <h1><span class="mobileHide">OGÓLNOPOLSKA KONFERENCJA NAUKOWA MŁODYCH INŻYNIERÓW <br /> </span>Przy obchodach Światowych Dni Telekomunikacji
               i Społeczeństwa Informacyjnego </h1>
           </div>
           <div class="welcomeContainer">
@@ -103,10 +103,30 @@
             <div class="right">
               <div class="competeActionContainer">
                 <h1>Masz ciekawy projekt?</h1>
-                <a href="/przewodnik2020.html"><button>Weź udział</button></a>
+                <div class="competeActionButtons">
+                  <div class="competeActionButtonSection">
+                    <a href="/przewodnik2020.html"><button>Zgłoś prezentację</button></a>
+                    <p class="timeRemainingToParticipate">Zgłoszenia przyjmujemy do<span class="dateRemaining">28 kwietnia 2020 r.</span></p>
+                    <p class="timeRemainingToParticipate">Prace należy przesłać do<span class="dateRemaining">4 maja
+                        2020 r.</span>
+                  </div>
+                  <!-- <div class="competeActionButtonSection competeActionButtonSectionSpan">
+                    <span>albo</span>
+                  </div> -->
+                  <div class="competeActionButtonSection">
+                    <a href="/przewodnik2020.html"><button>Zgłoś projekt</button></a>
+                  </div>
+
+                </div>
+                <a href="!">: Regulamin :</a>
+
+              </div>
+              <!-- <div class="competeActionContainer competeActionContainerSecond">
+                <h1>Chcesz zgłosić swój udział w konferencji?</h1>
+                <a href="/przewodnik2020.html"><button>Zgłoś się</button></a>
                 <a href="!">: Regulamin :</a>
                 <p class="timeRemainingToParticipate">Zgłoszenia przyjmujemy do 28 kwietnia 2020 r.</p>
-              </div>
+              </div> -->
             </div>
           </div>
           <div></div>
@@ -134,6 +154,127 @@
               class="inNumbersTitle">Partnerów</span></div>
         </div>
       </section>
+    </section>
+
+    <section id="winners">
+      <h1 class="sectionTitle">Zwycięzcy poprzednich edycji</h1>
+
+      <!-- SECTION 2019 -->
+      <div class="winnersYearSection">
+        <h2 class="yearSectionTitle">III EDYCJA - MAJ 2019</h2>
+
+        <div class="prizes">
+          <h3 class="prizesSubtitle"></h3>
+          <div class="prizesSub">
+            <div class="prize">
+              <h4 class="prizeProjectName">Algorytm detekcji mimiki twarzy</h4>
+              <p class="prizeValue">Nagroda: 2000 PLN</p>
+              <p class="prizePlace">W kategorii <strong>Projekt IT</strong></p>
+            </div>
+  
+            <div class="prize">
+              <h4 class="prizeProjectName">WiredLine</h4>
+              <p class="prizeValue">Nagroda: 2000 PLN</p>
+              <p class="prizePlace">W kategorii <strong>Projekt Wykonany</strong></p>
+            </div>
+
+            <div class="prize">
+              <h4 class="prizeProjectName">Innowacyjny projekt traktora</h4>
+              <p class="prizeValue">Nagroda: 2500 PLN</p>
+              <p class="prizePlace">W kategorii <strong>Projekt CAD/CAM</strong></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- SECTION 2019 -->
+
+      <!-- SECTION 2018 DECEMBER-->
+      <div class="winnersYearSection">
+        <h2 class="yearSectionTitle">II EDYCJA - GRUDZIEŃ 2018</h2>
+
+        <div class="prizes">
+          <h3 class="prizesSubtitle"></h3>
+          <div class="prizesSub">
+            <div class="prize">
+              <h4 class="prizeProjectName">Stacja meteorologiczna na platformie Raspberry PI</h4>
+              <p class="prizeValue">Nagroda: Samsung Galaxy Watch</p>
+              <p class="prizePlace"><strong>I MIEJSCE</strong></p>
+            </div>
+  
+            <div class="prize">
+              <h4 class="prizeProjectName">Aplikacja umożliwiająca wizualizację ochrony odgromowej przy użyciu metody toczącej się kuli</h4>
+              <p class="prizeValue">Nagroda: Samsung Gear 360</p>
+              <p class="prizePlace"><strong>II MIEJSCE</strong></p>
+            </div>
+
+            <div class="prize">
+              <h4 class="prizeProjectName">Insudi - kalkulator insuliny</h4>
+              <p class="prizeValue">Nagroda: Samsung Level Box mini</p>
+              <p class="prizePlace"><strong>III MIEJSCE</strong> ex aequo</p>
+            </div>
+
+            <div class="prize">
+              <h4 class="prizeProjectName">Projekt gry mobilnej "ranDungeon"</h4>
+              <p class="prizeValue">Nagroda: Samsung Level Box mini</p>
+              <p class="prizePlace"><strong>III MIEJSCE</strong> ex aequo</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- SECTION 2018 DECEMBER-->
+      
+      <!-- SECTION 2018 MAY-->
+      <div class="winnersYearSection">
+        <h2 class="yearSectionTitle">I EDYCJA - MAJ 2018</h2>
+
+        <div class="prizes">
+          <h3 class="prizesSubtitle">W kategorii <strong>Projekt Wykonany:</strong></h3>
+          <div class="prizesSub">
+            <div class="prize">
+              <h4 class="prizeProjectName">"Domowe Centrum Recyklingu i Obróbki Tworzyw Sztucznych" oraz "Fuzor - reaktor syntezy termojądrowej"</h4>
+              <p class="prizeValue">Nagroda: 2000 PLN</p>
+              <p class="prizePlace"><strong>I MIEJSCE</strong> ex aequo</p>
+            </div>
+  
+            <div class="prize">
+              <h4 class="prizeProjectName">Przemysłowy robot pneumatyczny</h4>
+              <p class="prizeValue">Nagroda: Tablet firmy Samsung</p>
+              <p class="prizePlace"><strong>I MIEJSCE</strong> ex aequo</p>
+            </div>
+
+            <div class="prize">
+              <h4 class="prizeProjectName">Gra komputerowa: Tree of Life Tower Defence</h4>
+              <p class="prizeValue">Nagroda: Tablet firmy Samsung</p>
+              <p class="prizePlace"><strong>II MIEJSCE</strong></p>
+            </div>
+
+            <div class="prize">
+              <h4 class="prizeProjectName">Jednoosiowy Robot Rozpoznawczy</h4>
+              <p class="prizeValue">Nagroda: Samsung Level Box mini</p>
+              <p class="prizePlace"><strong>III MIEJSCE</strong></p>
+            </div>
+          </div>
+          <h3 class="prizesSubtitle">W kategorii <strong>Projekt CAD/CAM:</strong></h3>
+          <div class="prizesSub">
+            <div class="prize">
+              <h4 class="prizeProjectName">Wizualizacja silnika benzynowego 1,6l 16v</h4>
+              <p class="prizeValue">Nagroda: Tablet firmy Samsung</p>
+              <p class="prizePlace"><strong>I MIEJSCE</strong></p>
+            </div>
+
+            <div class="prize">
+              <h4 class="prizeProjectName">ManualGearBox</h4>
+              <p class="prizeValue">Nagroda: Samsung Level Box mini</p>
+              <p class="prizePlace"><strong>II MIEJSCE</strong></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- SECTION 2018 MAY-->
+
     </section>
 
     <section id="aboutConference">
@@ -170,59 +311,30 @@
         <div class="board">
           <div class="person primeBoard">
             <p class="personTitle"></p>
-            <p class="name">inż. Piotr Prach</p>
-            <p class="academy">Uniwersytet Rzeszowski, SEP Rzeszów, PTI Oddział Rzeszowski</p>
-          </div>
-          <div class="person primeBoard">
-            <p class="personTitle"></p>
-            <p class="name">Ryszard Ruchaj</p>
-            <p class="academy">Uniwersytet Rzeszowski, SEP Rzeszów</p>
-          </div>
-          <div class="person primeBoard">
-            <p class="personTitle"></p>
-            <p class="name">dr inż. Marek Bolanowski</p>
-            <p class="academy">PTI Oddział Rzeszowski, Politechnika Rzeszowska</p>
-          </div>
-          <div class="person primeBoard">
-            <p class="personTitle"></p>
-            <p class="name">dr inż. Andrzej Paszkiewicz</p>
-            <p class="academy">PTI Oddział Rzeszowski, Politechnika Rzeszowska</p>
-          </div>
-          <div class="person primeBoard">
-            <p class="personTitle"></p>
-            <p class="name">dr hab. inż. Lucyna Leniowska, prof. UR</p>
+            <p class="name">mgr inż. Piotr Prach</p>
             <p class="academy">Uniwersytet Rzeszowski</p>
           </div>
           <div class="person primeBoard">
             <p class="personTitle"></p>
-            <p class="name">Dominik Potyrała</p>
-            <p class="academy">Uniwersytet Rzeszowski, SEP Rzeszów</p>
+            <p class="name">Ryszard Ruchaj</p>
+            <p class="academy">Uniwersytet Rzeszowski</p>
+          </div>
+          <div class="person primeBoard">
+            <p class="personTitle">PTI Oddział Rzeszów</p>
+            <p class="name">dr inż. Marek Bolanowski</p>
+            <p class="academy">Politechnika Rzeszowska</p>
+          </div>
+          <div class="person primeBoard">
+            <p class="personTitle">PTI Oddział Rzeszów</p>
+            <p class="name">dr inż. Andrzej Paszkiewicz</p>
+            <p class="academy">Politechnika Rzeszowska</p>
           </div>
           <div class="person primeBoard">
             <p class="personTitle"></p>
-            <p class="name">Artur Pilch</p>
-            <p class="academy">Uniwersytet Rzeszowski, SEP Rzeszów</p>
+            <p class="name">Jakub Cyrnek</p>
+            <p class="academy">Uniwersytet Rzeszowski</p>
           </div>
-          <div class="person primeBoard">
-            <p class="personTitle"></p>
-            <p class="name">Filip Rebizant</p>
-            <p class="academy">Uniwersytet Rzeszowski, PTI Oddział Rzeszowski</p>
-          </div>
-          <div class="person primeBoard">
-            <p class="personTitle"></p>
-            <p class="name">Marta Łukasik</p>
-            <p class="academy">Uniwersytet Rzeszowski, SEP Rzeszów</p>
-          </div>
-          <div class="person primeBoard">
-            <p class="personTitle"></p>
-            <p class="name">Konrad Trzeciak</p>
-            <p class="academy">Uniwersytet Rzeszowski, SEP Rzeszów</p>
-          </div>
-          <div class="person primeBoard">
-            <p class="personTitle"></p>
-            <p class="name">Paweł Śliwa</p>
-            <p class="academy">Uniwersytet Rzeszowski, SEP Rzeszów, PTI Oddział Rzeszowski</p>
-          </div>
+
         </div>
       </section>
     </div>
@@ -359,7 +471,7 @@
           </div>
           <div class="person primeBoard">
             <p class="personTitle"></p>
-            <p class="name">Piotr Prach</p>
+            <p class="name">mgr inż. Piotr Prach</p>
             <p class="academy">Uniwersytet Rzeszowski</p>
           </div>
           <div class="basis100"></div>
@@ -395,55 +507,80 @@
       <div class="partnersSection">
         <h2>Organizatorzy</h2>
         <ul class="partners">
-          <li><a href="http://www.mechatron.ur.edu.pl/" target="_blank"><img src="/logos/organizers/logo-mechatron.png" title="Koło Naukowe MECHATRON"></a></li>
-          <li><a href="http://www.rzeszow.pti.org.pl/" target="_blank"><img src="/logos/organizers/logo-ptirzeszow.png" title="PTI oddział Rzeszowski"></a></li>
-          <li><a href="http://www.seprzeszow.pl/" target="_blank"><img src="/logos/organizers/logo-sep.png" title="SEP oddział Rzeszowski"></a></li>
+          <li><a href="http://www.mechatron.ur.edu.pl/" target="_blank"><img src="/logos/organizers/logo-mechatron.png"
+                title="Koło Naukowe MECHATRON"></a></li>
+          <li><a href="http://www.rzeszow.pti.org.pl/" target="_blank"><img src="/logos/organizers/logo-ptirzeszow.png"
+                title="PTI oddział Rzeszowski"></a></li>
+          <li><a href="http://www.seprzeszow.pl/" target="_blank"><img src="/logos/organizers/logo-sep.png"
+                title="SEP oddział Rzeszowski"></a></li>
         </ul>
       </div>
       <div class="partnersSection">
         <h2>Patronat Honorowy</h2>
         <ul class="partners">
-          <li><a href="https://www.gov.pl/web/cyfryzacja" target="_blank"><img src="/logos/honorary/logo-ministerstwocyfryzacji.png" title="Ministerstwo Cyfryzacji"></a></li>
+          <li><a href="https://www.gov.pl/web/cyfryzacja" target="_blank"><img
+                src="/logos/honorary/logo-ministerstwocyfryzacji.png" title="Ministerstwo Cyfryzacji"></a></li>
         </ul>
       </div>
       <div class="partnersSection">
         <h2>Patronat Akademicki</h2>
         <ul class="partners">
-          <li><a href="https://w.prz.edu.pl/" target="_blank"><img src="/logos/academies/logo-prz.png" title="Politechnika Rzeszowska"></a></li>
-          <li><a href="http://www.ur.edu.pl/" target="_blank"><img src="/logos/academies/logo-urz.png" title="Uniwersytet Rzeszowski"></a></li>
-          <li><a href="https://wsiz.rzeszow.pl/" target="_blank"><img src="/logos/academies/logo-wsiiz.png" title="Wyższa Szkoła Informatyki i Zarządzania w Rzeszowie"></a></li>
+          <li><a href="https://w.prz.edu.pl/" target="_blank"><img src="/logos/academies/logo-prz.png"
+                title="Politechnika Rzeszowska"></a></li>
+          <li><a href="http://www.ur.edu.pl/" target="_blank"><img src="/logos/academies/logo-urz.png"
+                title="Uniwersytet Rzeszowski"></a></li>
+          <li><a href="https://wsiz.rzeszow.pl/" target="_blank"><img src="/logos/academies/logo-wsiiz.png"
+                title="Wyższa Szkoła Informatyki i Zarządzania w Rzeszowie"></a></li>
         </ul>
       </div>
       <div class="partnersSection">
         <h2>Patroni</h2>
         <ul class="partners">
-          <li><a href="https://podkarpackie.pl/" target="_blank"><img src="/logos/patrons/logo-marszalekwojpodkarpackiego.png" title="Marszałek Województwa Podkarpackiego"></a></li>
-          <li><a href="https://www.enot.pl/" target="_blank"><img src="/logos/patrons/logo-not.png" title="Naczelna Organizacja Techniczna"></a></li>
-          <li><a href="http://www.rzeszow.pl/" target="_blank"><img src="/logos/patrons/logo-prezydentmiastarzeszowa.png" title="Prezydent Miasta Rzeszowa"></a></li>
-          <li><a href="https://rzeszow.uw.gov.pl/" target="_blank"><img src="/logos/patrons/logo-podkarpackiurzadwojewodzki.png" title="Wojewoda Podkarpacki"></a></li>
+          <li><a href="https://podkarpackie.pl/" target="_blank"><img
+                src="/logos/patrons/logo-marszalekwojpodkarpackiego.png"
+                title="Marszałek Województwa Podkarpackiego"></a></li>
+          <li><a href="https://www.enot.pl/" target="_blank"><img src="/logos/patrons/logo-not.png"
+                title="Naczelna Organizacja Techniczna"></a></li>
+          <li><a href="http://www.rzeszow.pl/" target="_blank"><img
+                src="/logos/patrons/logo-prezydentmiastarzeszowa.png" title="Prezydent Miasta Rzeszowa"></a></li>
+          <li><a href="https://rzeszow.uw.gov.pl/" target="_blank"><img
+                src="/logos/patrons/logo-podkarpackiurzadwojewodzki.png" title="Wojewoda Podkarpacki"></a></li>
         </ul>
       </div>
       <div class="partnersSection">
         <h2>Patroni Medialni</h2>
         <ul class="partners">
-          <li><a href="http://feniks.fm/" target="_blank"><img src="/logos/media/logo-feniksfm.png" title="Feniks.fm"></a></li>
-          <li><a href="https://forbot.pl/blog/" target="_blank"><img src="/logos/media/logo-forbot.png" title="Forbot"></a></li>
-          <li><a href="https://www.facebook.com/INDEKS.TV/" target="_blank"><img src="/logos/media/logo-indekstv.png" title="IndeksTV"></a></li>
-          <li><a href="http://studenturatv.pl/" target="_blank"><img src="/logos/media/logo-studentura.png" title="StudentURa"></a></li>
-          <li><a href="https://rzeszow.tvp.pl/" target="_blank"><img src="/logos/media/logo-tvp3rzeszow.png" title="TVP Rzeszów"></a></li>
+          <li><a href="http://feniks.fm/" target="_blank"><img src="/logos/media/logo-feniksfm.png"
+                title="Feniks.fm"></a></li>
+          <li><a href="https://forbot.pl/blog/" target="_blank"><img src="/logos/media/logo-forbot.png"
+                title="Forbot"></a></li>
+          <li><a href="https://www.facebook.com/INDEKS.TV/" target="_blank"><img src="/logos/media/logo-indekstv.png"
+                title="IndeksTV"></a></li>
+          <li><a href="http://studenturatv.pl/" target="_blank"><img src="/logos/media/logo-studentura.png"
+                title="StudentURa"></a></li>
+          <li><a href="https://rzeszow.tvp.pl/" target="_blank"><img src="/logos/media/logo-tvp3rzeszow.png"
+                title="TVP Rzeszów"></a></li>
         </ul>
       </div>
       <div class="partnersSection">
         <h2>Partnerzy</h2>
         <ul class="partners">
-          <li><a href="http://axtoneglobal.com/?lang=pl" target="_blank"><img src="/logos/partners/logo-axtone.png" title="Axtone"></a></li>
-          <li><a href="https://www.borgwarner.com/home" target="_blank"><img src="/logos/partners/logo-borgwarner.png" title="BorgWarner"></a></li>
-          <li><a href="https://botland.com.pl/pl/" target="_blank"><img src="/logos/partners/logo-botland.png" title="Botland"></a></li>
-          <li><a href="https://fim.edu.pl/" target="_blank"><img src="/logos/partners/logo-fmi.png" title="Fundacja Inicjatyw Młodzieżowych"></a></li>
-          <li><a href="http://www.pcinn.org/" target="_blank"><img src="/logos/partners/logo-pci.png" title="Podkarpackie Centrum Innowacji"></a></li>
-          <li><a href="https://startupinkubator.pl/" target="_blank"><img src="/logos/partners/logo-samsunginkubator.png" title="Samsung Inkubator"></a></li>
-          <li><a href="https://www.softsystem.pl/pl/" target="_blank"><img src="/logos/partners/logo-softsystem.png" title="SoftSystem"></a></li>
-          <li><a href="https://www.facebook.com/WiredTeam/" target="_blank"><img src="/logos/partners/logo-wiredteam.png" title="WiredTeam"></a></li>
+          <li><a href="http://axtoneglobal.com/?lang=pl" target="_blank"><img src="/logos/partners/logo-axtone.png"
+                title="Axtone"></a></li>
+          <li><a href="https://www.borgwarner.com/home" target="_blank"><img src="/logos/partners/logo-borgwarner.png"
+                title="BorgWarner"></a></li>
+          <li><a href="https://botland.com.pl/pl/" target="_blank"><img src="/logos/partners/logo-botland.png"
+                title="Botland"></a></li>
+          <li><a href="https://fim.edu.pl/" target="_blank"><img src="/logos/partners/logo-fmi.png"
+                title="Fundacja Inicjatyw Młodzieżowych"></a></li>
+          <li><a href="http://www.pcinn.org/" target="_blank"><img src="/logos/partners/logo-pci.png"
+                title="Podkarpackie Centrum Innowacji"></a></li>
+          <li><a href="https://startupinkubator.pl/" target="_blank"><img
+                src="/logos/partners/logo-samsunginkubator.png" title="Samsung Inkubator"></a></li>
+          <li><a href="https://www.softsystem.pl/pl/" target="_blank"><img src="/logos/partners/logo-softsystem.png"
+                title="SoftSystem"></a></li>
+          <li><a href="https://www.facebook.com/WiredTeam/" target="_blank"><img
+                src="/logos/partners/logo-wiredteam.png" title="WiredTeam"></a></li>
         </ul>
       </div>
     </section>
@@ -501,16 +638,16 @@
             <div id="contactEmails" class="contactElement">
               <h2>E-mail</h2>
               <ul>
-              <ul>
-                <li>
-                  <p>mlodzikonferencja@urz.pl</p><button id="copyEmailMlodziKonferencja" class="copyButton">Kopiuj
-                    e-mail</button>
-                </li>
-                <li>
-                  <p>mlodzikonkurs@urz.pl</p><button id="copyEmailMlodziKonkurs" class="copyButton">Kopiuj
-                    e-mail</button>
-                </li>
-              </ul>
+                <ul>
+                  <li>
+                    <p>mlodzikonferencja@urz.pl</p><button id="copyEmailMlodziKonferencja" class="copyButton">Kopiuj
+                      e-mail</button>
+                  </li>
+                  <li>
+                    <p>mlodzikonkurs@urz.pl</p><button id="copyEmailMlodziKonkurs" class="copyButton">Kopiuj
+                      e-mail</button>
+                  </li>
+                </ul>
             </div>
             <div id="busLines" class="contactElement">
               <h2>Linie autobusowe</h2>

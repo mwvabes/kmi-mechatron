@@ -641,6 +641,10 @@ footer>*>*>p {
 
 @media screen and (max-width: 1260px) {
 
+  .mobileHide {
+    display: none;
+  }
+
   .takeMeUp {
     display: none !important;
   }
@@ -671,6 +675,11 @@ footer>*>*>p {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+  }
+
+  .spanMobileMain {
+    font-size: .8rem;
+    text-align: right;
   }
 
   .navToggleLabel > span {

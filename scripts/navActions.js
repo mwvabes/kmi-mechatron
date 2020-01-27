@@ -10,7 +10,7 @@ for (const item of navItems) {
   });
 }
 
-let navs = ["aboutConferenceNav", "scientificBoardNav", "organiserNav", "partnersNav", "aboutUsInMediaNav", "contactNav"];
+let navs = ["winnersNav", "aboutConferenceNav", "scientificBoardNav", "organiserNav", "partnersNav", "aboutUsInMediaNav", "contactNav"];
 
 for (const nav of navs) {
   document.getElementById(nav).addEventListener("click", function () {
