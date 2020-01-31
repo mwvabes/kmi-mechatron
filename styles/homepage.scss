@@ -793,6 +793,10 @@ p.conferenceState {
     border-bottom: 4px solid $blue;
 }
 
+.prize h4 {
+    font-size: 1rem;
+}
+
 .yearSectionTitle {
     color: #2f81b8;
     font-weight: bold;
@@ -826,14 +830,15 @@ p.conferenceState {
     }
 
     .yearSectionTitle {
-        font-size: 100px;
+        font-size: 80px;
         position: relative;
         z-index: 2;
+        letter-spacing: 15px;
     }
 
     .prizes {
         position: relative;
-        top: -55px;
+        top: -47px;
         left: 0;
         right: 0;
     }
@@ -859,6 +864,10 @@ p.conferenceState {
 
     .prizesSubtitle {
         margin-top: 5px;
+    }
+
+    .competeActionButton {
+        min-width: 300px;
     }
 
 }
