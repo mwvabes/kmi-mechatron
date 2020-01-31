@@ -367,7 +367,9 @@ section#quickContact {
   font-size: 40px;
 }
 
-.competeActionContainer button {
+.competeActionButton {
+  text-decoration: none;
+  margin: 2px;
   min-width: 240px;
   padding: 20px 40px;
   background-color: #20afc9;
@@ -412,11 +414,19 @@ section#quickContact {
   }
 }
 
-.competeActionContainer button:hover {
+.competeActionButton p {
+  font-size: .75rem;
+  font-weight: normal;
+  font-style: italic;
+  color: #e0e0e0;
+}
+
+.competeActionButton:hover {
   background-color: #008fc7;
   border-color: #003c81;
   background-image: none;
   color: #e9fcff;
+  border-color: #0059ff;
 }
 
 .competeActionContainer > a {
@@ -429,6 +439,54 @@ section#quickContact {
 
 .competeActionContainer > a:hover {
   color: #e9fcff;
+}
+
+.registrationButtonSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.registrationButton {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  margin: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.registrationButton a {
+  padding: 10px;
+  background-color: #008fc7;
+  color: #FFF;
+  font-weight: bold;
+  font-size: .9rem;
+  text-decoration: none;
+  border: 2px solid #003c81;
+  -webkit-transition: background-color 275ms ease-in;
+  transition: background-color 275ms ease-in;
+}
+
+.registrationButton a:hover {
+  background-color: #004299;
 }
 
 #aboutConference {
@@ -444,6 +502,16 @@ section#quickContact {
 
 #aboutConference .title h1 {
   position: relative;
+}
+
+#aboutConference a {
+  color: #005cc5;
+  -webkit-transition: color 175ms ease-in-out;
+  transition: color 175ms ease-in-out;
+}
+
+#aboutConference a:hover {
+  color: #4facfe;
 }
 
 /* #aboutConference .title h1::after {
@@ -900,13 +968,18 @@ p.conferenceState {
   font-size: 1rem;
 }
 
-.timeRemainingToParticipate {
+.whatToChoose {
   font-size: .75em;
   color: #d4d4d4;
 }
 
-.timeRemainingToParticipate .dateRemaining {
+.whatToChoose a {
   text-decoration: underline;
+  color: #FFF;
+}
+
+.whatToChoose a:hover {
+  color: #20afc9;
 }
 
 #winners {
@@ -1011,6 +1084,10 @@ p.conferenceState {
   padding: 5px;
   color: #e7e7e7;
   font-size: .8rem;
+}
+
+.impHeading {
+  color: #0030b4;
 }
 
 @media screen and (min-width: 1261px) {

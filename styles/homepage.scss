@@ -291,7 +291,9 @@ section#quickContact {
     font-size: 40px;
 }
 
-.competeActionContainer button {
+.competeActionButton {
+    text-decoration: none;
+    margin: 2px;
     min-width: 240px;
     padding: 20px 40px;
     background-color: $actionButtonBgColor;
@@ -318,11 +320,19 @@ section#quickContact {
 
 }
 
-.competeActionContainer button:hover {
+.competeActionButton p {
+    font-size: .75rem;
+    font-weight: normal;
+    font-style: italic;
+    color: #e0e0e0;
+}
+
+.competeActionButton:hover {
     background-color: $actionButtonBgColorHover;
     border-color: $actionButtonBorderColorHover;
     background-image: none;
     color: $actionAnchorColorHover;
+    border-color: #0059ff;
 }
 
 .competeActionContainer > a {
@@ -334,6 +344,36 @@ section#quickContact {
 
 .competeActionContainer>a:hover {
     color: $actionAnchorColorHover;
+}
+
+.registrationButtonSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.registrationButton {
+    flex-grow: 0;
+    margin: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.registrationButton a {
+    padding: 10px;
+    background-color: #008fc7;
+    color: #FFF;
+    font-weight: bold;
+    font-size: .9rem;
+    text-decoration: none;
+    border: 2px solid #003c81;
+    transition: background-color 275ms ease-in;
+}
+
+.registrationButton a:hover {
+    background-color: #004299;
 }
 
 #aboutConference {
@@ -349,6 +389,15 @@ section#quickContact {
 
 #aboutConference .title h1 {
     position: relative;
+}
+
+#aboutConference a {
+    color: #005cc5;
+    transition: color 175ms ease-in-out;
+}
+
+#aboutConference a:hover {
+    color: #4facfe;
 }
 
 /* #aboutConference .title h1::after {
@@ -683,13 +732,18 @@ p.conferenceState {
     font-size: 1rem;
 }
 
-.timeRemainingToParticipate {
+.whatToChoose {
     font-size: .75em;
     color: #d4d4d4;
 }
 
-.timeRemainingToParticipate .dateRemaining {
+.whatToChoose a {
     text-decoration: underline;
+    color: #FFF;
+}
+
+.whatToChoose a:hover {
+    color: #20afc9;
 }
 
 #winners {
@@ -760,6 +814,10 @@ p.conferenceState {
     padding: 5px;
     color: #e7e7e7;
     font-size: .8rem;
+}
+
+.impHeading {
+    color: #0030b4;
 }
 
 @media screen and (min-width: 1261px) {
