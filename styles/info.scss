@@ -105,6 +105,12 @@ section.information > *:not(:last-child) {
   color: #004faa;
 }
 
+.information h4 {
+  font-style: italic;
+  color: #008fc7;
+  margin-top: 10px;
+}
+
 .information section {
   position: relative;
   margin-bottom: 40px;
@@ -157,7 +163,9 @@ section.information > *:not(:last-child) {
   flex-wrap: wrap;
 }
 
-.buttonSection button {
+.buttonSection a {
+  text-decoration: none;
+  text-align: center;
   padding: 15px 10px;
   background-color: $actionButtonBgColor;
   color: $actionButtonColor;
@@ -173,14 +181,14 @@ section.information > *:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.buttonSection button:hover {
+.buttonSection a:hover {
   background-color: $actionButtonBgColorHover;
   border-color: $actionButtonBorderColorHover;
   background-image: none;
   color: #e4e4e4;
 }
 
-.paymentInfo {
+.additionalInfo {
   padding: 5px;
   background-color: #effbff;
   border: 2px solid $blue;
@@ -189,13 +197,13 @@ section.information > *:not(:last-child) {
   font-size: .9rem;
 }
 
-.paymentInfo h4 {
+.additionalInfo h4 {
   font-size: .9rem;
 }
 
-.paymentInfo span {
+.additionalInfo span {
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: .95em;
 }
 
 .extInfo {
@@ -227,7 +235,7 @@ section.information > *:not(:last-child) {
     flex: 1;
   }
 
-  .buttonSection button {
+  .buttonSection a {
     min-height: 75px;
     height: 100%;
   }
