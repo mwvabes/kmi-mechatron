@@ -171,9 +171,10 @@ section.information > *:not(:last-child) {
   color: #0030b4;
   text-align: center;
   width: 100%;
-  border: 2px solid #001858;
+  border: 2px solid #0030b4;
   margin-bottom: 10px;
   background-color: #ebf9ff;
+  border-bottom: 4px solid #004faa;
 }
 
 .buttonSection p span {
@@ -186,7 +187,7 @@ section.information > *:not(:last-child) {
   padding: 15px 10px;
   background-color: $actionButtonBgColor;
   color: $actionButtonColor;
-  border: 2px solid $actionButtonBorderColor;
+  border: 2px solid #0030b4;
   border-radius: 0;
   text-transform: uppercase;
   font-weight: bold;
@@ -196,7 +197,7 @@ section.information > *:not(:last-child) {
   background-image: url(/img/zig-blue.png);
   width: 100%;
   margin-bottom: 10px;
-  border-bottom: 6px solid #004faa;
+  border-bottom: 4px solid #004faa;
 }
 
 .buttonSection a:hover {
@@ -204,7 +205,7 @@ section.information > *:not(:last-child) {
   border-color: $actionButtonBorderColorHover;
   background-image: none;
   color: #e4e4e4;
-  border-bottom: 6px solid #a7d0ff;
+  border-bottom: 4px solid #a7d0ff;
 }
 
 .additionalInfo {
@@ -214,6 +215,11 @@ section.information > *:not(:last-child) {
   margin: 5px 20px;
   color: #002472;
   font-size: .9rem;
+  border-bottom: 4px solid $blue;
+}
+
+.additionalInfo hr {
+  border: 1px solid $blue;
 }
 
 .additionalInfo h4 {

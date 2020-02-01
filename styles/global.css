@@ -998,9 +998,9 @@ footer > * > * > p {
     right: 30px;
     z-index: 9999;
     border-radius: 25px;
-    background-color: #0030b4;
-    border: 2px solid #FFF;
-    color: #FFF;
+    background-color: #FFF;
+    border: 2px solid #a0e4ff;
+    color: #0030b4;
     text-align: center;
     overflow: hidden;
     -webkit-box-align: center;
