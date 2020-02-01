@@ -169,6 +169,27 @@ section.information > *:not(:last-child) {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buttonSection p {
+  font-weight: normal;
+  padding: 5px;
+  color: #0030b4;
+  text-align: center;
+  width: 100%;
+  border: 2px solid #001858;
+  margin-bottom: 10px;
+  background-color: #ebf9ff;
+}
+
+.buttonSection p span {
+  font-weight: bold;
 }
 
 .buttonSection a {
@@ -188,13 +209,15 @@ section.information > *:not(:last-child) {
   background-image: url(/img/zig-blue.png);
   width: 100%;
   margin-bottom: 10px;
+  border-bottom: 6px solid #004faa;
 }
 
 .buttonSection a:hover {
-  background-color: #008fc7;
+  background-color: #004faa;
   border-color: #004faa;
   background-image: none;
   color: #e4e4e4;
+  border-bottom: 6px solid #a7d0ff;
 }
 
 .additionalInfo {
