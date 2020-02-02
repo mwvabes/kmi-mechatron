@@ -88,7 +88,7 @@ section.information {
   max-width: $maxWidth;
   margin: 0px auto;
   min-height: calc(100vh - 200px);
-  border: 1px solid #e0e0e0;
+  border: 0px;
   background-color: #FFF;
   border-radius: 50px 50px 0 0;
   box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75);
@@ -96,7 +96,7 @@ section.information {
 }
 
 section.information > *:not(:last-child) {
-  padding: 15px;
+  padding: 5px;
 }
 
 .information h3 {
@@ -198,6 +198,9 @@ section.information > *:not(:last-child) {
   width: 100%;
   margin-bottom: 10px;
   border-bottom: 4px solid #004faa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttonSection a:hover {
@@ -212,7 +215,7 @@ section.information > *:not(:last-child) {
   padding: 5px;
   background-color: #effbff;
   border: 2px solid $blue;
-  margin: 5px 20px;
+  margin: 5px 17px;
   color: #002472;
   font-size: .9rem;
   border-bottom: 4px solid $blue;
@@ -236,8 +239,21 @@ section.information > *:not(:last-child) {
 }
 
 @media screen and (max-width: 1260px) {
+
+  section.information {
+    border: 0px;
+  }
+
   .bigTitle {
     position: static;
+  }
+
+  .bigTitle h1 {
+    padding: 40px 0px 40px
+  }
+
+  .bigTitle h1::after {
+    bottom: 40px;
   }
 
   section.information {
@@ -261,8 +277,12 @@ section.information > *:not(:last-child) {
   }
 
   .buttonSection a {
-    min-height: 75px;
+    min-height: 100px;
     height: 100%;
+  }
+
+  .buttonSection p {
+    margin: 5px;
   }
 
   .paymentInfo {
@@ -272,6 +292,10 @@ section.information > *:not(:last-child) {
   .infLeft,
   .infRight {
     padding: 5px 0px;
+  }
+
+  .infLeft > section {
+    margin: 4px;
   }
 
 }

@@ -44,6 +44,23 @@ function checkHrefMatching() {
   }
 }
 
+function fbContactVisibility() {
+  const fbContactIcon = document.getElementById("fb-root");
+  if (window.scrollY > 200) {
+    fbContactIcon.style.opacity = 0;
+    setTimeout(function() { 
+      fbContactIcon.style.display = "none";
+    }, 175);
+  } else {
+    fbContactIcon.style.display = "block";
+    fbContactIcon.style.opacity = 1;
+  }
+}
+
+window.addEventListener("scroll", function() {
+  fbContactVisibility();
+});
+
 window.addEventListener("load", function(){
   checkHrefMatching();
 });
