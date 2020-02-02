@@ -1017,4 +1017,9 @@ footer > * > * > p {
     color: #67d4ff;
   }
 }
+
+#fb-root {
+  -webkit-transition: opacity 175 ease-in-out;
+  transition: opacity 175 ease-in-out;
+}
 /*# sourceMappingURL=global.css.map */
