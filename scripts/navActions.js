@@ -46,7 +46,7 @@ function checkHrefMatching() {
 
 function fbContactVisibility() {
   const fbContactIcon = document.getElementById("fb-root");
-  if (window.scrollY > 200) {
+  if (window.scrollY > 800) {
     fbContactIcon.style.opacity = 0;
     setTimeout(function() { 
       fbContactIcon.style.display = "none";
@@ -57,7 +57,7 @@ function fbContactVisibility() {
   }
 }
 
-window.addEventListener("scroll", function() {
+window.matchMedia("(max-width: 700px)").addEventListener("scroll", function() {
   fbContactVisibility();
 });
 
