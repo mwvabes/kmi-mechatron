@@ -45,6 +45,7 @@ function checkHrefMatching() {
 }
 
 function fbContactVisibility() {
+  console.log("a");
   const fbContactIcon = document.getElementById("fb-root");
   if (window.scrollY > 800) {
     fbContactIcon.style.opacity = 0;
@@ -57,8 +58,10 @@ function fbContactVisibility() {
   }
 }
 
-window.matchMedia("(max-width: 700px)").addEventListener("scroll", function() {
-  fbContactVisibility();
+window.addEventListener("scroll", function() {
+  if (window.matchMedia("(max-width: 700px)").matches) {
+    fbContactVisibility();
+  } 
 });
 
 window.addEventListener("load", function(){
