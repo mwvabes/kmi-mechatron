@@ -97,7 +97,7 @@ header {
   right: 0;
   z-index: 9999;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
-  background-image: url(/img/zig-blue.png);
+  background-image: url(../img/zig-blue.png);
 }
 
 nav {
@@ -280,7 +280,7 @@ section#contact {
 
 section#contact>.title {
   text-align: center;
-  background-image: url(/img/zig-dark.png);
+  background-image: url(../img/zig-dark.png);
 }
 
 .contactContainer {
@@ -358,7 +358,7 @@ section#contact>.title {
   transition: filter 175ms ease-in-out;
   overflow: hidden;
   justify-content: center;
-  background: url(/img/mapa.png) no-repeat;
+  background: url(../img/mapa.png) no-repeat center center;
   background-size: cover;
   width: 100%;
 }

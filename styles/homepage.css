@@ -201,7 +201,7 @@ section#quickContact {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: url(/img/background.png) no-repeat center center fixed;
+  background: url(../img/background.png) no-repeat center center fixed;
   background-size: cover;
   padding-bottom: 20px;
 }
@@ -382,7 +382,7 @@ section#quickContact {
   -webkit-transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, background-image 170ms ease-in-out;
   transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, background-image 170ms ease-in-out;
   text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
-  background-image: url(/img/zig-blue.png);
+  background-image: url(../img/zig-blue.png);
   background: -webkit-gradient(linear, left top, left bottom, from(#008ecf), to(#ff16e0));
   background: linear-gradient(180deg, #008ecf, #ff16e0);
   background-size: 400% 400%;
@@ -984,7 +984,7 @@ p.conferenceState {
 
 #winners {
   background-color: #002a61;
-  background: url(/img/zig-dark.png);
+  background: url(../img/zig-dark.png);
 }
 
 .winnersYearSection {
