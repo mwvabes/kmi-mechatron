@@ -15,7 +15,7 @@ $maxWidth: 1260px;
 
 body {
   background-color: #FFF;
-  background-image: url(../img/papyrus.png);
+  background-image: url(./../img/papyrus.png);
 }
 
 h1 {
@@ -50,7 +50,7 @@ ol {
   width: 100%;
   text-align: center;
   background-color: $navy;
-  background-image: url(../img/background.png);
+  background-image: url(./../img/background.png);
   position: absolute;
   z-index: 0;
   top: 60px;
@@ -194,7 +194,7 @@ section.information > *:not(:last-child) {
   font-size: .9rem;
   transition: background-color 170ms ease-in-out, border-color 170ms ease-in-out, background-image 170ms ease-in-out;
   text-shadow: 0px 3px 5px rgba(0,0,0,0.5);
-  background-image: url(../img/zig-blue.png);
+  background-image: url(./../img/zig-blue.png);
   width: 100%;
   margin-bottom: 10px;
   border-bottom: 4px solid #004faa;
