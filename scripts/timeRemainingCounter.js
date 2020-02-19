@@ -1,7 +1,7 @@
 //Settings
 const eventStartDate = new Date(2020, 04, 27, 9, 0, 0).getTime();
-const eventEndDate = new Date(2020, 04, 28, 15, 28, 10).getTime();
-const registrationDateEnd = new Date(2020, 02, 12).getTime();
+const eventEndDate = new Date(2020, 04, 28, 15, 0, 0).getTime();
+const registrationDateEnd = new Date(2020, 03, 27).getTime();
 
 let now = new Date().getTime();
 
@@ -72,12 +72,18 @@ let renderTime = () => {
   const toEventEnd = eventEndDate - now;
   let daysToRegistrationEnd = Math.ceil((registrationDateEnd - now) / (1000 * 60 * 60 * 24)) + 1;
 
-  if (daysToRegistrationEnd < 1) {
+  if (daysToRegistrationEnd == 1) {
     document.getElementById("warning").style.visibility = "visible";
-    document.querySelector('#warning a').style.display = "none";
+    document.querySelector('#warning').style.display = "flex";
+    document.querySelector('#warning h4').innerHTML = "Ostatni dzień na zgłoszenie projektu!";
+  } else if (daysToRegistrationEnd < 1) {
+    document.getElementById("warning").style.visibility = "visible";
+    document.querySelector('#warning').style.display = "flex";
     document.querySelector('#warning h4').innerHTML = "Czas na zgłoszenie projektu już minął";
-  } else if (daysToRegistrationEnd < 15) {
+  } else if (daysToRegistrationEnd > 1 && daysToRegistrationEnd < 15) {
     document.getElementById("warning").style.visibility = "visible";
+    document.querySelector('#warning').style.display = "flex";
+    document.querySelector('#warning > h4').innerHTML = 'UWAGA! Pozostało tylko <span class="remainedDaysToRegistration">kilka</span> dni na zgłoszenie projektu!';
     document.querySelector('#warning > h4 > span.remainedDaysToRegistration').innerHTML = daysToRegistrationEnd;
   }
 

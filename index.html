@@ -8,6 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#008ecf">
 
+  
   <meta property="og:description"
     content="Konferencja skierowana jest do studentów i doktorantów kierunków technicznych z całej Polski. Jej celem jest przedstawienie oraz zapoznanie się z pracami i osiągnięciami badawczymi młodych inżynierów z naszego kraju." />
   <meta property="og:image" content="https://i.imgur.com/RRxRrAG.png" />
@@ -76,10 +77,9 @@
 
     <section class="welcomeScreen">
       <section id="warning">
-        <!-- <h4>UWAGA! Pozostało tylko <span class="remainedDaysToRegistration">7</span> dni na zgłoszenie projektu!</h4>
+        <h4></h4>
         <a href="przewodnik2020.html">Zgłoś się</a>
-        <span id="hideWarning"><i class="far fa-times-circle"></i></span> -->
-        <div id="timeRemainingContainer"></div>
+        <span id="hideWarning"><i class="far fa-times-circle"></i></span>
       </section>
 
       <section id="welcome" class="container">
@@ -107,18 +107,20 @@
                 <h1>Masz ciekawy projekt?</h1>
                 <div class="competeActionButtons">
                   <div class="competeActionButtonSection">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiStrISjX6gkUATZrfYdsuUaaTMgXPWZS7roGDMno4blRreg/viewform" class="competeActionButton" target="_blank">Zgłoś artykuł<p>Konferencja</p></a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdiStrISjX6gkUATZrfYdsuUaaTMgXPWZS7roGDMno4blRreg/viewform"
+                      class="competeActionButton" target="_blank">Zgłoś artykuł<p>Konferencja</p></a>
                   </div>
                   <!-- <div class="competeActionButtonSection competeActionButtonSectionSpan">
                     <span>albo</span>
                   </div> -->
                   <div class="competeActionButtonSection">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsSycmpJQvw0ognamPxuSj2IQK3cRK8aWkQtmPuOcONXUMIA/viewform" class="competeActionButton" target="_blank">Zgłoś projekt<p>Konkurs</p></a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdsSycmpJQvw0ognamPxuSj2IQK3cRK8aWkQtmPuOcONXUMIA/viewform"
+                      class="competeActionButton" target="_blank">Zgłoś projekt<p>Konkurs</p></a>
                   </div>
 
                 </div>
-                <p class="whatToChoose">Nie wiesz co wybrać? Zapoznaj się z <a href="/przewodnik2020.html">przewodnikiem.</a></p>
-                <a href="!">: Regulamin :</a>
+                <p class="whatToChoose">Nie wiesz co wybrać? Zapoznaj się z <a
+                    href="/przewodnik2020.html">przewodnikiem.</a></p>
 
               </div>
               <!-- <div class="competeActionContainer competeActionContainerSecond">
@@ -134,7 +136,9 @@
       </section>
 
       <section class="seeYouSoon">
-        <p>Do zobaczenia <span class="conferenceStartDate">27 maja 2020</span> w Rzeszowie!</p>
+        <p>Temin Konferencji: <span class="conferenceStartDate">27 maja 2020r.</span> w Rzeszowie</p>
+        <p>Termin zgłoszenia: <span>27 kwietnia 2020r.</span></p>
+        <p>Termin wysłania prac: <span>4 maja 2020r.</span></p>
       </section>
 
       <section id="conferenceInNumbers">
@@ -142,15 +146,17 @@
           <h1 class="sectionTitle">Konferencja 2019 w liczbach:</h1>
         </div>
         <div class="numElements">
-          <div class="numElement"><span class="number" id="numSupervisors">9</span><span
+          <div class="numElement"><span class="number" id="numSupervisors">13</span><span
               class="inNumbersTitle">Kierowników Naukowych</span></div>
-          <div class="numElement"><span class="number" id="numLectures">16</span><span
+              <div class="numElement"><span class="number" id="numPartners">2</span><span
+                class="inNumbersTitle">Dni</span></div>
+          <div class="numElement"><span class="number" id="numLectures">13</span><span
               class="inNumbersTitle">Prelekcji</span></div>
           <div class="numElement"><span class="number" id="numProjects">48</span><span
               class="inNumbersTitle">Projektów</span></div>
           <div class="numElement"><span class="number" id="numParticipants">163</span><span
               class="inNumbersTitle">Uczestników</span></div>
-          <div class="numElement"><span class="number" id="numPartners">24</span><span
+          <div class="numElement"><span class="number" id="numPartners">22</span><span
               class="inNumbersTitle">Partnerów</span></div>
         </div>
       </section>
@@ -670,9 +676,11 @@
             </div>
           </div>
           <div>
-            <div class="contactMap">
-              <span></span>
-            </div>
+            <a href="https://goo.gl/maps/LrYksJsvqrWZQkcMA" target="_blank" title="Kliknij aby wyznaczyć trasę">
+              <div class="contactMap">
+                <span></span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -694,7 +702,7 @@
 
   <a id="takeMeUpNav" data-target-id="pageStart" class="takeMeUp"><span><i class="fas fa-arrow-up"></i></span></a>
 
-  <script src="scripts/timeRemainingCounter.js"></script>
+  <script src="./scripts/timeRemainingCounter.js"></script>
   <script src="./scripts/copyToClipboard.js"></script>
   <script src="./scripts/navActions.js"></script>
   <script src="./scripts/highlight.js"></script>
