@@ -242,6 +242,7 @@ main>div {
   border-bottom: 1px solid #ff6600;
   transition: opacity 175ms ease-in-out;
   align-items: center;
+  flex-direction: row;
 }
 
 #warning h4 {
@@ -605,7 +606,7 @@ footer>*>*>p {
 }
 
 .seeYouSoon {
-  padding: 15px;
+  padding: 10px 15px;
   background-color: rgba(0, 49, 39, 0.8);
   border: 4px solid #006e6e;
   color: #f3f3f3;
@@ -613,9 +614,12 @@ footer>*>*>p {
   text-align: center;
   font-weight: bold;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 10px 15px;
   width: calc(100% - 30px);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 
   background: linear-gradient(30deg, #00aeff, #002896);
   background-size: 300% 300%;
@@ -631,7 +635,15 @@ footer>*>*>p {
 }
 
 .seeYouSoon p {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  padding: 5px;
+  margin: 0px 5px;
+  color: #d1e0ff;
+  border-bottom: 2px solid #bdbdbd;
+}
+
+.seeYouSoon span {
+  color: #FFF;
 }
 
 .email {

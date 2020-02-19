@@ -145,6 +145,7 @@ section#quickContact {
     text-align: center;
     flex: 1;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .numElement:hover {
@@ -733,13 +734,14 @@ p.conferenceState {
 }
 
 .whatToChoose {
-    font-size: .75em;
+    font-size: .95em;
     color: #d4d4d4;
 }
 
 .whatToChoose a {
     text-decoration: underline;
     color: #FFF;
+    transition: color 175ms ease-in-out;
 }
 
 .whatToChoose a:hover {
