@@ -80,7 +80,4 @@ window.addEventListener("scroll", function() {
   else document.getElementById("takeMeUpNav").style.display = "none";
 })
 
-document.getElementById("hideWarning").addEventListener("click", function() {
-  document.getElementById("warning").style.opacity = 0;
-})
 
