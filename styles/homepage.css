@@ -292,8 +292,6 @@ section#quickContact {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-flex: 8;
       -ms-flex: 8;
           flex: 8;
@@ -988,8 +986,7 @@ p.conferenceState {
 }
 
 #winners {
-  background-color: #002a61;
-  background: url(./../img/zig-dark.png);
+  background-color: #000c44;
 }
 
 .winnersYearSection {
@@ -1008,12 +1005,16 @@ p.conferenceState {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: linear-gradient(130deg, #005b80 0%, #0000a1 52%, #008cff 100%);
+}
+
+.winnersYearSection:not(:last-child) {
+  margin-bottom: 25px;
 }
 
 .prizes {
-  padding: 20px;
+  padding: 10px;
   color: #FFF;
-  background-color: #002a61;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1063,8 +1064,9 @@ p.conferenceState {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 20px 50px;
-  background-color: rgba(68, 143, 212, 0.3);
+  padding: 15px 40px;
+  background-color: rgba(0, 23, 65, 0.8);
+  border: 2px solid #008ecf;
   border-bottom: 4px solid #008ecf;
 }
 
@@ -1073,15 +1075,18 @@ p.conferenceState {
 }
 
 .yearSectionTitle {
-  color: #2f81b8;
+  color: #ffffff;
   font-weight: bold;
   text-shadow: 0px 0px 30px rgba(0, 195, 255, 0.3);
   text-align: center;
+  margin-top: 20px;
+  padding: 0px 7px;
 }
 
 .prizesSubtitle {
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: center;
+  font-size: 1.1rem;
 }
 
 .prizeValue {
@@ -1106,18 +1111,6 @@ p.conferenceState {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .yearSectionTitle {
-    font-size: 80px;
-    position: relative;
-    z-index: 2;
-    letter-spacing: 15px;
-  }
-  .prizes {
-    position: relative;
-    top: -47px;
-    left: 0;
-    right: 0;
-  }
 }
 
 @media screen and (max-width: 1260px) {
@@ -1128,21 +1121,16 @@ p.conferenceState {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .welcomeMessage, .categoriesInfoContainer {
+    padding: 20px 10px;
+  }
   .timeRemainingContainer,
   .conferenceIsNowContainer,
   .timeUpContainer {
     padding: 15px 0px;
   }
-  .yearSectionTitle {
-    margin-top: 30px;
-    font-size: 3rem;
-    background-color: rgba(0, 119, 255, 0.3);
-  }
-  .prizesSubtitle {
-    margin-top: 5px;
-  }
   .competeActionButton {
-    min-width: 300px;
+    padding: 10px 20px;
   }
   .aboutIMElementAnchor {
     margin: 20px;

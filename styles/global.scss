@@ -437,11 +437,12 @@ section#contact>.title {
 }
 
 #quickContact {
-  background-color: #303030;
+  background-color: #ffffff;
   color: #FFF;
   font-size: 1rem;
-  border-top: 4px solid #3f3f3f;
-  border-bottom: 4px solid #3f3f3f;
+  border-top: 1px solid #0030b4;
+  border-bottom: 1px solid #0030b4;
+  background-image: url(./../img/zig-dark.png);
 }
 
 #quickContact a,
@@ -516,11 +517,11 @@ section#contact>.title {
   transition: color 175 ease-in;
 }
 
-$FCol1: #006e6e;
+$FCol1: #0030b4;
 $FCol2: #ff16e0;
 
 .footer {
-  border-top: 6px solid #006e6e;
+  border-top: 6px solid $FCol1;
   
   animation: footerBorderAnimation 2s ease-in-out infinite;
   
@@ -651,11 +652,29 @@ footer>*>*>p {
 }
 
 
-@media screen and (max-width: 1260px) {
-
-  .mobileHide {
+//For screens <300px (Iphone SE etc.)
+@media screen and (max-width: 1260px) and (min-width: 330px) {
+  
+  .mobileHideShowUpTo300px {
     display: none;
   }
+
+ }
+
+//For screens <300px (Iphone SE etc.)
+@media screen and (max-width: 330px) {
+
+  :root {
+    font-size: 14px;
+  }
+
+  .spanMobileMain {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 1260px) {
 
   .takeMeUp {
     display: none !important;
