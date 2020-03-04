@@ -567,7 +567,7 @@ section#quickContact {
 
 #organiser {
   background: #370153;
-  background: linear-gradient(130deg, #005b80 0%, #0000a1 52%, #008cff 100%);
+  background: linear-gradient(130deg, #370153 0%, #0000a1 52%, #370153 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1005,7 +1005,7 @@ p.conferenceState {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: linear-gradient(130deg, #005b80 0%, #0000a1 52%, #008cff 100%);
+  background: linear-gradient(130deg, #0563b1 0%, #0000a1 52%, #0563b1 100%);
 }
 
 .winnersYearSection:not(:last-child) {

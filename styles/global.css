@@ -178,11 +178,6 @@ main > div {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .contact > div {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
   .quickContactLeft > .quickContactElement {
     margin-right: 100px;
   }
@@ -284,6 +279,9 @@ section#contact {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 20px;
+  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.7);
+  background: linear-gradient(130deg, #370153 0%, #0000a1 52%, #370153 100%);
 }
 
 section#contact > .title {
@@ -312,11 +310,17 @@ section#contact > .title {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   padding: 25px 0px;
 }
 
 .contact a {
   color: inherit;
+  -webkit-transition: color 175ms ease-in-out;
+  transition: color 175ms ease-in-out;
 }
 
 .contact a:hover {
@@ -324,9 +328,6 @@ section#contact > .title {
 }
 
 .contact > div {
-  -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -339,11 +340,27 @@ section#contact > .title {
 }
 
 .contactElement {
-  padding: 10px;
-  border: 0px;
   font-size: 1rem;
-  -webkit-transition: border 300ms ease-in;
-  transition: border 300ms ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgba(0, 23, 65, 0.8);
+  border: 1px solid #008ecf;
+  border-bottom: 4px solid #008ecf;
+  justify-content: center;
+  min-height: 140px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .contactElement h1 {
@@ -372,8 +389,8 @@ section#contact > .title {
   font-size: .9rem;
   margin-top: 5px;
   border-bottom: 4px solid #008ecf;
-  -webkit-transition: background-color 175ms ease-in-out, color 175ms ease-in-out;
-  transition: background-color 175ms ease-in-out, color 175ms ease-in-out;
+  -webkit-transition: 175ms ease-in-out;
+  transition: 175ms ease-in-out;
 }
 
 .routePlannerButton:hover {
@@ -429,7 +446,7 @@ section#contact > .title {
 }
 
 .copySuccessful {
-  background-color: #00be10;
+  border: 1px solid #00be10;
 }
 
 .copyButton:hover {
@@ -650,7 +667,7 @@ footer > div {
   padding: 15px 20px;
   max-width: 1260px;
   margin: 0px auto;
-  background-color: #242424;
+  background-color: #090e24;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -759,7 +776,6 @@ footer > * > * > p {
   padding: 5px;
   margin: 0px 5px;
   color: #d1e0ff;
-  border-bottom: 2px solid #bdbdbd;
 }
 
 .seeYouSoon span {
@@ -768,6 +784,25 @@ footer > * > * > p {
 
 .email {
   text-decoration: underline;
+}
+
+.emailToCopy {
+  text-decoration: underline;
+  cursor: pointer;
+  -webkit-transition: color 175ms ease-in-out, border 175ms ease-in;
+  transition: color 175ms ease-in-out, border 175ms ease-in;
+}
+
+.emailToCopyBlue {
+  color: #003c81;
+}
+
+.emailToCopyBlue:hover {
+  color: #008dcf;
+}
+
+.emailToCopyWhite:hover {
+  color: #e0e0e0;
 }
 
 @media screen and (max-width: 1260px) and (min-width: 330px) {
