@@ -8,7 +8,7 @@ $anchorMenuColor: #FFF;
 $greyColor: #3f3f3f;
 $greyBorder: #c7c7c7;
 
-$footerBackground: #242424;
+$footerBackground: #090e24;
 $footerColor: #f5f5f5;
 
 $warningBgColor: #ff173e;
@@ -194,10 +194,6 @@ main>div {
     flex-direction: row;
   }
 
-  .contact>div {
-    align-items: flex-start;
-  }
-
   .quickContactLeft > .quickContactElement {
     margin-right: 100px;
   }
@@ -277,6 +273,8 @@ section#contact {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 20px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, .7);
+  background: linear-gradient(130deg, #370153 0%, #0000a1 52%, #370153 100%);
 }
 
 section#contact>.title {
@@ -294,29 +292,39 @@ section#contact>.title {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   padding: 25px 0px;
 }
 
 .contact a {
   color: inherit;
+  transition: color 175ms ease-in-out;
 }
 
 .contact a:hover {
   color: #dadada;
 }
 
-.contact>div {
-  flex: auto;
+.contact > div {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
 .contactElement {
-  padding: 10px;
-  border: 0px;
   font-size: 1rem;
-  transition: border 300ms ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgba(0, 23, 65, 0.8);
+  border: 1px solid $blue;
+  border-bottom: 4px solid $blue;
+  justify-content: center;
+  min-height: 140px;
+  flex: 1;
 }
 
 .contactElement h1 {
@@ -345,7 +353,7 @@ section#contact>.title {
   font-size: .9rem;
   margin-top: 5px;
   border-bottom: 4px solid $blue;
-  transition: background-color 175ms ease-in-out, color 175ms ease-in-out;
+  transition: 175ms ease-in-out;
 }
 
 .routePlannerButton:hover {
@@ -393,7 +401,7 @@ section#contact>.title {
 }
 
 .copySuccessful {
-  background-color: #00be10;
+  border: 1px solid #00be10;
 }
 
 .copyButton:hover {
@@ -437,11 +445,12 @@ section#contact>.title {
 }
 
 #quickContact {
-  background-color: #303030;
+  background-color: #ffffff;
   color: #FFF;
   font-size: 1rem;
-  border-top: 4px solid #3f3f3f;
-  border-bottom: 4px solid #3f3f3f;
+  border-top: 1px solid #0030b4;
+  border-bottom: 1px solid #0030b4;
+  background-image: url(./../img/zig-dark.png);
 }
 
 #quickContact a,
@@ -516,11 +525,11 @@ section#contact>.title {
   transition: color 175 ease-in;
 }
 
-$FCol1: #006e6e;
+$FCol1: #0030b4;
 $FCol2: #ff16e0;
 
 .footer {
-  border-top: 6px solid #006e6e;
+  border-top: 6px solid $FCol1;
   
   animation: footerBorderAnimation 2s ease-in-out infinite;
   
@@ -639,7 +648,6 @@ footer>*>*>p {
   padding: 5px;
   margin: 0px 5px;
   color: #d1e0ff;
-  border-bottom: 2px solid #bdbdbd;
 }
 
 .seeYouSoon span {
@@ -650,12 +658,48 @@ footer>*>*>p {
   text-decoration: underline;
 }
 
+.emailToCopy {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 175ms ease-in-out, border 175ms ease-in;
+}
 
-@media screen and (max-width: 1260px) {
+.emailToCopyBlue {
+  color: #003c81;
+}
 
-  .mobileHide {
+.emailToCopyBlue:hover {
+  color: #008dcf;
+}
+
+.emailToCopyWhite:hover {
+  color: #e0e0e0;
+}
+
+
+//For screens <300px (Iphone SE etc.)
+@media screen and (max-width: 1260px) and (min-width: 330px) {
+  
+  .mobileHideShowUpTo300px {
     display: none;
   }
+
+ }
+
+//For screens <300px (Iphone SE etc.)
+@media screen and (max-width: 330px) {
+
+  :root {
+    font-size: 14px;
+  }
+
+  .spanMobileMain {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 1260px) {
 
   .takeMeUp {
     display: none !important;

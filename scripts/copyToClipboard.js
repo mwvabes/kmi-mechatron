@@ -48,7 +48,7 @@ window.Clipboard = (function (window, document, navigator) {
 function copySuccessful(btn) {
     btn.classList.add("copySuccessful");
     let content = btn.innerHTML;
-    btn.innerHTML = "Skopiowano!";
+    //btn.innerHTML = "Skopiowano!";
     setTimeout(function () {
         btn.classList.remove("copySuccessful");
         btn.innerHTML = content;
