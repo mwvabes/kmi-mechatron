@@ -678,6 +678,9 @@ footer>*>*>p {
 
 .aboutIMEmbeddedVideos {
   margin: 30px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  display: none;
 }
 
 .aboutIMEmbeddedVideos > iframe {
@@ -693,16 +696,23 @@ footer>*>*>p {
 .gallery ul {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   overflow: hidden;
 }
 
 .gallery ul li {
+  // flex: 1 0 0px;
   overflow: hidden;
+  min-height: 200px;
+  min-width: 200px;
   height: 200px;
   width: 200px;
   margin: 5px;
   transition: box-shadow 175ms ease-in-out, filter 175ms ease-in-out;
   cursor: pointer;
+  border: 1px solid #e0e0e0;
 }
 
 .gallery ul li:hover {
@@ -714,83 +724,78 @@ footer>*>*>p {
   height: 210px;
 }
 
+#galleryBox {
+  display: none;
+  opacity: 0;
+}
+
 .galleryBox {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9997;
-  padding: 60px;
-  display: flex;
-  flex-direction: column;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 9995;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  flex-direction: column;
+  transition: 200ms ease-in;
 }
 
-.imgBox {
+.galleryContainer {
+  margin: 30px;
+  display: flex;
   overflow: hidden;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+#imgBox, #imgBox > img {
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+.galleryNavigation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
   display: flex;
   flex-direction: row;
+}
+
+.galleryNavigation > div {
+  cursor: pointer;
+  flex: 1;
+  background-color: #003c81;
+  display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 2rem;
+  color: #FFF;
+  transition: color 175ms ease-in-out, background-color 175ms ease-in-out;
 }
 
-.galleryInfo {
-  color: #a8a8a8;
-  font-size: .75rem;
+.galleryNavigation > div:hover {
+  color: #9e9e9e;
+  background-color: #008dcf;
 }
 
-.galleryNavigationBox > div {
-  position: absolute;
-  top: 0;
-  z-index: 9998;
-  bottom: 0;
-  width: 20%;
-  font-size: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-  transition: opacity 200ms ease;
-  opacity: .5;
-  cursor: pointer;
+#galleryInfo {
+  font-size: .7rem;
+  color: #e0e0e0;
+  padding: 3px;
 }
 
-.galleryLeft {
-  left: 0;
-  align-items: flex-start;
-  background: linear-gradient(to right, #003c81, rgba(0, 0, 0, 0));
-}
-
-.galleryLeft:hover {
-  opacity: 1;
-}
-
-.galleryRight {
-  right: 0;
-  align-items: flex-end;
-  background: linear-gradient(to left, #003c81, rgba(0, 0, 0, 0));
-}
-
-.galleryRight:hover {
-  opacity: 1;
-}
-
-.imgBox img {
-  height: 100%;
-  position: relative;
-  z-index: 9999;
-}
-
-.galleryBox {
-
-}
-
-.imgDescription {
+#imgDescription {
   padding: 10px;
+}
+
+#imgDescription {
+  font-size: .6rem;
 }
 
 //For screens <300px (Iphone SE etc.)
@@ -815,11 +820,13 @@ footer>*>*>p {
 
 }
 
-@media screen and (max-width: 1260px) {
-
-  .galleryNavigationBox {
-    display: none;
+@media screen and (min-width: 1200px) {
+  .galleryContainer {
+    margin: 60px;
   }
+}
+
+@media screen and (max-width: 1260px) {
 
   .takeMeUp {
     display: none !important;
@@ -1028,6 +1035,10 @@ footer>*>*>p {
 @media screen and (min-width: 1390px) {
   #takeMeUpNav {
     display: flex !important;
+  }
+
+  .imgBox {
+    max-width: 80%;
   }
 
   .takeMeUp {

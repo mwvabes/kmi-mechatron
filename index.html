@@ -370,23 +370,16 @@
         </div>
         <div class="aboutIMElements">
 
-          <div class="gallery">
-            <ul>
-              <li><img src="./gallery/gallery-1.jpg"/></li>
-              <li><img src="./gallery/gallery-2.jpg"/></li>
-              <li><img src="./gallery/gallery-3.jpg"/></li>
-              <li><img src="./gallery/gallery-4.jpg"/></li>
-              <li><img src="./gallery/gallery-5.jpg"/></li>
-              <li><img src="./gallery/gallery-6.jpg"/></li>
-            </ul>
+          <div class="gallery" id="gallery">
+
           </div>
 
           <div class="aboutIMEmbeddedVideos">
-            
+
             <iframe width="560" height="315" src="https://www.youtube.com/embed/NGRYiAGQHfI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
           </div>
-          
+
         </div>
       </div>
     </section>
@@ -580,16 +573,21 @@
 
   <a id="takeMeUpNav" data-target-id="pageStart" class="takeMeUp"><span><i class="fas fa-arrow-up"></i></span></a>
 
-  <div class="galleryBox">
-    <div class="galleryNavigationBox">
-      <div class="galleryLeft"><i class="fas fa-arrow-left"></i></div>
-      <div class="galleryRight"><i class="fas fa-arrow-right"></i></div>
+  <div id="galleryBox" class="galleryBox">
+
+    <div class="galleryContainer">
+      <div id="imgBox">
+      </div>
+      <p id="imgDescription"></p>
+      <p id="galleryInfo">Na komputerze nawigacja z użyciem strzałek klawiatury. <i class="fas fa-long-arrow-alt-left"></i> <i class="fas fa-long-arrow-alt-right"></i> przewijanie, <i class="fas fa-long-arrow-alt-up"></i> <i class="fas fa-long-arrow-alt-down"></i> wyjście.</p>
     </div>
-    <div class="imgBox">
-      <img src="./gallery/gallery-1.jpg" alt="">
+
+    <div class="galleryNavigation">
+      <div class="galleryLeft" id="galleryLeft"><i class="fas fa-arrow-left"></i></div>
+      <div class="galleryClose" id="galleryClose"><i class="fas fa-times"></i></div>
+      <div class="galleryRight" id="galleryRight"><i class="fas fa-arrow-right"></i></div>
     </div>
-    <p class="imgDescription">Kilka chwil przed rozpoczęciem</p>
-    <p class="galleryInfo">Na komputerze nawigacja z użyciem klawiatury. Na smartfonie swipe w prawo lub w lewo.</p>
+
   </div>
 
   <script src="./scripts/timeRemainingCounter.js"></script>

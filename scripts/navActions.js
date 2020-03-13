@@ -45,7 +45,6 @@ function checkHrefMatching() {
 }
 
 function fbContactVisibility() {
-  console.log("a");
   const fbContactIcon = document.getElementById("fb-root");
   if (window.scrollY > 1500) {
     fbContactIcon.style.opacity = 0;
