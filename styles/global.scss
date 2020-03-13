@@ -755,6 +755,7 @@ footer>*>*>p {
 #imgBox, #imgBox > img {
   max-width: 100%;
   max-height: 80vh;
+  overflow: hidden;
 }
 
 .galleryNavigation {
@@ -780,7 +781,7 @@ footer>*>*>p {
 }
 
 .galleryNavigation > div:hover {
-  color: #9e9e9e;
+  color: #e0e0e0;
   background-color: #008dcf;
 }
 
@@ -792,10 +793,6 @@ footer>*>*>p {
 
 #imgDescription {
   padding: 10px;
-}
-
-#imgDescription {
-  font-size: .6rem;
 }
 
 //For screens <300px (Iphone SE etc.)

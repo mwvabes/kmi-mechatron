@@ -75,6 +75,12 @@ function setUpGalleries() {
 
 function photoClicked(p) {
   showGalleryBox();
+  let currentImage = "";
+  for (photo of gallery1.photos) {
+    console.log(p.firstChild.attributes.src)
+    if (photo.path == p.firstChild.attributes.src.nodeValue) currentImage = photo;
+  }
+  document.getElementById("imgDescription").innerHTML = currentImage.description;
   document.getElementById("imgBox").innerHTML = p.innerHTML;
 }
 
