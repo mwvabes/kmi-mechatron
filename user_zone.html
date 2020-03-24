@@ -22,6 +22,9 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="#" id='home'>Zgłoszenia</a>
+                <a class="nav-item nav-link" href="#" id='stats'>Statystyki</a>
+                <a class="nav-item nav-link" href="#" id='user_applications'>Zgłoszenia</a>
+                <a class="nav-item nav-link" href="#" id='create_application'>Nowe zgłoszenie</a>
                 <a class="nav-item nav-link" href="#" id='update_account'>Konto</a>
                 <a class="nav-item nav-link" href="#" id='logout'>Wyloguj</a>
                 <a class="nav-item nav-link" href="#" id='login'>Logowanie</a>
@@ -48,6 +51,10 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/google-palette@1.1.0/palette.min.js"></script>
+
     <script>
         $(document).ready(function () {
             showHomePage();
@@ -56,19 +63,28 @@
                 var html = `
                 <h2>Rejestracja</h2>
                 <form id='sign_up_form'>
-     
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" id="email" required />
-                    </div>
-     
-                    <div class="form-group">
-                        <label for="password">Hasło</label>
-                        <input type="password" class="form-control" name="password" id="password" required />
-                    </div>
-     
-                    <button type='submit' class='btn btn-primary'>Zarejestruj się</button>
-                </form>
+                <div class="form-group">
+                    <label for="firstname">Imię:</label>
+                    <input type="text" class="form-control" name="firstname" id="firstname" required />
+                </div>
+ 
+                <div class="form-group">
+                    <label for="lastname">Nazwisko:</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname" required />
+                </div>
+ 
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" name="email" id="email" required />
+                </div>
+ 
+                <div class="form-group">
+                    <label for="password">Hasło:</label>
+                    <input type="password" class="form-control" name="password" id="password" required />
+                </div>
+ 
+                <button type='submit' class='btn btn-primary'>Zarejestruj się</button>
+            </form>
                 `;
 
                 clearResponse();
@@ -119,7 +135,6 @@
                         $('#response').html(
                             "<div class='alert alert-success'>Zostałeś zalogowany.</div>"
                         );
-
                     },
                     error: function (xhr, resp, text) {
                         $('#response').html(
@@ -136,8 +151,109 @@
                 clearResponse();
             });
 
+            $(document).on('click', '#stats', function () {
+                showStats();
+                clearResponse();
+            });
+
             $(document).on('click', '#update_account', function () {
                 showUpdateAccountForm();
+            });
+
+            function showApplicationForm() {
+                var jwt = getCookie('jwt');
+                $.post("api/validate_token.php", JSON.stringify({
+                        jwt: jwt
+                    })).done(function () {
+                        var html = `
+            <h2>Zgłoś projekt</h2>
+                    <form id='application-form'>
+                        <div class="form-group">
+                            <label for="authors">Pozostali autorzy:</label>
+                            <input type="text" class="form-control" name="authors" id="authors" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="affiliation">Afiliacja</label>
+                            <input type="text" class="form-control" name="affiliation" id="affiliation" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title">Tytuł</label>
+                            <input type="text" class="form-control" name="title" id="title" required />
+                        </div>
+
+                        <label for="category">Kategoria</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="category" id="categoryradio1" value="projekt IT" checked>
+                            <label class="form-check-label" for="categoryradio1">
+                                projekt IT
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="category" id="categoryradio2" value="freestyle">
+                            <label class="form-check-label" for="categoryradio2">
+                                freestyle
+                            </label>
+                        </div>
+
+                        <label for="regulations" style="padding-top: 10px">Oświadczam, że zapoznałem/am się z treścią
+                            Regulaminu zamieszczonego na stronie internetowej konferencji **STRONA**, przyjmuję do
+                            wiadomości treści w nim zawarte i zobowiązuję się do przestrzegania jego zapisów</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check" type="checkbox" name="regulations" id="regulations" value="zaakceptowane" required>
+                            <label class="form-check-label" for="regulations">Tak, oświadczam, że zapoznałem/am się z
+                                treścią Regulaminu zamieszczonego na stronie internetowej konferencji mlodzi@urz.pl,
+                                przyjmuję do wiadomości treści w nim zawarte i zobowiązuję się do przestrzegania jego
+                                zapisów</label>
+                        </div>
+
+                        <button type='submit' class='btn btn-primary'>
+                            Wyślij
+                        </button>
+                    </form>`
+                        clearResponse();
+                        $('#content').html(html);
+                    })
+
+                    .fail(function (result) {
+                        showLoginPage();
+                        $('#response').html(
+                            "<div class='alert alert-danger'>Dostęp tylko dla zalogowanych użytkowników. Zaloguj się.</div>"
+                        );
+                    });
+            }
+
+            $(document).on('click', '#create_application', function () {
+                showApplicationForm();
+                clearResponse();
+            });
+
+            $(document).on('submit', '#application-form', function () {
+                var application_form = $(this);
+                var form_data = JSON.stringify(application_form.serializeObject());
+                alert(form_data);
+
+                $.ajax({
+                    url: "api/create_application.php",
+                    type: "POST",
+                    contentType: 'application/json',
+                    data: form_data,
+                    success: function (result) {
+                        $('#response').html(
+                            "<div class='alert alert-success'>Twoje zgłoszenie zostało zapisane pomyślnie.</div>"
+                        );
+                        $('#content').html("");
+                        application_form.find('input').val('');
+
+                    },
+                    error: function (xhr, resp, text) {
+                        $('#response').html(
+                            "<div class='alert alert-danger'>Wystąpił błąd podczas wysyłania zgłoszenia.</div>"
+                        );
+                    }
+                });
+                return false;
             });
 
             $(document).on('submit', '#update_account_form', function () {
@@ -219,6 +335,9 @@
                 $("#logout").hide();
                 $("#home").hide();
                 $("#update_account").hide();
+                $("#stats").hide();
+                $("#user_applications, #create_application").hide();
+                setCookie("uid", "", 0);
             }
 
             function showHomePage() {
@@ -226,8 +345,37 @@
                 $.post("api/validate_token.php", JSON.stringify({
                         jwt: jwt
                     })).done(function (result) {
-                        $('#content').load("api/show_applications.php");
                         showLoggedInMenu();
+                        if (result.data.admin == "1") {
+                            $('#content').load("api/show_applications.php");
+                        } else {
+                            showUserHomePage();
+                        }
+                    })
+
+                    .fail(function (result) {
+                        showLoginPage();
+                        $('#response').html(
+                            "<div class='alert alert-danger'>Dostęp tylko dla zalogowanych użytkowników. Zaloguj się.</div>"
+                        );
+                    });
+            }
+
+            function showUserHomePage() {
+                $('#content').load("api/user_applications.php");
+            }
+
+            $(document).on('click', '#user_applications', function () {
+                showUserHomePage();
+                clearResponse();
+            });
+
+            function showStats() {
+                var jwt = getCookie('jwt');
+                $.post("api/validate_token.php", JSON.stringify({
+                        jwt: jwt
+                    })).done(function (result) {
+                        $('#content').load("api/show_stats.php");
                     })
 
                     .fail(function (result) {
@@ -256,7 +404,20 @@
 
             function showLoggedInMenu() {
                 $("#login, #sign_up").hide();
-                $("#logout, #home, #update_account").show();
+                $("#logout, #update_account").show();
+                var jwt = getCookie('jwt');
+                $.post("api/validate_token.php", JSON.stringify({
+                    jwt: jwt
+                })).done(function (result) {
+                    setCookie("uid", result.data.id, 1);
+                    if (result.data.admin == "1") {
+                        $("#home, #stats").show();
+                        $("#user_applications, #create_application").hide();
+                    } else {
+                        $("#home, #stats").hide();
+                        $("#user_applications, #create_application").show();
+                    }
+                })
             }
 
             function showUpdateAccountForm() {
@@ -268,18 +429,30 @@
         <h2>Aktualizacja konta</h2>
         <form id='update_account_form'>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="firstname">Imię:</label>
+                <input type="text" class="form-control" name="firstname" id="firstname" required value="` + result.data
+                            .firstname + `" />
+            </div>
+ 
+            <div class="form-group">
+                <label for="lastname">Nazwisko:</label>
+                <input type="text" class="form-control" name="lastname" id="lastname" required value="` + result.data
+                            .lastname + `" />
+            </div>
+ 
+            <div class="form-group">
+                <label for="email">Email:</label>
                 <input type="email" class="form-control" name="email" id="email" required value="` + result.data
                             .email + `" />
             </div>
  
             <div class="form-group">
-                <label for="password">Hasło</label>
+                <label for="password">Hasło:</label>
                 <input type="password" class="form-control" name="password" id="password" />
             </div>
  
             <button type='submit' class='btn btn-primary'>
-                Aktualizuj dane
+                Zapisz zmiany
             </button>
         </form>
     `;

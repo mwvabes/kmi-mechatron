@@ -6,9 +6,7 @@ class Application
     private $table_name = "application";
 
     public $id;
-    public $email;
-    public $name;
-    public $surname;
+    public $user_id;
     public $authors;
     public $affiliation;
     public $title;
@@ -24,29 +22,24 @@ class Application
     {
         $query = "INSERT INTO " . $this->table_name . "
             SET
-                email = :email,
-                name = :name,
-                surname = :surname,
+                user_id = :user_id,
                 authors = :authors,
                 affiliation = :affiliation,
                 title = :title,
                 category = :category,
-                regulations = :regulations";
+                regulations = :regulations,
+                status = 'złożone'";
 
         $stmt = $this->conn->prepare($query);
 
-        $this->email = htmlspecialchars(strip_tags($this->email));
-        $this->name = htmlspecialchars(strip_tags($this->name));
-        $this->surname = htmlspecialchars(strip_tags($this->surname));
+        $this->user_id = htmlspecialchars(strip_tags($this->user_id));
         $this->authors = htmlspecialchars(strip_tags($this->authors));
         $this->affiliation = htmlspecialchars(strip_tags($this->affiliation));
         $this->title = htmlspecialchars(strip_tags($this->title));
         $this->category = htmlspecialchars(strip_tags($this->category));
         $this->regulations = htmlspecialchars(strip_tags($this->regulations));
 
-        $stmt->bindParam(':email', $this->email);
-        $stmt->bindParam(':name', $this->name);
-        $stmt->bindParam(':surname', $this->surname);
+        $stmt->bindParam(':user_id', $this->user_id);
         $stmt->bindParam(':authors', $this->authors);
         $stmt->bindParam(':affiliation', $this->affiliation);
         $stmt->bindParam(':title', $this->title);

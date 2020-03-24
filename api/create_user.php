@@ -15,10 +15,15 @@ $user = new User($db);
 
 $data = json_decode(file_get_contents("php://input"));
 
+$user->firstname = $data->firstname;
+$user->lastname = $data->lastname;
 $user->email = $data->email;
 $user->password = $data->password;
+$user->admin = 0;
 
 if (
+    !empty($user->firstname) &&
+    !empty($user->lastname) &&
     !empty($user->email) &&
     !empty($user->password) &&
     $user->create()

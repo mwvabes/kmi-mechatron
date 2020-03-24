@@ -14,9 +14,7 @@ $application = new Application($db);
 
 $data = json_decode(file_get_contents("php://input"));
 
-$application->email = $data->email;
-$application->name = $data->name;
-$application->surname = $data->surname;
+$application->user_id = htmlspecialchars($_COOKIE["uid"]);
 $application->authors = $data->authors;
 $application->affiliation = $data->affiliation;
 $application->title = $data->title;
@@ -24,9 +22,7 @@ $application->category = $data->category;
 $application->regulations = $data->regulations;
 
 if (
-    !empty($application->email) &&
-    !empty($application->name) &&
-    !empty($application->surname) &&
+    !empty($application->user_id) &&
     !empty($application->affiliation) &&
     !empty($application->title) &&
     !empty($application->category) &&

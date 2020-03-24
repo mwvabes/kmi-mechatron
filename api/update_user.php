@@ -26,6 +26,8 @@ $jwt = isset($data->jwt) ? $data->jwt : "";
 if ($jwt) {
     try {
         $decoded = JWT::decode($jwt, $key, array('HS256'));
+        $user->firstname = $data->firstname;
+        $user->lastname = $data->lastname;
         $user->email = $data->email;
         $user->password = $data->password;
         $user->id = $decoded->data->id;
@@ -38,6 +40,8 @@ if ($jwt) {
                 "nbf" => $nbf,
                 "data" => array(
                     "id" => $user->id,
+                    "firstname" => $user->firstname,
+                    "lastname" => $user->lastname,
                     "email" => $user->email
                 )
             );

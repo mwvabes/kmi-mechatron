@@ -99,8 +99,6 @@
             var application_form = $(this);
             var form_data = JSON.stringify(application_form.serializeObject());
 
-            console.log(form_data);
-
             $.ajax({
                 url: "api/create_application.php",
                 type: "POST",
