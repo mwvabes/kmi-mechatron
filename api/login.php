@@ -47,7 +47,8 @@ if ($email_exists && password_verify($data->password, $user->password)) {
     echo json_encode(
         array(
             "message" => "Successful login.",
-            "jwt" => $jwt
+            "jwt" => $jwt,
+            "uid" => $user->id
         )
     );
 } else {

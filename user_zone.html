@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="styles/user_zone.css" />
+
+
 </head>
 
 <body>
@@ -40,24 +42,23 @@
                 <div id="content"></div>
             </div>
         </div>
-
     </main>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/google-palette@1.1.0/palette.min.js"></script>
 
     <script>
         $(document).ready(function () {
             showHomePage();
+
             $(document).on('click', '#sign_up', function () {
 
                 var html = `
@@ -91,9 +92,10 @@
                 $('#content').html(html);
             });
 
-            $(document).on('submit', '#sign_up_form', function () {
-                var sign_up_form = $(this);
-                var form_data = JSON.stringify(sign_up_form.serializeObject());
+            $(document).on('submit', '#sign_up_form', function (e) {
+                e.preventDefault();
+                var form = $(this);
+                var form_data = JSON.stringify(form.serializeObject());
 
                 $.ajax({
                     url: "api/create_user.php",
@@ -104,7 +106,7 @@
                         $('#response').html(
                             "<div class='alert alert-success'>Rejestracja przebiegła pomyślnie. Teraz możesz się zalogować.</div>"
                         );
-                        sign_up_form.find('input').val('');
+                        form.find('input').val('');
                     },
                     error: function (xhr, resp, text) {
                         $('#response').html(
@@ -120,9 +122,10 @@
                 showLoginPage();
             });
 
-            $(document).on('submit', '#login_form', function () {
-                var login_form = $(this);
-                var form_data = JSON.stringify(login_form.serializeObject());
+            $(document).on('submit', '#login_form', function (e) {
+                e.preventDefault();
+                var form = $(this);
+                var form_data = JSON.stringify(form.serializeObject());
                 $.ajax({
                     url: "api/login.php",
                     type: "POST",
@@ -130,6 +133,7 @@
                     data: form_data,
                     success: function (result) {
                         setCookie("jwt", result.jwt, 1);
+                        setCookie("uid", result.uid, 1);
                         showLoggedInMenu();
                         $('#content').html('');
                         $('#response').html(
@@ -140,7 +144,7 @@
                         $('#response').html(
                             "<div class='alert alert-danger'>Email i hasło nie pasują do siebie.</div>"
                         );
-                        login_form.find('input').val('');
+                        form.find('input').val('');
                     }
                 });
                 return false;
@@ -151,116 +155,15 @@
                 clearResponse();
             });
 
-            $(document).on('click', '#stats', function () {
-                showStats();
-                clearResponse();
-            });
-
             $(document).on('click', '#update_account', function () {
                 showUpdateAccountForm();
             });
 
-            function showApplicationForm() {
+            $(document).on('submit', '#update_account_form', function (e) {
+                e.preventDefault();
+                var form = $(this);
                 var jwt = getCookie('jwt');
-                $.post("api/validate_token.php", JSON.stringify({
-                        jwt: jwt
-                    })).done(function () {
-                        var html = `
-            <h2>Zgłoś projekt</h2>
-                    <form id='application-form'>
-                        <div class="form-group">
-                            <label for="authors">Pozostali autorzy:</label>
-                            <input type="text" class="form-control" name="authors" id="authors" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="affiliation">Afiliacja</label>
-                            <input type="text" class="form-control" name="affiliation" id="affiliation" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="title">Tytuł</label>
-                            <input type="text" class="form-control" name="title" id="title" required />
-                        </div>
-
-                        <label for="category">Kategoria</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="category" id="categoryradio1" value="projekt IT" checked>
-                            <label class="form-check-label" for="categoryradio1">
-                                projekt IT
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="category" id="categoryradio2" value="freestyle">
-                            <label class="form-check-label" for="categoryradio2">
-                                freestyle
-                            </label>
-                        </div>
-
-                        <label for="regulations" style="padding-top: 10px">Oświadczam, że zapoznałem/am się z treścią
-                            Regulaminu zamieszczonego na stronie internetowej konferencji **STRONA**, przyjmuję do
-                            wiadomości treści w nim zawarte i zobowiązuję się do przestrzegania jego zapisów</label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check" type="checkbox" name="regulations" id="regulations" value="zaakceptowane" required>
-                            <label class="form-check-label" for="regulations">Tak, oświadczam, że zapoznałem/am się z
-                                treścią Regulaminu zamieszczonego na stronie internetowej konferencji mlodzi@urz.pl,
-                                przyjmuję do wiadomości treści w nim zawarte i zobowiązuję się do przestrzegania jego
-                                zapisów</label>
-                        </div>
-
-                        <button type='submit' class='btn btn-primary'>
-                            Wyślij
-                        </button>
-                    </form>`
-                        clearResponse();
-                        $('#content').html(html);
-                    })
-
-                    .fail(function (result) {
-                        showLoginPage();
-                        $('#response').html(
-                            "<div class='alert alert-danger'>Dostęp tylko dla zalogowanych użytkowników. Zaloguj się.</div>"
-                        );
-                    });
-            }
-
-            $(document).on('click', '#create_application', function () {
-                showApplicationForm();
-                clearResponse();
-            });
-
-            $(document).on('submit', '#application-form', function () {
-                var application_form = $(this);
-                var form_data = JSON.stringify(application_form.serializeObject());
-                alert(form_data);
-
-                $.ajax({
-                    url: "api/create_application.php",
-                    type: "POST",
-                    contentType: 'application/json',
-                    data: form_data,
-                    success: function (result) {
-                        $('#response').html(
-                            "<div class='alert alert-success'>Twoje zgłoszenie zostało zapisane pomyślnie.</div>"
-                        );
-                        $('#content').html("");
-                        application_form.find('input').val('');
-
-                    },
-                    error: function (xhr, resp, text) {
-                        $('#response').html(
-                            "<div class='alert alert-danger'>Wystąpił błąd podczas wysyłania zgłoszenia.</div>"
-                        );
-                    }
-                });
-                return false;
-            });
-
-            $(document).on('submit', '#update_account_form', function () {
-
-                var update_account_form = $(this);
-                var jwt = getCookie('jwt');
-                var update_account_form_obj = update_account_form.serializeObject()
+                var update_account_form_obj = form.serializeObject()
                 update_account_form_obj.jwt = jwt;
                 var form_data = JSON.stringify(update_account_form_obj);
 
@@ -337,7 +240,6 @@
                 $("#update_account").hide();
                 $("#stats").hide();
                 $("#user_applications, #create_application").hide();
-                setCookie("uid", "", 0);
             }
 
             function showHomePage() {
@@ -351,31 +253,6 @@
                         } else {
                             showUserHomePage();
                         }
-                    })
-
-                    .fail(function (result) {
-                        showLoginPage();
-                        $('#response').html(
-                            "<div class='alert alert-danger'>Dostęp tylko dla zalogowanych użytkowników. Zaloguj się.</div>"
-                        );
-                    });
-            }
-
-            function showUserHomePage() {
-                $('#content').load("api/user_applications.php");
-            }
-
-            $(document).on('click', '#user_applications', function () {
-                showUserHomePage();
-                clearResponse();
-            });
-
-            function showStats() {
-                var jwt = getCookie('jwt');
-                $.post("api/validate_token.php", JSON.stringify({
-                        jwt: jwt
-                    })).done(function (result) {
-                        $('#content').load("api/show_stats.php");
                     })
 
                     .fail(function (result) {
@@ -409,7 +286,6 @@
                 $.post("api/validate_token.php", JSON.stringify({
                     jwt: jwt
                 })).done(function (result) {
-                    setCookie("uid", result.data.id, 1);
                     if (result.data.admin == "1") {
                         $("#home, #stats").show();
                         $("#user_applications, #create_application").hide();
@@ -483,6 +359,146 @@
                 });
                 return o;
             };
+
+
+            function showApplicationForm() {
+                var jwt = getCookie('jwt');
+                $.post("api/validate_token.php", JSON.stringify({
+                        jwt: jwt
+                    })).done(function () {
+                        var html = `
+            <h2>Zgłoś projekt</h2>
+                    <form id="application-form">
+                        <div class="form-group">
+                            <label for="authors">Pozostali autorzy:</label>
+                            <input type="text" class="form-control" name="authors" id="authors" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="affiliation">Afiliacja</label>
+                            <input type="text" class="form-control" name="affiliation" id="affiliation" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title">Tytuł</label>
+                            <input type="text" class="form-control" name="title" id="title" required />
+                        </div>
+
+                        
+                        <div class="form-check">
+                            <label for="category">Kategoria</label>
+                            <select id="category" name="category">
+                            <option value="projekt IT" selected>projekt IT</option>
+                            <option value="freestyle">freestyle</option>
+                            </select>
+
+                        </div>
+
+                        <label for="regulations" style="padding-top: 10px">Oświadczam, że zapoznałem/am się z treścią
+                            Regulaminu zamieszczonego na stronie internetowej konferencji **STRONA**, przyjmuję do
+                            wiadomości treści w nim zawarte i zobowiązuję się do przestrzegania jego zapisów</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check" type="checkbox" name="regulations" id="regulations" value="zaakceptowane" required>
+                            <label class="form-check-label" for="regulations">Tak, oświadczam, że zapoznałem/am się z
+                                treścią Regulaminu zamieszczonego na stronie internetowej konferencji mlodzi@urz.pl,
+                                przyjmuję do wiadomości treści w nim zawarte i zobowiązuję się do przestrzegania jego
+                                zapisów</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Wyślij
+                        </button>
+                    </form>`
+                        clearResponse();
+                        $('#content').html(html);
+                    })
+
+                    .fail(function (result) {
+                        showLoginPage();
+                        $('#response').html(
+                            "<div class='alert alert-danger'>Dostęp tylko dla zalogowanych użytkowników. Zaloguj się.</div>"
+                        );
+                    });
+            }
+
+            $(document).on('click', '#stats', function () {
+                showStats();
+                clearResponse();
+            });
+
+            $(document).on('click', '#create_application', function () {
+                showApplicationForm();
+                clearResponse();
+            });
+
+            $(document).on('submit', '#application-form', function (e) {
+                e.preventDefault();
+                var form = $(this);
+                var form_data = JSON.stringify(form.serializeObject());
+                $.ajax({
+                    url: "api/create_application.php",
+                    type: "POST",
+                    contentType: 'application/json',
+                    data: form_data,
+                    success: function (result) {
+                        $('#response').html(
+                            "<div class='alert alert-success'>Twoje zgłoszenie zostało zapisane pomyślnie.</div>"
+                        );
+                        $('#content').html("");
+                        form.find('input').val('');
+                    },
+                    error: function (xhr, resp, text) {
+                        $('#response').html(
+                            "<div class='alert alert-danger'>Wystąpił błąd podczas wysyłania zgłoszenia.</div>"
+                        );
+                    }
+                });
+                return false;
+            });
+
+            function showUserHomePage() {
+                $('#content').load("api/user_applications.php");
+            }
+
+            $(document).on('click', '#user_applications', function () {
+                showUserHomePage();
+                clearResponse();
+            });
+
+            function showStats() {
+                var jwt = getCookie('jwt');
+                $.post("api/validate_token.php", JSON.stringify({
+                        jwt: jwt
+                    })).done(function (result) {
+                        $('#content').load("api/show_stats.php");
+                    })
+
+                    .fail(function (result) {
+                        showLoginPage();
+                        $('#response').html(
+                            "<div class='alert alert-danger'>Dostęp tylko dla zalogowanych użytkowników. Zaloguj się.</div>"
+                        );
+                    });
+            }
+
+            $(document).on('submit', '.acceptButton', function (e) {
+                e.preventDefault();
+                var form = $(this);
+                var form_data = '{"id":"' + $(form).attr('id') + '"}';
+                $.ajax({
+                    url: "api/accept_application.php",
+                    type: "POST",
+                    contentType: 'application/json',
+                    data: form_data,
+                    success: function (result) {
+                        $('[id=' + $(form).attr('id') + '].statusP').html('zaakceptowane');
+                        $('form[id=' + $(form).attr('id') + '].acceptButton button').prop(
+                            'disabled', true);
+                    },
+                    error: function (xhr, resp, text) {}
+                });
+                return false;
+            })
         });
     </script>
 </body>

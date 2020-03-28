@@ -1,4 +1,4 @@
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
 <script src="api/libs/table-sortable/table-sortable.js"></script>
 <link rel="stylesheet" href="api/libs/table-sortable/table-sortable.css" />
 

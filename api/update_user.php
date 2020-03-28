@@ -31,6 +31,7 @@ if ($jwt) {
         $user->email = $data->email;
         $user->password = $data->password;
         $user->id = $decoded->data->id;
+        $user->admin = $decoded->data->admin;
 
         if ($user->update()) {
             $token = array(
@@ -42,7 +43,8 @@ if ($jwt) {
                     "id" => $user->id,
                     "firstname" => $user->firstname,
                     "lastname" => $user->lastname,
-                    "email" => $user->email
+                    "email" => $user->email,
+                    "admin" => $user->admin
                 )
             );
 

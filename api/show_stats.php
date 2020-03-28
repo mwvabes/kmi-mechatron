@@ -60,7 +60,7 @@ $status = json_encode($application);
     }
 
     var ctxCategory = document.getElementById('categoryChart').getContext('2d');
-    var categoryChart = new Chart(ctxCategory, {
+    var vcategoryChart = new Chart(ctxCategory, {
         type: 'doughnut',
         data: {
             labels: labelCategory,
@@ -88,7 +88,7 @@ $status = json_encode($application);
     }
 
     var ctxAffiliation = document.getElementById('affiliationChart').getContext('2d');
-    var affiliationChart = new Chart(ctxAffiliation, {
+    var vaffiliationChart = new Chart(ctxAffiliation, {
         type: 'bar',
         data: {
             labels: labelAffiliation,
@@ -104,6 +104,13 @@ $status = json_encode($application);
             responsive: true,
             legend: {
                 display: false
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
             }
         }
     });
@@ -119,7 +126,7 @@ $status = json_encode($application);
     }
 
     var ctxStatus = document.getElementById('statusChart').getContext('2d');
-    var statusChart = new Chart(ctxStatus, {
+    var vstatusChart = new Chart(ctxStatus, {
         type: 'doughnut',
         data: {
             labels: labelStatus,
