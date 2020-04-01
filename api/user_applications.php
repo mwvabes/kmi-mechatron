@@ -32,13 +32,31 @@ $json = json_encode($application);
             "<div class='alert alert-success'>Nie masz jeszcze żadnych zgłoszeń</div>"
         );
     } else {
+        for (var i = 0; i < data.length; i++) {
+            var bc;
+            switch (data[i].status) {
+                case "złożone": {
+                    bc = "orange";
+                    break;
+                }
+                case "zaakceptowane": {
+                    bc = "green";
+                    break;
+                }
+                case "odrzucone": {
+                    bc = "red";
+                    break;
+                }
+            }
+            data[i].title = "<p>".concat(data[i].title, "<span style='margin-left: 5px; color: white; background-color: ", bc, "' class='badge bagde-primary'>", data[i].status, "</span></p>");
+        }
+
         var columns = {
             'num': '#',
-            'authors': 'Autorzy',
+            'authors': 'Zespół',
             'affiliation': 'Afiliacja',
             'title': 'Tytuł',
             'category': 'Kategoria',
-            'status': 'Status',
         }
 
         var table = $('#table-sortable').tableSortable({
@@ -53,15 +71,13 @@ $json = json_encode($application);
                 1200: {
                     columns: {
                         'title': 'Tytuł',
-                        'category': 'Kategoria',
-                        'status': 'Status'
+                        'category': 'Kategoria'
                     },
                 },
                 850: {
                     rowsPerPage: 2,
                     columns: {
-                        'title': 'Tytuł',
-                        'status': 'Status'
+                        'title': 'Tytuł'
                     },
                 }
             }

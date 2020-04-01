@@ -3,7 +3,7 @@
 class User
 {
     private $conn;
-    private $table_name = "user";
+    private $table_name = "users";
 
     public $id;
     public $firstname;

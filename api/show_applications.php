@@ -1,5 +1,48 @@
-<script src="api/libs/table-sortable/table-sortable.js"></script>
-<link rel="stylesheet" href="api/libs/table-sortable/table-sortable.css" />
+<style>
+    .success {
+        color: white;
+        background-color: green;
+        margin-left: 5px;
+    }
+
+    .warning {
+        color: white;
+        background-color: orange;
+        margin-left: 5px;
+    }
+
+    .danger {
+        color: white;
+        background-color: red;
+        margin-left: 5px;
+    }
+
+    button.fsm {
+        border: none;
+        background-color: transparent;
+    }
+
+    button.fsm i {
+        cursor: pointer;
+    }
+
+    i.fas.fa-check {
+        color: green;
+    }
+
+    i.fas.fa-ban,
+    i.far.fa-trash-alt {
+        color: red;
+    }
+
+    form {
+        float: left;
+    }
+
+    div.buttons-container {
+        width: 100px;
+    }
+</style>
 
 <h2>Zgłoszenia</h2>
 <div id="table-sortable"></div>
@@ -11,7 +54,7 @@ $database = new Database();
 $db = $database->getConnection();
 $stmt = $db->prepare("SET @row_number:=0");
 $stmt->execute();
-$stmt = $db->prepare('SELECT @row_number:=@row_number+1 AS num, application.id as idd, email, firstname, lastname, authors, affiliation, title, category, status FROM application INNER JOIN user ON (application.user_id = user.id)  ORDER BY application.id');
+$stmt = $db->prepare('SELECT @row_number:=@row_number+1 AS num, application.id as idd, email, CONCAT(firstname, " ", lastname) AS author, authors, affiliation, title, category, status FROM application INNER JOIN users ON (application.user_id = users.id)  ORDER BY application.id');
 $stmt->execute();
 $application = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -23,21 +66,36 @@ $json = json_encode($application);
     var data = <?php echo $json; ?>;
 
     for (var i = 0; i < data.length; i++) {
-        data[i].accept = "<form class='acceptButton' id=".concat(data[i].idd, "><button type='submit'", data[i].status == "zaakceptowane" ? 'disabled' : '', ">Akceptuj</button></form>");
-        data[i].status = "<p class='statusP' id=".concat(data[i].idd, ">", data[i].status, "</p>");
+        var bc;
+        switch (data[i].status) {
+            case "złożone": {
+                bc = "warning";
+                break;
+            }
+            case "zaakceptowane": {
+                bc = "success";
+                break;
+            }
+            case "odrzucone": {
+                bc = "danger";
+                break;
+            }
+        }
+        data[i].title = "<p>".concat(data[i].title, "<span id=", data[i].idd, " class='badge ", bc, "'>", data[i].status, "</span></p>");
+        data[i].accept = "<div class='buttons-container'><form class='applicationsAction' data-action='zaakceptowane' id=".concat(data[i].idd, "><button type='submit' class='fsm'><i class='fas fa-check'></i></button></form>",
+            "<form class='applicationsAction' data-action='odrzucone' id=", data[i].idd, "><button type='submit' class='fsm'><i class='fas fa-ban'></i></button></form>",
+            "<form class='applicationsAction' data-action='delete' id=", data[i].idd, "><button type='submit' class='fsm'><i class='far fa-trash-alt'></i></button></form></div>"
+        );
     }
-
     var columns = {
         'num': '#',
         'email': 'Email',
-        'firstname': 'Imię',
-        'lastname': 'Nazwisko',
-        'authors': 'Autorzy',
+        'author': 'Autor',
+        'authors': 'Zespół',
         'affiliation': 'Afiliacja',
-        'title': 'Tytuł',
         'category': 'Kategoria',
-        'status': 'Status',
-        'accept': 'Akceptuj'
+        'title': 'Tytuł',
+        'accept': 'Akcje'
     }
 
     var table = $('#table-sortable').tableSortable({
@@ -52,23 +110,23 @@ $json = json_encode($application);
             1200: {
                 columns: {
                     'email': 'Email',
-                    'title': 'Tytuł',
                     'category': 'Kategoria',
-                    'accept': 'Akceptuj'
+                    'title': 'Tytuł',
+                    'accept': 'Akcje'
                 },
             },
             1000: {
                 columns: {
                     'email': 'Email',
                     'title': 'Tytuł',
-                    'accept': 'Akceptuj'
+                    'accept': 'Akcje'
                 },
             },
             850: {
                 rowsPerPage: 2,
                 columns: {
                     'title': 'Tytuł',
-                    'accept': 'Akceptuj'
+                    'accept': 'Akcje'
                 },
             }
         }

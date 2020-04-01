@@ -7,10 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Strefa użytkownika</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles/user_zone.css" />
-
 
 </head>
 
@@ -49,11 +48,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/google-palette@1.1.0/palette.min.js"></script>
+
+    <script src="api/libs/table-sortable/table-sortable.js"></script>
+    <link rel="stylesheet" href="api/libs/table-sortable/table-sortable.css" />
+    <script src="https://kit.fontawesome.com/7f492f3a8a.js" crossorigin="anonymous" async></script>
+
 
     <script>
         $(document).ready(function () {
@@ -481,22 +485,60 @@
                     });
             }
 
-            $(document).on('submit', '.acceptButton', function (e) {
+            $(document).on('submit', '.applicationsAction', function (e) {
                 e.preventDefault();
                 var form = $(this);
-                var form_data = '{"id":"' + $(form).attr('id') + '"}';
-                $.ajax({
-                    url: "api/accept_application.php",
-                    type: "POST",
-                    contentType: 'application/json',
-                    data: form_data,
-                    success: function (result) {
-                        $('[id=' + $(form).attr('id') + '].statusP').html('zaakceptowane');
-                        $('form[id=' + $(form).attr('id') + '].acceptButton button').prop(
-                            'disabled', true);
-                    },
-                    error: function (xhr, resp, text) {}
-                });
+                var form_data = '{"id":"' + $(form).attr('id') + '", "sts" : "' + $(form).data(
+                    'action') + '"}';
+                if ($(form).data('action') != "delete") {
+                    $.ajax({
+                        url: "api/accept_application.php",
+                        type: "POST",
+                        contentType: 'application/json',
+                        data: form_data,
+                        success: function (result) {
+                            if ($(form).data('action') == 'zaakceptowane') {
+                                $('[id=' + $(form).attr('id') + '].badge').html(
+                                    'zaakceptowane');
+                                $('[id=' + $(form).attr('id') + '].badge').removeClass(
+                                    'danger warning');
+                                $('[id=' + $(form).attr('id') + '].badge').addClass(
+                                    'success');
+                            } else {
+                                $('[id=' + $(form).attr('id') + '].badge').html(
+                                    'odrzucone');
+                                $('[id=' + $(form).attr('id') + '].badge').removeClass(
+                                    'success warning');
+                                $('[id=' + $(form).attr('id') + '].badge').addClass(
+                                    'danger');
+                            }
+
+                        },
+                        error: function (xhr, resp, text) {}
+                    });
+                } else {
+                    $.ajax({
+                        url: "api/remove_application.php",
+                        type: "POST",
+                        contentType: 'application/json',
+                        data: form_data,
+                        success: function (result) {
+                            $('#response').html(
+                                "<div class='alert alert-success'>Zgłoszenie zostało usunięte pomyślnie.</div>"
+                            );
+                            setTimeout(function () {
+                                showHomePage();
+                                $('#response').html("");
+                            }, 1000);
+
+                        },
+                        error: function (xhr, resp, text) {
+                            $('#response').html(
+                                "<div class='alert alert-danger'>Wystąpił błąd podczas usuwania zgłoszenia.</div>"
+                            );
+                        }
+                    });
+                }
                 return false;
             })
         });

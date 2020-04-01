@@ -11,7 +11,7 @@ $db = $database->getConnection();
 
 $data = json_decode(file_get_contents("php://input"));
 
-$sts = 'zaakceptowane';
+$sts = $data->sts;
 $id = $data->id;
 
 $query = "UPDATE application SET status = :sts WHERE id = :id";

@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS project;
 CREATE DATABASE project;
 USE project;
 
-CREATE TABLE user (
+CREATE TABLE users (
   id int(11) PRIMARY KEY AUTO_INCREMENT,
   email VARCHAR(256) NOT NULL,
   password VARCHAR(2048) NOT NULL,
@@ -19,13 +19,14 @@ CREATE TABLE application (
   title VARCHAR(100) NOT NULL,
   category ENUM('freestyle','projekt IT') NOT NULL,
   regulations ENUM('zaakceptowane') DEFAULT NULL,
-  status ENUM('złożone', 'zaakceptowane') DEFAULT 'złożone' NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES user(id)
+  status ENUM('złożone', 'zaakceptowane', 'odrzucone') DEFAULT 'złożone' NOT NULL,
+  application_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO user (email, firstname, lastname, password, admin) VALUES
+INSERT INTO users (email, firstname, lastname, password, admin) VALUES
 ('admin@ur.pl', 'Admin', 'Admin', '$2y$10$JJm7cyQ1bQQD.Y/rOzDVde/bexEIZXnFi5z39kXckgkw6dzrn0y92', TRUE),
-('arkadiusz.bermowski@wp.pl', 'Arkadiusz', 'Bremowski', '$2y$10$Pk9EIAD2GNlDTH4ROAeIgObDhjuVfnhEJQeaS7kHtFyXIjQYqQhZ6', FALSE),
+('arkadiusz.bremowski@wp.pl', 'Arkadiusz', 'Bremowski', '$2y$10$Pk9EIAD2GNlDTH4ROAeIgObDhjuVfnhEJQeaS7kHtFyXIjQYqQhZ6', FALSE),
 ('dawid.nowak@onet.pl', 'Dawid', 'Nowak', '$2y$10$Pk9EIAD2GNlDTH4ROAeIgObDhjuVfnhEJQeaS7kHtFyXIjQYqQhZ6', FALSE),
 ('marek.gil@gmail.com', 'Marek', 'Gil', '$2y$10$Pk9EIAD2GNlDTH4ROAeIgObDhjuVfnhEJQeaS7kHtFyXIjQYqQhZ6', FALSE),
 ('tomasz.kot@wp.pl', 'Tomasz', 'Kot', '$2y$10$Pk9EIAD2GNlDTH4ROAeIgObDhjuVfnhEJQeaS7kHtFyXIjQYqQhZ6', FALSE),

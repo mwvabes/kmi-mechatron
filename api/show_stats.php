@@ -9,11 +9,24 @@
         position: relative;
         width: 60vw;
         margin: 20px auto;
+        height: 80vh;
     }
 
     h3 {
         padding-top: 10px;
         text-align: center;
+    }
+
+    @media screen and (max-width: 750px) {
+        div.chart {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 750px) and (orientation: landscape) {
+        div.chart {
+            height: 80vh;
+        }
     }
 </style>
 
@@ -24,6 +37,8 @@
 <div class='chart'><canvas id="affiliationChart"></canvas></div>
 <h3>Statusy zgłoszeń</h3>
 <div class='chart'><canvas id="statusChart"></canvas></div>
+<h3>Zgłoszenia w czasie</h3>
+<div class='chart'><canvas id="dateChart"></canvas></div>
 <?php
 
 include_once 'config/database.php';
@@ -36,7 +51,7 @@ $stmt->execute();
 $application = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $category = json_encode($application);
 
-$stmt = $db->prepare('SELECT affiliation, COUNT(*) AS quantity FROM application GROUP BY affiliation');
+$stmt = $db->prepare('SELECT affiliation, COUNT(*) AS quantity FROM application GROUP BY affiliation ORDER BY quantity LIMIT 5');
 $stmt->execute();
 $application = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $affiliation = json_encode($application);
@@ -45,6 +60,12 @@ $stmt = $db->prepare('SELECT status, COUNT(*) AS quantity FROM application GROUP
 $stmt->execute();
 $application = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $status = json_encode($application);
+
+// $stmt = $db->prepare('SELECT DATE(application_date) AS application_date, COUNT(*) AS quantity FROM application GROUP BY application_date');
+$stmt = $db->prepare("SELECT a.application_date AS application_date, MAX(a.quantity) AS quantity FROM (SELECT DATE(application_date) AS application_date, COUNT(*) AS quantity FROM application GROUP BY application_date UNION SELECT DATE('2020-03-01') AS application_date, 0 AS quantity FROM dual UNION SELECT DATE('2020-04-27') AS application_date, 0 AS quantity FROM dual) a GROUP BY a.application_date ORDER BY a.application_date");
+$stmt->execute();
+$application = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$dates = json_encode($application);
 
 ?>
 
@@ -65,7 +86,7 @@ $status = json_encode($application);
         data: {
             labels: labelCategory,
             datasets: [{
-                label: '# of Applications',
+                label: 'Ilość zgłoszeń',
                 data: quantityCategory,
                 backgroundColor: palette('mpn65', quantityCategory.length).map(function(hex) {
                     return '#' + hex;
@@ -74,6 +95,7 @@ $status = json_encode($application);
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
         }
     });
 
@@ -93,7 +115,7 @@ $status = json_encode($application);
         data: {
             labels: labelAffiliation,
             datasets: [{
-                label: '# of Applications',
+                label: 'Ilość zgłoszeń',
                 data: quantityAffiliation,
                 backgroundColor: palette('mpn65', quantityAffiliation.length).map(function(hex) {
                     return '#' + hex;
@@ -102,15 +124,32 @@ $status = json_encode($application);
         },
         options: {
             responsive: true,
+            aspectRatio: 1,
+            maintainAspectRatio: false,
             legend: {
                 display: false
             },
             scales: {
+                xAxes: [{
+                    ticks: {
+                        autoSkip: true,
+                        maxRotation: 90,
+                        minRotation: 90
+                    }
+                }],
                 yAxes: [{
                     ticks: {
                         beginAtZero: true
                     }
                 }]
+            },
+            layout: {
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 20
+                }
             }
         }
     });
@@ -131,7 +170,7 @@ $status = json_encode($application);
         data: {
             labels: labelStatus,
             datasets: [{
-                label: '# of Applications',
+                label: 'Ilość zgłoszeń',
                 data: quantityStatus,
                 backgroundColor: palette('mpn65', quantityStatus.length).map(function(hex) {
                     return '#' + hex;
@@ -140,6 +179,38 @@ $status = json_encode($application);
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
+        }
+    });
+
+
+    var data = <?php echo $dates; ?>;
+
+    var labelDates = new Array();
+    var quantityDates = new Array();
+
+    for (var i = 0; i < data.length; i++) {
+        labelDates[i] = data[i].application_date;
+        quantityDates[i] = data[i].quantity;
+    }
+
+    var ctxDates = document.getElementById('dateChart').getContext('2d');
+    var vdateChart = new Chart(ctxDates, {
+        type: 'line',
+        data: {
+            labels: labelDates,
+            datasets: [{
+                label: 'Ilość zgłoszeń',
+                data: quantityDates,
+                backgroundColor: "#4287f5"
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: false
+            },
         }
     });
 </script>
