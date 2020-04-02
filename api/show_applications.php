@@ -1,19 +1,19 @@
 <style>
     .success {
         color: white;
-        background-color: green;
+        background-color: #28a745;
         margin-left: 5px;
     }
 
     .warning {
         color: white;
-        background-color: orange;
+        background-color: #ffc107;
         margin-left: 5px;
     }
 
     .danger {
         color: white;
-        background-color: red;
+        background-color: #dc3545;
         margin-left: 5px;
     }
 
@@ -27,12 +27,12 @@
     }
 
     i.fas.fa-check {
-        color: green;
+        color: #28a745;
     }
 
     i.fas.fa-ban,
     i.far.fa-trash-alt {
-        color: red;
+        color: #dc3545;
     }
 
     form {

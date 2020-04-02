@@ -35,12 +35,12 @@ INSERT INTO users (email, firstname, lastname, password, admin) VALUES
 ('marek.kus@gmail.com', 'Marek', 'Kus', '$2y$10$Pk9EIAD2GNlDTH4ROAeIgObDhjuVfnhEJQeaS7kHtFyXIjQYqQhZ6', FALSE),
 ('michal.chmiel@wp.pl', 'Michał', 'Chmiel', '$2y$10$Pk9EIAD2GNlDTH4ROAeIgObDhjuVfnhEJQeaS7kHtFyXIjQYqQhZ6', FALSE);
 
-INSERT INTO application (user_id, authors, affiliation, title, category, regulations) VALUES
-(2, 'Bartłomiej Iwaszek, Kacper Niemiec', 'Akademia Górniczo-Hutnicza', 'Algorytm detekcji mimiki twarzy', 'projekt IT', 'zaakceptowane'),
-(3, NULL, 'Uniwersytet Rzeszowski', 'WiredLine', 'freestyle', 'zaakceptowane'),
-(4, NULL, 'Politechnika Wrocławska', 'Innowacyjny projekt traktora', 'projekt IT', 'zaakceptowane'),
-(5, 'Andżelika Wiech', 'Uniwersytet Jagielloński', 'Stacja meteorologiczna na platformie Raspberry PI', 'freestyle', 'zaakceptowane'),
-(6, NULL, 'Politechnika Warszawska', 'Insudi - kalkulator insuliny', 'freestyle', 'zaakceptowane'),
-(7, NULL, 'Politechnika Poznańska', 'Projekt gry mobilnej "ranDungeon"', 'freestyle', 'zaakceptowane'),
-(8, NULL, 'Katolicki Uniwersytet Lubleski', 'Wizualizacja silnika benzynowego 1,6l 16v', 'projekt IT', 'zaakceptowane'),
-(9, NULL, 'Politechnika Gdańska', 'ManualGearBox', 'freestyle', 'zaakceptowane');
+INSERT INTO application (user_id, authors, affiliation, title, category, status, application_date, regulations) VALUES
+(2, 'Bartłomiej Iwaszek, Kacper Niemiec', 'Akademia Górniczo-Hutnicza', 'Algorytm detekcji mimiki twarzy', 'projekt IT', 'zaakceptowane', '2020-03-05 12:48:24', 'zaakceptowane'),
+(3, NULL, 'Uniwersytet Rzeszowski', 'WiredLine', 'freestyle', 'odrzucone', '2020-03-05 12:48:24', 'zaakceptowane'),
+(4, NULL, 'Politechnika Wrocławska', 'Innowacyjny projekt traktora', 'projekt IT', 'złożone', '2020-03-12 12:48:24', 'zaakceptowane'),
+(5, 'Andżelika Wiech', 'Uniwersytet Jagielloński', 'Stacja meteorologiczna na platformie Raspberry PI', 'freestyle', 'złożone', '2020-03-20 12:48:24', 'zaakceptowane'),
+(6, NULL, 'Uniwersytet Jagielloński', 'Insudi - kalkulator insuliny', 'freestyle', 'złożone', '2020-03-20 12:48:24', 'zaakceptowane'),
+(7, NULL, 'Politechnika Poznańska', 'Projekt gry mobilnej "ranDungeon"', 'freestyle', 'zaakceptowane', '2020-03-20 12:48:24', 'zaakceptowane'),
+(8, NULL, 'Uniwersytet Rzeszowski', 'Wizualizacja silnika benzynowego 1,6l 16v', 'projekt IT', 'złożone', '2020-03-25 12:48:24', 'zaakceptowane'),
+(9, NULL, 'Uniwersytet Rzeszowski', 'ManualGearBox', 'freestyle', 'złożone', '2020-03-30 12:48:24', 'zaakceptowane');

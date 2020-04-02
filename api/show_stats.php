@@ -56,7 +56,8 @@ $stmt->execute();
 $application = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $affiliation = json_encode($application);
 
-$stmt = $db->prepare('SELECT status, COUNT(*) AS quantity FROM application GROUP BY status');
+// $stmt = $db->prepare('SELECT status, COUNT(*) AS quantity FROM application GROUP BY status');
+$stmt = $db->prepare('SELECT a.status AS status, MAX(a.quantity) AS quantity FROM ( SELECT status, COUNT(*) AS quantity FROM application GROUP BY status UNION SELECT "zaakceptowane" AS status, 0 AS quantity FROM dual UNION SELECT "złożone" AS status, 0 AS quantity FROM dual UNION SELECT "odrzucone" AS status, 0 AS quantity FROM dual ) a GROUP BY status ORDER BY status');
 $stmt->execute();
 $application = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $status = json_encode($application);
@@ -172,9 +173,10 @@ $dates = json_encode($application);
             datasets: [{
                 label: 'Ilość zgłoszeń',
                 data: quantityStatus,
-                backgroundColor: palette('mpn65', quantityStatus.length).map(function(hex) {
-                    return '#' + hex;
-                })
+                backgroundColor: ["rgb(255, 0, 41)", "rgb(102, 166, 30)", "rgb(255, 127, 0)"],
+                // backgroundColor: palette('mpn65', quantityStatus.length).map(function(hex) {
+                //     return '#' + hex;
+                // })
             }]
         },
         options: {
@@ -202,7 +204,7 @@ $dates = json_encode($application);
             datasets: [{
                 label: 'Ilość zgłoszeń',
                 data: quantityDates,
-                backgroundColor: "#4287f5"
+                backgroundColor: "rgb(55, 126, 184)"
             }]
         },
         options: {

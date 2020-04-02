@@ -2,6 +2,26 @@
 <script src="api/libs/table-sortable/table-sortable.js"></script>
 <link rel="stylesheet" href="api/libs/table-sortable/table-sortable.css" />
 
+<style>
+    .success {
+        color: white;
+        background-color: #28a745;
+        margin-left: 5px;
+    }
+
+    .warning {
+        color: white;
+        background-color: #ffc107;
+        margin-left: 5px;
+    }
+
+    .danger {
+        color: white;
+        background-color: #dc3545;
+        margin-left: 5px;
+    }
+</style>
+
 <h2>Moje zgłoszenia</h2>
 <div id="response"></div>
 <div id="table-sortable"></div>
@@ -36,19 +56,19 @@ $json = json_encode($application);
             var bc;
             switch (data[i].status) {
                 case "złożone": {
-                    bc = "orange";
+                    bc = "warning";
                     break;
                 }
                 case "zaakceptowane": {
-                    bc = "green";
+                    bc = "success";
                     break;
                 }
                 case "odrzucone": {
-                    bc = "red";
+                    bc = "danger";
                     break;
                 }
             }
-            data[i].title = "<p>".concat(data[i].title, "<span style='margin-left: 5px; color: white; background-color: ", bc, "' class='badge bagde-primary'>", data[i].status, "</span></p>");
+            data[i].title = "<p>".concat(data[i].title, "<span class='badge ", bc, "'>", data[i].status, "</span></p>");
         }
 
         var columns = {
