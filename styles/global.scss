@@ -903,7 +903,8 @@ footer>*>*>p {
 
   .navToggle:checked~ul {
     display: flex;
-    max-height: 100%;
+    max-height: calc(100vh - 60px);
+    overflow-y: scroll;
     transform: scale(1,1);
   }
 
@@ -912,9 +913,9 @@ footer>*>*>p {
     z-index: 9000;
   }
 
-  nav>ul {
+  nav > ul {
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     margin: 0;
   }
 
