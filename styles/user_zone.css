@@ -91,7 +91,7 @@ h2 {
   overflow-x: scroll;
 }
 
-#content {
+.contentScrollX {
   overflow-x: scroll;
 }
 /*# sourceMappingURL=user_zone.css.map */

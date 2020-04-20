@@ -60,6 +60,7 @@
     }
 </style>
 
+<div class="contentScrollX">
 <h2>Statystyki</h2>
 <h3>Kategorie projektów</h3>
 <div class='chart'><canvas id="categoryChart"></canvas></div>
@@ -74,6 +75,7 @@
 <div class='chart'><canvas id="statusChart"></canvas></div>
 <h3>Zgłoszenia w czasie</h3>
 <div class='chart'><canvas id="dateChart"></canvas></div>
+</div>
 <?php
 
 include_once 'config/database.php';
