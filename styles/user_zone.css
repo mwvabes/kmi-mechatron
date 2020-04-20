@@ -86,4 +86,12 @@ h2 {
   font-weight: bold;
   color: #636363;
 }
+
+.chart {
+  overflow-x: scroll;
+}
+
+#content {
+  overflow-x: scroll;
+}
 /*# sourceMappingURL=user_zone.css.map */
