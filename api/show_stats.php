@@ -7,7 +7,7 @@
 
     div.chart {
         position: relative;
-        width: 60vw;
+        width: 90%;
         margin: 20px auto;
         height: 80vh;
     }
@@ -35,14 +35,14 @@
 
     .chartAreaWrapper {
         height: 100%;
-        width: 60vw;
+        width: 100%;
         overflow-x: scroll;
     }
 
     @media screen and (max-width: 750px) {
-        div.chart {
+        /* /* div.chart {
             width: 100%;
-        }
+        } */
 
         .chartAreaWrapper {
             width: 100%;
@@ -61,20 +61,20 @@
 </style>
 
 <div class="contentScrollX">
-<h2>Statystyki</h2>
-<h3>Kategorie projektów</h3>
-<div class='chart'><canvas id="categoryChart"></canvas></div>
-<h3>Afiliacje</h3>
-<div class="chart">
-    <div class="chartAreaWrapper">
-        <canvas id="affiliationChart"></canvas>
+    <h2>Statystyki</h2>
+    <h3>Kategorie projektów</h3>
+    <div class='chart'><canvas id="categoryChart"></canvas></div>
+    <h3>Afiliacje</h3>
+    <div class="chart">
+        <div class="chartAreaWrapper">
+            <canvas id="affiliationChart"></canvas>
+        </div>
+        <canvas id="affiliationChartAxis"></canvas>
     </div>
-    <canvas id="affiliationChartAxis"></canvas>
-</div>
-<h3>Statusy zgłoszeń</h3>
-<div class='chart'><canvas id="statusChart"></canvas></div>
-<h3>Zgłoszenia w czasie</h3>
-<div class='chart'><canvas id="dateChart"></canvas></div>
+    <h3>Statusy zgłoszeń</h3>
+    <div class='chart'><canvas id="statusChart"></canvas></div>
+    <h3>Zgłoszenia w czasie</h3>
+    <div class='chart'><canvas id="dateChart"></canvas></div>
 </div>
 <?php
 
@@ -248,6 +248,13 @@ $dates = json_encode($application);
             maintainAspectRatio: false,
             legend: {
                 display: false
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        autoSkip: true
+                    }
+                }]
             },
         }
     });
