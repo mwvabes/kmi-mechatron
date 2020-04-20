@@ -12,13 +12,39 @@
         height: 80vh;
     }
 
+    #affiliationChart {
+        width: 1200px;
+    }
+
+    #affiliationChartAxis {
+        height: 300px;
+        width: 0px;
+    }
+
     h3 {
         padding-top: 10px;
         text-align: center;
     }
 
+    .chart>canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+    }
+
+    .chartAreaWrapper {
+        height: 100%;
+        width: 60vw;
+        overflow-x: scroll;
+    }
+
     @media screen and (max-width: 750px) {
         div.chart {
+            width: 100%;
+        }
+
+        .chartAreaWrapper {
             width: 100%;
         }
     }
@@ -27,6 +53,10 @@
         div.chart {
             height: 80vh;
         }
+
+        .chartAreaWrapper {
+            width: 100%;
+        }
     }
 </style>
 
@@ -34,7 +64,12 @@
 <h3>Kategorie projektów</h3>
 <div class='chart'><canvas id="categoryChart"></canvas></div>
 <h3>Afiliacje</h3>
-<div class='chart'><canvas id="affiliationChart"></canvas></div>
+<div class="chart">
+    <div class="chartAreaWrapper">
+        <canvas id="affiliationChart"></canvas>
+    </div>
+    <canvas id="affiliationChartAxis"></canvas>
+</div>
 <h3>Statusy zgłoszeń</h3>
 <div class='chart'><canvas id="statusChart"></canvas></div>
 <h3>Zgłoszenia w czasie</h3>
@@ -51,7 +86,7 @@ $stmt->execute();
 $application = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $category = json_encode($application);
 
-$stmt = $db->prepare('SELECT affiliation, COUNT(*) AS quantity FROM application GROUP BY affiliation ORDER BY quantity LIMIT 5');
+$stmt = $db->prepare('SELECT affiliation, COUNT(*) AS quantity FROM application GROUP BY affiliation ORDER BY quantity');
 $stmt->execute();
 $application = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $affiliation = json_encode($application);
@@ -124,8 +159,7 @@ $dates = json_encode($application);
             }]
         },
         options: {
-            responsive: true,
-            aspectRatio: 1,
+            responsive: false,
             maintainAspectRatio: false,
             legend: {
                 display: false
