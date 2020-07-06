@@ -1,10 +1,12 @@
 # Strona Konferencji Młodych Inżynierów 2020
 
-[https://younge.pti.org.pl/](https://younge.pti.org.pl/)
+## Demo
+
+[https://kmi-mechatron.netlify.app/](https://kmi-mechatron.netlify.app/)
 
 ---
 
-### Made with
+## Made with
 
   > Vanilla JS, SCSS, Flexbox, HTML5
 
